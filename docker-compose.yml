@@ -12,7 +12,7 @@ services:
     # 🔧 jives/hlds:valve-legacy (Half-Life Deathmatch) (Pre 25th Anniversary Edition)
     # 🔧 jives/hlds:cstrike-legacy (Counter-Strike) (Pre 25th Anniversary Edition)
     # 🔧 jives/hlds:czero-legacy (Counter-Strike: Condition Zero) (Pre 25th Anniversary Edition)
-    image: jives/hlds:valve
+    image: jives/hlds:cstrike
     # 📣 Learn more about these volumes in the advanced setup guides: https://github.com/JamesIves/hlds-docker?tab=readme-ov-file#advanced-setup-%EF%B8%8F
     volumes:
       - "./config:/temp/config"

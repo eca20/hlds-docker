@@ -1,2 +1,16 @@
-1fdc2768d3a1   jives/hlds:cstrike              "./entrypoint.sh '+l…"   15 minutes ago   Up 15 minutes   0.0.0.0:26900->26900/udp, :::26900->26900/udp, 0.0.0.0:27015->27015/udp, :::27015->27015/udp, 0.0.0.0:27015->27015/tcp, :::27015->27015/tcp   hlds
-f0868b818292   portainer/portainer-ce:latest   "/portainer"             13 days ago      Up 22 minutes   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 0.0.0.0:9443->9443/tcp, :::9443->9443/tcp, 9000/tcp   
+ L 06/10/2025 - 17:02:14: [admin.amxx] Login: "PapaSofa<1><STEAM_0:0:697174><>" became an admin (account "STEAM_0:0:697174") (access "abcdefghijklmnopqrstu") (address "185.221.99.24")
+hlds-1  | L 06/10/2025 - 17:02:14: "PapaSofa<1><STEAM_0:0:697174><>" STEAM USERID validated
+hlds-1  | ERROR: couldn't open custom.hpk.
+hlds-1  | L 06/10/2025 - 17:02:16: "PapaSofa<1><STEAM_0:0:697174><>" entered the game
+hlds-1  | crash_20250610170216_2.dmp[46]: Uploading dump (out-of-process)
+hlds-1  | /tmp/dumps/crash_20250610170216_2.dmp
+hlds-1  | crash_20250610170216_2.dmp[46]: Finished uploading minidump (out-of-process): success = no
+hlds-1  | crash_20250610170216_2.dmp[46]: error: libcurl.so: cannot open shared object file: No such file or directory
+hlds-1  | crash_20250610170216_2.dmp[46]: file ''/tmp/dumps/crash_20250610170216_2.dmp'', upload no: ''libcurl.so: cannot open shared object file: No such file or directory''
+hlds-1  | Segmentation fault (core dumped)
+hlds-1  | email debug.log to linux@valvesoftware.com
+hlds-1  | Tue Jun 10 17:02:17 UTC 2025: Server restart in 10 seconds
+hlds-1  | Using breakpad crash handler
+hlds-1  | Setting breakpad minidump AppID = 10
+hlds-1  | Forcing breakpad minidump interfaces to load
+hlds-1  | 

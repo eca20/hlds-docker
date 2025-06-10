@@ -82,8 +82,8 @@ RUN mkdir -p $HOME/.steam \
 WORKDIR /opt/steam/hlds
 
 # Ensure custom.hpk exists and is writable
-RUN mkdir -p /opt/steam/hlds/${GAME}/cstrike && \
-    touch /opt/steam/hlds/${GAME}/cstrike/custom.hpk && \
+RUN mkdir -p /opt/steam/hlds/${GAME} && \
+    touch /opt/steam/hlds/${GAME}/custom.hpk && \
     chown -R steam:steam /opt/steam/hlds && \
     chmod -R u+rw /opt/steam/hlds
 

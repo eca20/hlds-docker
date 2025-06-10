@@ -60,6 +60,9 @@ COPY ./hlds.txt /opt/steam
 RUN sed -i "s/\$GAME/${GAME}/g" /opt/steam/hlds.txt
 RUN sed -i "s/\$FLAG/${FLAG}/g" /opt/steam/hlds.txt
 
+RUN apt-get update && \
+    apt-get install -y libcurl4 libcurl4-openssl-dev
+    
 # Downloads and extracts the SteamCMD installer.
 RUN curl -v -sL media.steampowered.com/client/installer/steamcmd_linux.tar.gz | tar xzvf - && \
     file /opt/steam/linux32/steamcmd && \

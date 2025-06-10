@@ -58,6 +58,12 @@ echo "
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 "
 
+if [ ! -f "$HLDS_DIR/cstrike/custom.hpk" ]; then
+  echo "Creating blank custom.hpk..."
+  touch "$HLDS_DIR/cstrike/custom.hpk"
+  chown steam:steam "$HLDS_DIR/cstrike/custom.hpk"
+fi
+
 echo "\e[32mStarting Half-Life Dedicated Server...\e[0m"
 
 # Start the server with the specified game and any additional arguments.

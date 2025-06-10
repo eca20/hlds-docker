@@ -10,14 +10,7 @@
 #endif
 #define _fun_included
 
-#if AMXX_VERSION_NUM >= 175
- #pragma reqlib fun
- #if !defined AMXMODX_NOAUTOLOAD
-  #pragma loadlib fun
- #endif
-#else
- #pragma library fun
-#endif
+#pragma library fun
 
 /* Returns 1 if receiver hears sender via voice communication. */
 native get_client_listen(receiver, sender);
@@ -39,7 +32,7 @@ native set_user_armor(index, armor);
 native set_user_health(index, health);
 
 /* Move player to origin. */
-native set_user_origin(index, const origin[3]);
+native set_user_origin(index, origin[3]);
 
 /* Sets player rendering mode. */
 native set_user_rendering(index, fx = kRenderFxNone, r = 255, g = 255, b = 255, render = kRenderNormal, amount = 16);
@@ -74,7 +67,7 @@ native Float:get_user_maxspeed(index);
 native set_user_gravity(index, Float:gravity = 1.0);
 
 /* Returns users gravity. */
-native Float:get_user_gravity(index);
+native get_user_gravity(index);
 
 /* Spawns entity. */
 native spawn(index);
@@ -84,9 +77,6 @@ native set_user_noclip(index, noclip = 0);
 
 /* Returns 1 if noclip is set. */
 native get_user_noclip(index);
-
-/* Returns 1 if player has silent footsteps, 0 if footsteps are set to normal */
-native get_user_footsteps(index);
 
 /* Gives player silent footsteps.
 * if set = 0 it will return footsteps to normal */

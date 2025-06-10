@@ -19,6 +19,8 @@ native getarg(arg, index=0);
 native setarg(arg, index=0, value);
 
 native strlen(const string[]);
+native strpack(dest[], const source[]);
+native strunpack(dest[], const source[]);
 
 native tolower(c);
 native toupper(c);
@@ -37,8 +39,3 @@ native time(&hour=0,&minute=0,&second=0);
 native date(&year=0,&month=0,&day=0);
 
 native tickcount(&granularity=0);
-
-stock abs(x)
-{
-	return x > 0 ? x : -x;
-}

@@ -23,37 +23,10 @@ STOP_FLOOD = Stop med at oversvoemme serveren!
 STOP_FLOOD = Przestan zapychac serwer!
 
 [nl]
-STOP_FLOOD = Stop met de server vol te spammen!
+STOP_FLOOD = Stop met het spammen van de server!
 
 [es]
 STOP_FLOOD = Para de saturar el servidor!
 
 [bp]
 STOP_FLOOD = Parem com o flood no servidor!
-
-[cz]
-STOP_FLOOD = Prestan floodovat!
-
-[fi]
-STOP_FLOOD = Lopeta floodiminen!
-
-[ls]
-STOP_FLOOD = nu m0|2 fl00d, |<? DDoS !$ 4 cr|m3
-
-[bg]
-STOP_FLOOD = Sprete da pretovarvate servara!
-
-[ro]
-STOP_FLOOD = Nu mai flooda server-ul!
-
-[hu]
-STOP_FLOOD = Ne irj ilyen sokat!
-
-[lt]
-STOP_FLOOD = Nustok greitai rasyti!
-
-[sk]
-STOP_FLOOD = Prestan floodovat!
-
-[mk]
-STOP_FLOOD = Prestani na flodiras na serverot!

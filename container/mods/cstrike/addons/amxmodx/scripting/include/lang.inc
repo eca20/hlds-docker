@@ -24,33 +24,3 @@ native register_dictionary(const filename[]);
 
 //returns 1 if the language is loaded, 0 otherwise.
 native lang_exists(const name[]);
-
-enum TransKey
-{
-	TransKey_Bad = -1,
-};
-
-/**
- * Adds or finds a translation key.
- */
-native TransKey:CreateLangKey(const key[]);
-
-/**
- * Finds a translation key id without adding on failure.
- * Returns -1 on not found.
- */
-native TransKey:GetLangTransKey(const key[]);
-
-/**
- * Adds a translation.
- */
-native AddTranslation(const lang[3], TransKey:key, const phrase[]);
-
-/**
- * Looks up the translation of the key for the given type
- * This does NOT format the output text.
- * eg: If the key includes %s, the outputted text will also contain %s.
- * NOTE: LANG_PLAYER is invalid in this, use a player index
- *       or LANG_SERVER
- */
-native LookupLangKey(Output[], OutputSize, const Key[], const &id);

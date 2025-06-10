@@ -39,9 +39,9 @@ CONF_MENU = Menu konfiguracji
 SPE_MENU = Menu rozmowy
 
 [nl]
-CMD_MENU = Commandomenu
-CONF_MENU = Configuratiemenu
-SPE_MENU = Spraakmenu
+CMD_MENU = Commando's Menu
+CONF_MENU = Configuratie's Menu
+SPE_MENU = Spraak Menu
 
 [es]
 CMD_MENU = Menu de Comandos
@@ -52,48 +52,3 @@ SPE_MENU = Menu de Voz
 CMD_MENU = Menu de Comandos
 CONF_MENU = Menu de Configs
 SPE_MENU = Menu de Vozes
-
-[cz]
-CMD_MENU = Menu prikazu
-CONF_MENU = Menu nastaveni
-SPE_MENU = Nastaveni reci
-
-[fi]
-CMD_MENU = Komentovalikko
-CONF_MENU = Saatovalikko
-SPE_MENU = Puhevalikko
-
-[ls]
-CMD_MENU = l33t cmdz M3nu
-CONF_MENU = l33t c0nf!gz M3nu
-SPE_MENU = l33t $p33ch M3nu
-
-[bg]
-CMD_MENU = Comandnoto Menu
-CONF_MENU = Configuracionno Menu
-SPE_MENU = Menu za Govorene
-
-[ro]
-CMD_MENU = Menu Comenzi
-CONF_MENU = Menu Configuratie
-SPE_MENU = Menu Speech
-
-[hu]
-CMD_MENU = Parancs Menu
-CONF_MENU = Beallitas Menu
-SPE_MENU = Beszed Menu
-
-[lt]
-CMD_MENU = Komandu meniu
-CONF_MENU = Konfigu meniu
-SPE_MENU = Kalbos meniu
-
-[sk]
-CMD_MENU = Menu prikazov
-CONF_MENU = Menu nastaveni
-SPE_MENU = Nastavenie reci
-
-[mk]
-CMD_MENU = Meni so komandi
-CONF_MENU = Meni so konfiguracii
-SPE_MENU = Meni so glasovni komandi

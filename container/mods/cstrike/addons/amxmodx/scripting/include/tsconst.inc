@@ -1,6 +1,6 @@
-/* TSFUN constants
+/* TSXMod functions
  *
- * (c) 2005, Suzuka
+ * (c) 2004, SidLuke
  * This file is provided as is (no warranties).
  */
 
@@ -11,7 +11,6 @@
 
 #define TSMAX_WEAPONS 44	// 37 + throwing knife + brekable + 5 custom weapon slots
 
-#define TSPWUP_NONE			0
 #define TSPWUP_RANDOM			0
 #define TSPWUP_SLOWMO 			1
 #define TSPWUP_INFAMMO		 	2
@@ -35,23 +34,7 @@
 #define TSA_SILENCER			1
 #define TSA_LASERSIGHT			2
 #define TSA_FLASHLIGHT			4
-#define TSA_SCOPE				8
-
-#define TSMSG_NORMAL			6
-#define TSMSG_WAITING			11
-#define TSMSG_DEAD			1
-#define TSMSG_KILLER			2
-#define TSMSG_DEMOLITION		3
-#define TSMSG_SPECIALIST		4
-#define TSMSG_UNSTOPPABLE		5
-#define TSMSG_THEONE			10
-
-#define STUNT_NONE 0
-#define STUNT_DUCK 1
-#define STUNT_ROLL 2
-#define STUNT_DIVE 3
-#define STUNT_GETUP 4
-#define STUNT_FLIP 5
+#define TSA_SCOPE			8
 
 enum {
   TSW_GLOCK18 = 1,
@@ -91,7 +74,7 @@ enum {
   TSW_SKNIFE,
   TSW_KUNG_FU,
   TSW_TKNIFE,
-};
+}
 
 /* 
 valid tsweaponid in TS_GiveWeapon

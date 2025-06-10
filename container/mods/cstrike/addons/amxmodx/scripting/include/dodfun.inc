@@ -11,20 +11,11 @@
 
 #include <dodconst>
 
-#if AMXX_VERSION_NUM >= 175
- #pragma reqlib dodfun
- #if !defined AMXMODX_NOAUTOLOAD
-  #pragma loadlib dodfun
- #endif
-#else
- #pragma library dodfun
-#endif
+#pragma library dodfun
+
 
 /* Function is called after grenade throw */
 forward grenade_throw(index,greindex,wId);
-
-/* Function is called after a rocket is shot */
-forward rocket_shoot(index,rocketindex,wId);
 
 /* Example: for full stamina use dod_player_stamina(1,STAMINA_SET,100,100) */
 /* value is from 0 - 100 */
@@ -49,10 +40,7 @@ native dod_is_randomclass(index);
 /* Returns player deaths */
 native dod_get_pl_deaths(index);
 
-/* Sets player deaths. 
- * Note if you opt to refresh the scoreboard, it
- * will make the player appear as "DEAD" in the scoreboard.
- */
+/* Sets player deaths. */
 native dod_set_pl_deaths(index,value,refresh=1);
 
 /* Returns player deaths. */
@@ -65,7 +53,7 @@ native dod_set_user_kills(index,value,refresh=1);
 native dod_set_user_score(index,value,refresh=1);
 
 /* Sets new team name for this player */
-native dod_set_pl_teamname(index,const szName[]);
+native dod_set_pl_teamname(index,szName[]);
 
 /* Gets player team name */
 native dod_get_pl_teamname(index,szName[],len);
@@ -128,7 +116,7 @@ native objectives_reinit( player=0 );
 native objective_get_data( index, CP_VALUE:key, szValue[]="", len=0 );
 
 /* use this function to change control point's data */
-native objective_set_data( index, CP_VALUE:key , iValue=-1, const szValue[]="" );
+native objective_set_data( index, CP_VALUE:key , iValue=-1, szValue[]="" );
 
 enum CA_VALUE {
 	CA_edict = 1,
@@ -143,7 +131,7 @@ enum CA_VALUE {
 };
 
 /* use this function to get info about specified control point's area */
-native area_get_data( index, CA_VALUE:key, szValue[]="", len=0 );
+native area_get_data( index, CP_VALUE:key, szValue[]="", len=0 );
 
 /* use this function to change control point's area data */
-native area_set_data( index, CA_VALUE:key , iValue=-1, const szValue[]="" );
+native area_set_data( index, CP_VALUE:key , iValue=-1, szValue[]="" );

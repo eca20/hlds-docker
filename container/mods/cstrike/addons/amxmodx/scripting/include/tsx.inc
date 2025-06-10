@@ -9,16 +9,10 @@
 #endif
 #define _tsx_included
 
+#include <tsconst>
 #include <tsstats>
 
-#if AMXX_VERSION_NUM >= 175
- #pragma reqclass xstats
- #if !defined AMXMODX_NOAUTOLOAD
-  #pragma defclasslib xstats tsx
- #endif
-#else
- #pragma library tsx
-#endif
+#pragma library tsx
 
 /************* Shared Natives Start ********************************/
 
@@ -26,11 +20,9 @@
 enum {
   XMF_DAMAGE = 0,
   XMF_DEATH,
-};
+}
 
-/* Use this function to register forwards 
- * DEPRECATED
- */
+/* Use this function to register forwards */
 native register_statsfwd( ftype );
 
 /* Function is called after player to player attacks ,
@@ -43,7 +35,7 @@ forward client_death(killer,victim,wpnindex,hitplace,TK);
 
 /* Custom Weapon Support */
 /* function will return index of new weapon */
-native custom_weapon_add( const wpnname[],melee = 0,const logname[]="" ); 
+native custom_weapon_add( wpnname[],melee = 0,logname[]="" ); 
 /* Function will pass damage done by this custom weapon to stats module and other plugins */
 native custom_weapon_dmg( weapon, att, vic, damage, hitplace=0 ); 
 /* Function will pass info about custom weapon shot to stats module */
@@ -69,17 +61,26 @@ native xmod_is_custom_wpn(wpnindex);
 
 /************* Shared Natives End ********************************/
 
-/* Spawns a Weapon */
-stock ts_weaponspawn(const weaponid[], const duration[], const extraclip[], const spawnflags[], const Float:Origin[3])
-{
-	new ent = create_entity("ts_groundweapon");
+/* weapon logname to weapon name convertion */
+native ts_wpnlogtoname(logname[],name[],len);
 
-	DispatchKeyValue(ent, "tsweaponid", weaponid);
-	DispatchKeyValue(ent, "wduration", duration);
-	DispatchKeyValue(ent, "wextraclip", extraclip);
-	DispatchKeyValue(ent, "spawnflags", spawnflags);
-	DispatchSpawn(ent);
+/* weapon logname to weapon index convertion */
+native ts_wpnlogtoid(logname[]);
 
-	entity_set_origin(ent, Origin);
-	return PLUGIN_HANDLED;
-}
+native ts_getuserwpn( index,&clip,&ammo,&mode,&extra );
+native ts_getusercash( index );
+native ts_getuserspace( index );
+native ts_getuserpwup( index,&Value );
+native ts_getuseritems( index );
+native ts_getuserkillflags(killer);
+native ts_getkillingstreak( index );
+native ts_getuserlastfrag( index );
+
+native ts_giveweapon( index,weapon,clips,extra );
+
+/* Function will create pwup entity and return its index (pwupent) */
+native ts_createpwup( pwup );
+
+native ts_givepwup( index,pwupent );
+
+native ts_setpddata( knifeoffset );

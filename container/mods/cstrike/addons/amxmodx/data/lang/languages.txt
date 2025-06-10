@@ -41,39 +41,3 @@ LANG_NAME_NATIVE = Espanyol
 [bp]
 LANG_NAME = Brazil Portuguese
 LANG_NAME_NATIVE = Portugues Brasil
-
-[cz]
-LANG_NAME = Czech
-LANG_NAME_NATIVE = Cestina
-
-[fi]
-LANG_NAME = Finnish
-LANG_NAME_NATIVE = Suomi
-
-[ls]
-LANG_NAME = l33t
-LANG_NAME_NATIVE = l33t
-
-[bg]
-LANG_NAME = Bulgarian
-LANG_NAME_NATIVE = Bulgarski
-
-[ro]
-LANG_NAME = Romanian
-LANG_NAME_NATIVE = Romana
-
-[hu]
-LANG_NAME = Hungarian
-LANG_NAME_NATIVE = Magyar
-
-[lt]
-LANG_NAME = Lithuania
-LANG_NAME_NATIVE = Lithuania
-
-[sk]
-LANG_NAME = Slovak
-LANG_NAME_NATIVE = Slovencina
-
-[mk]
-LANG_NAME = Macedonian
-LANG_NAME_NATIVE = Makedonski

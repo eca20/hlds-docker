@@ -11,8 +11,6 @@
 #endif
 #define _string_included
 
-#define charsmax(%1) (sizeof(%1)-1)
-
 /* Checks if source contains string. On success function
 * returns position in source, on failure returns -1. */
 native contain(const source[],const string[]);
@@ -22,52 +20,16 @@ native contain(const source[],const string[]);
 native containi(const source[],const string[]);
 
 /* Replaces given string to another in given text. */
-native replace(text[], len, const what[], const with[]);
+native replace(text[],len,const what[],const with[]);
 
 /* Adds one string to another. Last parameter different from 0, specifies
 * how many chars we want to add. Function returns number of all merged chars. */
 native add(dest[],len,const src[],max=0);
 
 /* Fills string with given format and parameters.
- * Function returns number of copied chars.
- * Example: format(dest,"Hello %s. You are %d years old","Tom",17).
- * If any of your input buffers overlap with the destination buffer,
- *  format() falls back to a "copy-back" version as of 1.65.  This is 
- *  slower, so you should using a source string that is the same as
- *  the destination.
- */
-native format(output[] ,len ,const format[] , any:...);
-
-/* Same as format(), except does not perform a "copy back" check.
- * This means formatex() is faster, but DOES NOT ALLOW this type
- * of call:
- *  formatex(buffer, len, "%s", buffer)
- *  formatex(buffer, len, buffer, buffer)
- *  formatex(buffer, len, "%s", buffer[5])
- * This is because the output is directly stored into "buffer", 
- *  rather than copied back at the end.
- */
-native formatex(output[] ,len ,const format[] , any:...);
-
-/* Replacement for format_args.  Much faster and %L compatible.
- * This works exactly like vsnprintf() from C.
- * You must pass in the output buffer and its size,
- *  the string to format, and the number of the FIRST variable
- *  argument parameter.  For example, for:
- *  function (a, b, c, ...)
- *  You would pass 4 (a is 1, b is 2, c is 3, et cetera).
- * There is no vformatex().
- */
-native vformat(buffer[], len, const fmt[], vararg);
-
-/*
- * Same as vformat(), except works in normal style dynamic natives.
- * Instead of passing the format arg string, you can only pass the 
- *  actual format argument number itself.
- * If you pass 0, it will read the format string from an optional 
- *  fifth parameter.
- */
-native vdformat(buffer[], len, fmt_arg, vararg, ...);
+* Function returns number of copied chars.
+* Example: format(dest,"Hello %s. You are %d years old","Tom",17). */
+native format(output[] ,len ,const format[] , {Float,Sql,Result,_}:...);
 
 /* Gets parameters from function as formated string. */
 native format_args(output[] ,len ,pos = 0);
@@ -77,12 +39,6 @@ native num_to_str(num,string[],len);
 
 /* Returns converted string to number. */
 native str_to_num(const string[]);
-
-/* Converts float to string. */
-native float_to_str(Float:fl, string[], len);
-
-/* Parses a float. */
-native Float:str_to_float(const string[]);
 
 /* Checks if two strings equal. If len var is set
 * then there are only c chars comapred. */
@@ -164,106 +120,3 @@ native strfind(const string[], const sub[], ignorecase=0, pos=0);
 
 /* Compares two strings with the C function strcmp().  Returns 0 on equal. */
 native strcmp(const string1[], const string2[], ignorecase=0);
-
-/* Tests if given string contains only digits. Also, returns false for zero-length strings. */
-stock bool:is_str_num(const sString[])
-{
-	new i = 0;
-	
-	while (sString[i] && isdigit(sString[i]))
-		++i;
-	
-	return sString[i] == 0 && i != 0;
-}
-
-/* It is basically strbreak but you have a delimiter that is more than one character in length.
-   You pass the Input string, the Left output, the max length of the left output,
-   the right output , the max right length, and then the delimiter string.
-   By Suicid3
-*/
-stock split(const szInput[], szLeft[], pL_Max, szRight[], pR_Max, const szDelim[])
-{
-	new iEnd = contain(szInput, szDelim);
-	new iStart = iEnd + strlen(szDelim);
-
-	//If delimiter isnt in Input just split the string at max lengths
-	if (iEnd == -1)
-	{
-		iStart = copy(szLeft, pL_Max, szInput);
-		copy(szRight, pR_Max, szInput[iStart]);
-		return;
-	}
-
-	//If delimter is in Input then split at input for max lengths
-	if (pL_Max >= iEnd)
-		copy(szLeft, iEnd, szInput);
-	else
-		copy(szLeft, pL_Max, szInput);
-
-	copy(szRight, pR_Max, szInput[iStart]);
-
-	return;
-}
-
-/* Removes a path from szFilePath leaving the name of the file in szFile for a pMax length. */
-stock remove_filepath(const szFilePath[], szFile[], pMax)
-{
-	new len = strlen(szFilePath);
-
-	while ((--len >= 0) && (szFilePath[len] != '/') && (szFilePath[len] != '\')) { }
-
-	copy(szFile, pMax, szFilePath[len + 1]);
-
-	return;
-}
-
-/* Replaces a contained string iteratively.
- * This ensures that no infinite replacements will take place by
- *  intelligently moving to the next string position each iteration.
- */
-stock replace_all(string[], len, const what[], const with[])
-{
-	new pos = 0;
-	
-	if ((pos = contain(string, what)) == -1)
-	{
-		return 0;
-	}
-	
-	new total = 0;
-	new with_len = strlen(with);
-	new diff = strlen(what) - with_len;
-	new total_len = strlen(string);
-	new temp_pos = 0;
-	
-	while (replace(string[pos], len - pos, what, with) != 0)
-	{
-		total++;
-
-		/* jump to position after replacement */
-		pos += with_len;
-		
-		/* update cached length of string */
-		total_len -= diff;
-		
-		/* will the next call be operating on the last character? */
-		if (pos >= total_len)
-		{
-			break;
-		}
-		
-		/* find the next position from our offset */
-		temp_pos = contain(string[pos], what);
-		
-		/* if it's invalid, we're done */
-		if (temp_pos == -1)
-		{
-			break;
-		}
-		
-		/* otherwise, reposition and update counters */
-		pos += temp_pos;
-	}
-	
-	return total;
-}

@@ -13,7 +13,7 @@ TIME_LEFT = Zeit uebrig
 NO_T_LIMIT = Kein Zeitlimit
 MINUTE = Minute
 MINUTES = Minuten
-SECOND = Sekunde
+SECOND = Sekunden
 SECONDS = Sekunden
 
 [sr]
@@ -71,9 +71,9 @@ SECOND = sekunda
 SECONDS = sekund
 
 [nl]
-THE_TIME = Het is nu
-TIME_LEFT = Restende Tijd
-NO_T_LIMIT = Geen Tijdlimiet
+THE_TIME = De tijd
+TIME_LEFT = Tijd Over
+NO_T_LIMIT = Geen Tijd Limiet
 MINUTE = minuut
 MINUTES = minuten
 SECOND = seconde
@@ -96,84 +96,3 @@ MINUTE = minuto
 MINUTES = minutos
 SECOND = segundo
 SECONDS = segundos
-
-[cz]
-THE_TIME = Cas
-TIME_LEFT = Zbyva jeste
-NO_T_LIMIT = Neni casovy limit
-MINUTE = minuta
-MINUTES = minut
-SECOND = sekunda
-SECONDS = second
-
-[fi]
-THE_TIME = Aika
-TIME_LEFT = Aikaa jaljella
-NO_T_LIMIT = Ei aikarajaa
-MINUTE = minuutti
-MINUTES = minuuttia
-SECOND = sekunti
-SECONDS = sekuntia
-
-[ls]
-THE_TIME = T3h t!m3
-TIME_LEFT = T!m3 L3ft
-NO_T_LIMIT = N0 T!m3 L!m!t
-MINUTE = m!nut3
-MINUTES = m!nut3z
-SECOND = s3c0nd
-SECONDS = s3c0ndz
-
-[bg]
-THE_TIME = 4asa
-TIME_LEFT = Ostanalo Vreme
-NO_T_LIMIT = Nqma limit na vremeto
-MINUTE = minuta
-MINUTES = minuti
-SECOND = secunda
-SECONDS = secundi
-
-[ro]
-THE_TIME = Ora
-TIME_LEFT = Timp Ramas
-NO_T_LIMIT = Nici o Limita a Timpului
-MINUTE = minut ramas
-MINUTES = minute ramase
-SECOND = secunda
-SECONDS = secunde
-
-[hu]
-THE_TIME = Az ido
-TIME_LEFT = Hatralevo ido
-NO_T_LIMIT = NIncs idohatar
-MINUTE = perc
-MINUTES = perc
-SECOND = masodperc
-SECONDS = masodperc
-
-[lt]
-THE_TIME = Laikas
-TIME_LEFT = Liko laiko
-NO_T_LIMIT = Nera laiko limito
-MINUTE = minute
-MINUTES = minutes
-SECOND = sekunde
-SECONDS = sekundes
-
-[sk]
-THE_TIME = Cas
-TIME_LEFT = Ostava este
-NO_T_LIMIT = Neni casovy limit
-MINUTE = minuta
-MINUTES = minut
-SECOND = sekunda
-SECONDS = sekund
-
-[mk]
-THE_TIME = Vreme
-TIME_LEFT = Preostanato Vreme
-NO_T_LIMIT = Nema Ogranicuvanje Na Vremeto
-MINUTE = minuta
-MINUTES = minuti
-SECOND = sekunda
-SECONDS = sekundi

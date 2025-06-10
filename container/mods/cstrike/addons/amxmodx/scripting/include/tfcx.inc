@@ -12,14 +12,7 @@
 #include <tfcconst>
 #include <tfcstats>
 
-#if AMXX_VERSION_NUM >= 175
- #pragma reqclass xstats
- #if !defined AMXMODX_NOAUTOLOAD
-  #pragma defclasslib xstats tfcx
- #endif
-#else
- #pragma library tfcx
-#endif
+#pragma library tfcx
 
 /************* Shared Natives Start ********************************/
 
@@ -27,7 +20,7 @@
 enum {
   XMF_DAMAGE = 0,
   XMF_DEATH,
-};
+}
 
 /* Use this function to register forwards */
 native register_statsfwd( ftype );
@@ -42,7 +35,7 @@ forward client_death(killer,victim,wpnindex,hitplace,TK);
 
 /* Custom Weapon Support */
 /* function will return index of new weapon */
-native custom_weapon_add( const wpnname[],melee = 0,const logname[]="" ); 
+native custom_weapon_add( wpnname[],melee = 0,logname[]="" ); 
 /* Function will pass damage done by this custom weapon to stats module and other plugins */
 native custom_weapon_dmg( weapon, att, vic, damage, hitplace=0 ); 
 /* Function will pass info about custom weapon shot to stats module */
@@ -119,27 +112,3 @@ native tfc_getweaponbammo(index, weapon);
 
 /* Sets amount of ammo in weapon's clip (backpack) */
 native tfc_setweaponbammo(index, weapon, value);
-
-/* Returns amount of ammo in weapon's clip */
-/* Index must be weapon's entity index */
-native tfc_getweaponammo(index);
-
-/* Sets amount of ammo in weapon's clip */
-/* Index must be weapon's entity index */
-native tfc_setweaponammo(index, value);
-
-/* Returns 1 if user is carrying a goal item such as a flag or a keycard, else 0.
- * Team is by reference parameter that will be set to owning team(s) of the goal item.
- * Use the TFC_GOALITEM_* constants to determine the owning team.
- */
-native tfc_get_user_goalitem(index, &team);
-
-/* Returns 1 if the player is a spy and is currently feigning death */
-native tfc_is_user_feigning(index);
-
-/* Returns 1 if the two teams are allies, 0 otherwise 
- * Note: Team must be 1->4
- *       Team 0 will always return 0
- *       Any other team will result in an error
- */
-native tfc_is_team_ally(TeamA,TeamB);

@@ -88,7 +88,7 @@ RUN mkdir -p /opt/steam/hlds/${GAME} && \
     chmod u+rw /opt/steam/hlds/${GAME}/custom.hpk
 
 # Copies the entrypoint script to the container and sets the necessary permissions.
-COPY --chown=steam:steam ./entrypoint.sh /opt/steam/hlds/entrypoint.sh
+COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
 COPY --chown=steam:steam config $GAME
 COPY --chown=steam:steam mods .
 
@@ -96,4 +96,4 @@ COPY --chown=steam:steam mods .
 RUN chmod +x ./entrypoint.sh
 
 
-ENTRYPOINT ["/opt/steam/hlds/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]

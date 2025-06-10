@@ -10,11 +10,10 @@ services:
     volumes:
       - "./config:/temp/config"
       - "./mods:/temp/mods"
-      - "./data:/opt/steam/hlds"
     ports:
       - "27015:27015/udp"
       - "27015:27015"
-      - "26900:26900/udp"
+      - "26900:2690/udp"
     environment:
       - GAME=${GAME}
       - FLAG=${FLAG}

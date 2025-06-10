@@ -50,7 +50,7 @@ RUN mkdir /temp/mods
 
 RUN apt-get update && \
     apt-get install -y lib32gcc-s1 lib32z1 lib32stdc++6 \
-    libcurl4 libcurl4-openssl-dev libcurl4:i386 \
+    libcurl4 libcurl4-openssl-dev \
     curl unzip ca-certificates tmux tar && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -78,14 +78,7 @@ RUN mkdir -p $HOME/.steam \
     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32 \
     && echo 70 > /opt/steam/hlds/steam_appid.txt
 
-
 WORKDIR /opt/steam/hlds
-
-# Ensure custom.hpk exists and is writable
-RUN mkdir -p /opt/steam/hlds/${GAME} && \
-    touch /opt/steam/hlds/${GAME}/custom.hpk && \
-    chown steam:steam /opt/steam/hlds/${GAME}/custom.hpk && \
-    chmod u+rw /opt/steam/hlds/${GAME}/custom.hpk
 
 # Copies the entrypoint script to the container and sets the necessary permissions.
 COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh

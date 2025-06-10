@@ -3,7 +3,6 @@
 GAME=${GAME:-valve}
 VERSION=${VERSION:-custom}
 IMAGE=${IMAGE:-custom}
-HLDS_DIR="$(pwd)"
 
 if echo "$@" | grep -qv "+map"; then
   echo -e "\e[33mWarning: No +map specified in the command. Server will start but may not be joinable.\e[0m"
@@ -58,12 +57,6 @@ echo "
 █                                                                  █
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 "
-
-if [ ! -f "$HLDS_DIR/cstrike/custom.hpk" ]; then
-  echo "Creating blank custom.hpk..."
-  touch "$HLDS_DIR/cstrike/custom.hpk"
-  chown steam:steam "$HLDS_DIR/cstrike/custom.hpk"
-fi
 
 echo "\e[32mStarting Half-Life Dedicated Server...\e[0m"
 

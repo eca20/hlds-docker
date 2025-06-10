@@ -3,7 +3,7 @@
 GAME=${GAME:-valve}
 VERSION=${VERSION:-custom}
 IMAGE=${IMAGE:-custom}
-HLDS_DIR="/opt/steam/hlds"
+HLDS_DIR="$(pwd)"
 
 if echo "$@" | grep -qv "+map"; then
   echo -e "\e[33mWarning: No +map specified in the command. Server will start but may not be joinable.\e[0m"

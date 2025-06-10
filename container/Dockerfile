@@ -84,8 +84,8 @@ WORKDIR /opt/steam/hlds
 # Ensure custom.hpk exists and is writable
 RUN mkdir -p /opt/steam/hlds/${GAME} && \
     touch /opt/steam/hlds/${GAME}/custom.hpk && \
-    chown -R steam:steam /opt/steam/hlds && \
-    chmod -R u+rw /opt/steam/hlds
+    chown steam:steam /opt/steam/hlds/${GAME}/custom.hpk && \
+    chmod u+rw /opt/steam/hlds/${GAME}/custom.hpk
 
 # Copies the entrypoint script to the container and sets the necessary permissions.
 COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh

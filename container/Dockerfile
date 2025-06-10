@@ -48,6 +48,13 @@ RUN mkdir /temp
 RUN mkdir /temp/config
 RUN mkdir /temp/mods
 
+RUN apt-get update && \
+    apt-get install -y lib32gcc-s1 lib32z1 lib32stdc++6 \
+    libcurl4 libcurl4-openssl-dev \
+    curl unzip ca-certificates tmux tar && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+    
 # Sets the user to the steam user.
 USER steam
 WORKDIR /opt/steam
@@ -59,10 +66,7 @@ COPY ./hlds.txt /opt/steam
 # Additionally replaces $FLAG with any additional flags that should be passed to the SteamCMD installer to support betas.
 RUN sed -i "s/\$GAME/${GAME}/g" /opt/steam/hlds.txt
 RUN sed -i "s/\$FLAG/${FLAG}/g" /opt/steam/hlds.txt
-
-RUN apt-get update && \
-    apt-get install -y libcurl4 libcurl4-openssl-dev
-    
+ 
 # Downloads and extracts the SteamCMD installer.
 RUN curl -v -sL media.steampowered.com/client/installer/steamcmd_linux.tar.gz | tar xzvf - && \
     file /opt/steam/linux32/steamcmd && \

@@ -1,0 +1,2 @@
+1fdc2768d3a1   jives/hlds:cstrike              "./entrypoint.sh '+l…"   15 minutes ago   Up 15 minutes   0.0.0.0:26900->26900/udp, :::26900->26900/udp, 0.0.0.0:27015->27015/udp, :::27015->27015/udp, 0.0.0.0:27015->27015/tcp, :::27015->27015/tcp   hlds
+f0868b818292   portainer/portainer-ce:latest   "/portainer"             13 days ago      Up 22 minutes   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 0.0.0.0:9443->9443/tcp, :::9443->9443/tcp, 9000/tcp   

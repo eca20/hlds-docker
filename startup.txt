@@ -6,4 +6,4 @@ docker run -d -ti \
   -p 27015:27015 \
   -p 26900:26900/udp \
   jives/hlds:cstrike  \
-  "+log on +rcon_password changeme +maxplayers 12 +map crossfire"
+  "+log on +rcon_password bubblegumdrops +maxplayers 12 +map cs_assault_upc"

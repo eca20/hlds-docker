@@ -1,49 +1,34 @@
-#39 29.70 Configuring DBD-mysql-5.013 ... OK
-#39 31.27 Building DBD-mysql-5.013 ... ! Installing DBD::mysql failed. See /root/.cpanm/work/1768200605.172/build.log for details. Retry with --force to force install it.
-#39 32.29 FAIL
-#39 32.29 1 distribution installed
-#39 ERROR: process "/bin/sh -c set -eux;     which mysql_config || true;     which mariadb_config || true;     MYSQLCFG=\"$(command -v mysql_config || command -v mariadb_config)\";     echo \"Using mysql_config at: $MYSQLCFG\";     cpanm --notest DBI;     cpanm --notest DBD::mysql --configure-args=\"--mysql_config=$MYSQLCFG\"" did not complete successfully: exit code: 1
+#7 24.94 Processing triggers for libc-bin (2.41-12) ...
+#7 25.41 + rm -rf /var/lib/apt/lists/auxfiles /var/lib/apt/lists/deb.debian.org_debian-security_dists_trixie-security_InRelease /var/lib/apt/lists/deb.debian.org_debian-security_dists_trixie-security_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/deb.debian.org_debian_dists_trixie-updates_InRelease /var/lib/apt/lists/deb.debian.org_debian_dists_trixie-updates_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/deb.debian.org_debian_dists_trixie_InRelease /var/lib/apt/lists/deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/lock /var/lib/apt/lists/partial
+#7 DONE 27.2s
 
-#38 [psychostats_web psychostats_web 4/4] RUN set -eux;     chown -R www-data:www-data /var/www/html;     find /var/www/html -type d -exec chmod 755 {} ;;     find /var/www/html -type f -exec chmod 644 {} ;;     if [ -f /var/www/html/config.php ]; then chmod 664 /var/www/html/config.php; fi
-#38 CANCELED
+#8 [psychostats_parser 3/5] RUN set -eux;     perl -MDBI -e 'print "DBI OK\n"';     perl -MDBD::mysql -e 'print "DBD::mysql OK\n"'
+#8 1.315 + perl -MDBI -e print "DBI OK\n"
+#8 1.347 Can't locate DBI.pm in @INC (you may need to install the DBI module) (@INC entries checked: /usr/local/lib/perl5/site_perl/5.38.5/x86_64-linux-gnu /usr/local/lib/perl5/site_perl/5.38.5 /usr/local/lib/perl5/vendor_perl/5.38.5/x86_64-linux-gnu /usr/local/lib/perl5/vendor_perl/5.38.5 /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu /usr/local/lib/perl5/5.38.5).
+#8 1.347 BEGIN failed--compilation aborted.
+#8 ERROR: process "/bin/sh -c set -eux;     perl -MDBI -e 'print \"DBI OK\\n\"';     perl -MDBD::mysql -e 'print \"DBD::mysql OK\\n\"'" did not complete successfully: exit code: 2
 ------
- > [psychostats_parser psychostats_parser 3/5] RUN set -eux;     which mysql_config || true;     which mariadb_config || true;     MYSQLCFG="$(command -v mysql_config || command -v mariadb_config)";     echo "Using mysql_config at: $MYSQLCFG";     cpanm --notest DBI;     cpanm --notest DBD::mysql --configure-args="--mysql_config=$MYSQLCFG":
-27.96 + cpanm --notest DBD::mysql --configure-args=--mysql_config=/usr/bin/mysql_config
-OK
-28.54 ==> Found dependencies: Devel::CheckLib
-28.62 --> Working on Devel::CheckLib
-28.62 Fetching https://www.cpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.16.tar.gz ... OK
-OK
-29.45 Successfully installed Devel-CheckLib-1.16
-! Installing DBD::mysql failed. See /root/.cpanm/work/1768200605.172/build.log for details. Retry with --force to force install it.
-32.29 FAIL
-32.29 1 distribution installed
+ > [psychostats_parser 3/5] RUN set -eux;     perl -MDBI -e 'print "DBI OK\n"';     perl -MDBD::mysql -e 'print "DBD::mysql OK\n"':
+1.315 + perl -MDBI -e print "DBI OK\n"
+1.347 Can't locate DBI.pm in @INC (you may need to install the DBI module) (@INC entries checked: /usr/local/lib/perl5/site_perl/5.38.5/x86_64-linux-gnu /usr/local/lib/perl5/site_perl/5.38.5 /usr/local/lib/perl5/vendor_perl/5.38.5/x86_64-linux-gnu /usr/local/lib/perl5/vendor_perl/5.38.5 /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu /usr/local/lib/perl5/5.38.5).
+1.347 BEGIN failed--compilation aborted.
 ------
-Dockerfile:154
+Dockerfile:155
 
 --------------------
 
- 153 |     # DBD::mysql needs mysql_config (or mariadb_config). The -compat package provides mysql_config.
+ 154 |     # Verify required Perl modules are available (installed via OS packages)
 
- 154 | >>> RUN set -eux; \
+ 155 | >>> RUN set -eux; \
 
- 155 | >>>     which mysql_config || true; \
+ 156 | >>>     perl -MDBI -e 'print "DBI OK\n"'; \
 
- 156 | >>>     which mariadb_config || true; \
+ 157 | >>>     perl -MDBD::mysql -e 'print "DBD::mysql OK\n"'
 
- 157 | >>>     MYSQLCFG="$(command -v mysql_config || command -v mariadb_config)"; \
-
- 158 | >>>     echo "Using mysql_config at: $MYSQLCFG"; \
-
- 159 | >>>     cpanm --notest DBI; \
-
- 160 | >>>     cpanm --notest DBD::mysql --configure-args="--mysql_config=$MYSQLCFG"
-
- 161 |     
+ 158 |     
 
 --------------------
 
-target psychostats_parser: failed to solve: process "/bin/sh -c set -eux;     which mysql_config || true;     which mariadb_config || true;     MYSQLCFG=\"$(command -v mysql_config || command -v mariadb_config)\";     echo \"Using mysql_config at: $MYSQLCFG\";     cpanm --notest DBI;     cpanm --notest DBD::mysql --configure-args=\"--mysql_config=$MYSQLCFG\"" did not complete successfully: exit code: 1
+failed to solve: process "/bin/sh -c set -eux;     perl -MDBI -e 'print \"DBI OK\\n\"';     perl -MDBD::mysql -e 'print \"DBD::mysql OK\\n\"'" did not complete successfully: exit code: 2
 
 eterraverse@eterraverse:~/projects/hlds-docker/container$ 
-

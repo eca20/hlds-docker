@@ -1,8 +1,6 @@
-docker compose exec psychostats_db sh -lc "mysql -uroot -p\"${PS_DB_ROOT_PASSWORD:-rootpass}\" -e \"SELECT User,Host,plugin FROM mysql.user WHERE User='${PS_DB_USER:-ps3}';\""
+docker compose exec psychostats_parser sh -lc 'echo "PS_DB_HOST=$PS_DB_HOST"; echo "PS_DB_PORT=$PS_DB_PORT"; echo "PS_DB_NAME=$PS_DB_NAME"; echo "PS_DB_USER=$PS_DB_USER"; echo "PS_DB_PASSWORD=${PS_DB_PASSWORD:+(set)}"'
 
+docker compose exec psychostats_db sh -lc 'echo "MARIADB_DATABASE=$MARIADB_DATABASE"; echo "MARIADB_USER=$MARIADB_USER"; echo "MARIADB_PASSWORD=${MARIADB_PASSWORD:+(set)}"; echo "MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD:+(set)}"'
 
-docker compose exec psychostats_db sh -lc "mysql -uroot -p\"${PS_DB_ROOT_PASSWORD:-rootpass}\" -e \"
-CREATE USER IF NOT EXISTS '${PS_DB_USER:-ps3}'@'%' IDENTIFIED BY '${PS_DB_PASSWORD:-ps3pass}';
-GRANT ALL PRIVILEGES ON \`${PS_DB_NAME:-psychostats3_1}\`.* TO '${PS_DB_USER:-ps3}'@'%';
-FLUSH PRIVILEGES;
-\""
+docker compose exec psychostats_parser sh -lc 'mysql -h psychostats_db -P 3306 -u"${PS_DB_USER:-ps3}" -p"${PS_DB_PASSWORD:-ps3pass}" -e "SELECT 1;" "${PS_DB_NAME:-psychostats3_1}"'
+

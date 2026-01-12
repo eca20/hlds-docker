@@ -130,24 +130,18 @@ EXPOSE 80
 # PsychoStats Parser (Perl)
 # Build with: docker build --target psychostats_parser .
 # -----------------------------------------------------------------------------
-FROM perl:5.38 AS psychostats_parser
+FROM debian:trixie-slim AS psychostats_parser
 
-# System deps for DBD::mysql and runtime tools
+# System deps for PsychoStats parser + DBI/MySQL driver (use Debian-packaged Perl so @INC matches)
 RUN set -eux; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
-      build-essential \
-      cpanminus \
-      rsync \
-      ca-certificates \
-      pkg-config \
-      zlib1g-dev \
-      libssl-dev \
-      libmariadb-dev \
-      libmariadb-dev-compat \
-      default-mysql-client \
+      perl \
       libdbi-perl \
       libdbd-mysql-perl \
+      mariadb-client \
+      rsync \
+      ca-certificates \
     ; \
     rm -rf /var/lib/apt/lists/*
 

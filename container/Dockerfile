@@ -75,9 +75,16 @@ RUN curl -v -sL media.steampowered.com/client/installer/steamcmd_linux.tar.gz | 
 
 # Writes the steam_appid.txt file to the hlds directory with the title id for Half-Life.
 # Patches a known issue with the Steam client.
-RUN mkdir -p $HOME/.steam \
-    && ln -s /opt/steam/linux32 $HOME/.steam/sdk32 \
-    && echo 70 > /opt/steam/hlds/steam_appid.txt
+USER root
+RUN set -eux; \
+    mkdir -p /opt/steam/hlds; \
+    chown -R steam:steam /opt/steam/hlds
+
+USER steam
+RUN set -eux; \
+    mkdir -p "$HOME/.steam"; \
+    ln -sfn /opt/steam/linux32 "$HOME/.steam/sdk32"; \
+    echo 70 > /opt/steam/hlds/steam_appid.txt
 
 WORKDIR /opt/steam/hlds
 

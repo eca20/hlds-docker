@@ -2,6 +2,7 @@ services:
   hlds:
     build:
       context: .
+      target: hlds
       args:
         - GAME=${GAME}
         - FLAG=${FLAG}
@@ -37,33 +38,38 @@ services:
       - psychostats_db_data:/var/lib/mysql
 
   psychostats_web:
-    image: php:8.2-apache
+    build:
+      context: .
+      target: psychostats_web
     container_name: psychostats_web
     restart: unless-stopped
     depends_on:
       - psychostats_db
     ports:
       - "8088:80"
+    # OPTIONAL: if you want to edit PsychoStats web files on the host, keep this bind mount.
+    # If you want the container-baked files instead, comment this out.
     volumes:
       - ./psychostats/www:/var/www/html
 
   psychostats_parser:
-    image: perl:5.38
+    build:
+      context: .
+      target: psychostats_parser
     container_name: psychostats_parser
     restart: unless-stopped
     depends_on:
       - psychostats_db
       - hlds
     volumes:
-      - ./psychostats/root:/ps
+      - ./psychostats/root:/opt/psychostats
       - cs_logs:/logs:ro
-    working_dir: /ps
+    working_dir: /opt/psychostats
     command: >
-      sh -lc "cpan -T DBI DBD::mysql &&
-              while true; do
-                perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
-                sleep 30;
-              done"
+      sh -lc "while true; do
+        perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
+        sleep 30;
+      done"
 
 volumes:
   cs_logs:

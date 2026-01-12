@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:24.04 AS hlds
 
 # Sets an environment variable for the game to install.
 # Supported games: valve, cstrike, czero, dod, dmc, gearbox, ricochet, tfc
@@ -97,3 +97,60 @@ RUN chmod +x ./entrypoint.sh
 
 
 ENTRYPOINT ["./entrypoint.sh"]
+
+# -----------------------------------------------------------------------------
+# PsychoStats Web (PHP + Apache)
+# Build with: docker build --target psychostats_web .
+# -----------------------------------------------------------------------------
+FROM php:8.2-apache AS psychostats_web
+
+# Install PHP MySQL support (mysqli + pdo_mysql) required by PsychoStats installer.
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends libzip-dev unzip; \
+    docker-php-ext-install mysqli pdo pdo_mysql; \
+    a2enmod rewrite; \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy PsychoStats web files into Apache docroot
+# NOTE: build context is `container/`, so this path is relative to that.
+COPY psychostats/www/ /var/www/html/
+
+# Allow the installer to write config files (you can tighten after install)
+RUN set -eux; \
+    chown -R www-data:www-data /var/www/html; \
+    find /var/www/html -type d -exec chmod 755 {} \;; \
+    find /var/www/html -type f -exec chmod 644 {} \;; \
+    if [ -f /var/www/html/config.php ]; then chmod 664 /var/www/html/config.php; fi
+
+EXPOSE 80
+
+
+# -----------------------------------------------------------------------------
+# PsychoStats Parser (Perl)
+# Build with: docker build --target psychostats_parser .
+# -----------------------------------------------------------------------------
+FROM perl:5.38 AS psychostats_parser
+
+# System deps for DBD::mysql and runtime tools
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+      default-libmysqlclient-dev \
+      build-essential \
+      cpanminus \
+      rsync \
+      ca-certificates \
+    ; \
+    rm -rf /var/lib/apt/lists/*
+
+# Install required Perl modules
+RUN set -eux; \
+    cpanm --notest DBI DBD::mysql
+
+# Copy PsychoStats parser/root files
+COPY psychostats/root/ /opt/psychostats/
+WORKDIR /opt/psychostats
+
+# Default command; docker-compose can override this.
+CMD ["perl", "./stats.pl", "-help"]

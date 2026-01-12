@@ -1,33 +1,27 @@
-#20 214.0 Success! App '90' fully installed.
-#20 214.0 quit
-#20 214.0 Unloading Steam API...OK
-#20 214.8 
-#20 DONE 218.6s
+#24 [19/22] COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
+#24 DONE 1.2s
 
-#21 [16/21] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt
-#21 6.692 /bin/sh: 1: cannot create /opt/steam/hlds/steam_appid.txt: Permission denied
-#21 ERROR: process "/bin/sh -c mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt" did not complete successfully: exit code: 2
+#25 [20/22] COPY --chown=steam:steam config cstrike
+#25 ERROR: cannot copy to non-directory: /var/snap/docker/common/var-lib-docker/overlay2/haqs3vygst6hsrge0ydzypwpv/merged/opt/steam/hlds/cstrike
 ------
- > [16/21] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt:
-6.692 /bin/sh: 1: cannot create /opt/steam/hlds/steam_appid.txt: Permission denied
+ > [20/22] COPY --chown=steam:steam config cstrike:
 ------
-Dockerfile:78
+Dockerfile:93
 
 --------------------
 
-  77 |     # Patches a known issue with the Steam client.
+  91 |     # Copies the entrypoint script to the container and sets the necessary permissions.
 
-  78 | >>> RUN mkdir -p $HOME/.steam \
+  92 |     COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
 
-  79 | >>>     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32 \
+  93 | >>> COPY --chown=steam:steam config $GAME
 
-  80 | >>>     && echo 70 > /opt/steam/hlds/steam_appid.txt
+  94 |     COPY --chown=steam:steam mods .
 
-  81 |     
+  95 |     
 
 --------------------
 
-failed to solve: process "/bin/sh -c mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt" did not complete successfully: exit code: 2
+failed to solve: cannot copy to non-directory: /var/snap/docker/common/var-lib-docker/overlay2/haqs3vygst6hsrge0ydzypwpv/merged/opt/steam/hlds/cstrike
 
 eterraverse@eterraverse:~/projects/hlds-docker/container$ 
-

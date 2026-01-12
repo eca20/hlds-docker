@@ -11,10 +11,11 @@ services:
       - "./config:/temp/config"
       - "./mods:/temp/mods"
       - ./config/server.cfg:/opt/steam/hlds/cstrike/cfg/server.cfg:ro
+      - cs_logs:/opt/steam/hlds/cstrike/logs
     ports:
       - "27015:27015/udp"
       - "27015:27015"
-      - "26900:2690/udp"
+      - "26900:26900/udp"
     environment:
       - GAME=${GAME}
       - FLAG=${FLAG}
@@ -22,3 +23,44 @@ services:
       - IMAGE=${IMAGE}
     command: +maxplayers 18 +log on +map cs_assault_upc +hostname "Sofa's 24/7 UPC"
     restart: unless-stopped
+
+  psychostats_db:
+    image: mariadb:10.11
+    container_name: psychostats_db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: psychostats
+      MARIADB_USER: psuser
+      MARIADB_PASSWORD: pspass
+      MARIADB_ROOT_PASSWORD: rootpass
+    volumes:
+      - psychostats_db_data:/var/lib/mysql
+
+  psychostats_web:
+    image: php:8.2-apache
+    container_name: psychostats_web
+    restart: unless-stopped
+    depends_on:
+      - psychostats_db
+    ports:
+      - "8088:80"
+    volumes:
+      - ./psychostats/webroot:/var/www/html
+
+  psychostats_parser:
+    image: perl:5.38
+    container_name: psychostats_parser
+    restart: unless-stopped
+    depends_on:
+      - psychostats_db
+      - hlds
+    volumes:
+      - ./psychostats/parser:/ps
+      - cs_logs:/logs:ro
+    working_dir: /ps
+    command: >
+      sh -lc "cpan -T DBI DBD::mysql && while true; do perl ./stats.pl -logdir /logs || true; sleep 30; done"
+
+volumes:
+  cs_logs:
+  psychostats_db_data:

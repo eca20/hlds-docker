@@ -136,17 +136,28 @@ FROM perl:5.38 AS psychostats_parser
 RUN set -eux; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
-      default-libmysqlclient-dev \
       build-essential \
       cpanminus \
       rsync \
       ca-certificates \
+      pkg-config \
+      zlib1g-dev \
+      libssl-dev \
+      libmariadb-dev \
+      libmariadb-dev-compat \
+      default-mysql-client \
     ; \
     rm -rf /var/lib/apt/lists/*
 
 # Install required Perl modules
+# DBD::mysql needs mysql_config (or mariadb_config). The -compat package provides mysql_config.
 RUN set -eux; \
-    cpanm --notest DBI DBD::mysql
+    which mysql_config || true; \
+    which mariadb_config || true; \
+    MYSQLCFG="$(command -v mysql_config || command -v mariadb_config)"; \
+    echo "Using mysql_config at: $MYSQLCFG"; \
+    cpanm --notest DBI; \
+    cpanm --notest DBD::mysql --configure-args="--mysql_config=$MYSQLCFG"
 
 # Copy PsychoStats parser/root files
 COPY psychostats/root/ /opt/psychostats/

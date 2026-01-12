@@ -1,0 +1,6 @@
+[mariadb]
+# Allow non-TLS connections inside the Docker network
+require_secure_transport=OFF
+
+# Also disable SSL capability entirely (optional but removes ambiguity)
+skip_ssl=ON

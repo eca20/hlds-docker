@@ -1,19 +1,49 @@
-25.81 Building DBD-mysql-5.013 ... ! Installing DBD::mysql failed. See /root/.cpanm/work/1768200314.7/build.log for details. Retry with --force to force install it.
-26.84 FAIL
-26.84 2 distributions installed
+#39 29.70 Configuring DBD-mysql-5.013 ... OK
+#39 31.27 Building DBD-mysql-5.013 ... ! Installing DBD::mysql failed. See /root/.cpanm/work/1768200605.172/build.log for details. Retry with --force to force install it.
+#39 32.29 FAIL
+#39 32.29 1 distribution installed
+#39 ERROR: process "/bin/sh -c set -eux;     which mysql_config || true;     which mariadb_config || true;     MYSQLCFG=\"$(command -v mysql_config || command -v mariadb_config)\";     echo \"Using mysql_config at: $MYSQLCFG\";     cpanm --notest DBI;     cpanm --notest DBD::mysql --configure-args=\"--mysql_config=$MYSQLCFG\"" did not complete successfully: exit code: 1
+
+#38 [psychostats_web psychostats_web 4/4] RUN set -eux;     chown -R www-data:www-data /var/www/html;     find /var/www/html -type d -exec chmod 755 {} ;;     find /var/www/html -type f -exec chmod 644 {} ;;     if [ -f /var/www/html/config.php ]; then chmod 664 /var/www/html/config.php; fi
+#38 CANCELED
 ------
-Dockerfile:148
+ > [psychostats_parser psychostats_parser 3/5] RUN set -eux;     which mysql_config || true;     which mariadb_config || true;     MYSQLCFG="$(command -v mysql_config || command -v mariadb_config)";     echo "Using mysql_config at: $MYSQLCFG";     cpanm --notest DBI;     cpanm --notest DBD::mysql --configure-args="--mysql_config=$MYSQLCFG":
+27.96 + cpanm --notest DBD::mysql --configure-args=--mysql_config=/usr/bin/mysql_config
+OK
+28.54 ==> Found dependencies: Devel::CheckLib
+28.62 --> Working on Devel::CheckLib
+28.62 Fetching https://www.cpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.16.tar.gz ... OK
+OK
+29.45 Successfully installed Devel-CheckLib-1.16
+! Installing DBD::mysql failed. See /root/.cpanm/work/1768200605.172/build.log for details. Retry with --force to force install it.
+32.29 FAIL
+32.29 1 distribution installed
+------
+Dockerfile:154
 
 --------------------
 
- 147 |     # Install required Perl modules
+ 153 |     # DBD::mysql needs mysql_config (or mariadb_config). The -compat package provides mysql_config.
 
- 148 | >>> RUN set -eux; \
+ 154 | >>> RUN set -eux; \
 
- 149 | >>>     cpanm --notest DBI DBD::mysql
+ 155 | >>>     which mysql_config || true; \
 
- 150 |     
+ 156 | >>>     which mariadb_config || true; \
+
+ 157 | >>>     MYSQLCFG="$(command -v mysql_config || command -v mariadb_config)"; \
+
+ 158 | >>>     echo "Using mysql_config at: $MYSQLCFG"; \
+
+ 159 | >>>     cpanm --notest DBI; \
+
+ 160 | >>>     cpanm --notest DBD::mysql --configure-args="--mysql_config=$MYSQLCFG"
+
+ 161 |     
 
 --------------------
 
-target psychostats_parser: failed to solve: process "/bin/sh -c set -eux;     cpanm --notest DBI DBD::mysql" did not complete successfully: exit code: 1
+target psychostats_parser: failed to solve: process "/bin/sh -c set -eux;     which mysql_config || true;     which mariadb_config || true;     MYSQLCFG=\"$(command -v mysql_config || command -v mariadb_config)\";     echo \"Using mysql_config at: $MYSQLCFG\";     cpanm --notest DBI;     cpanm --notest DBD::mysql --configure-args=\"--mysql_config=$MYSQLCFG\"" did not complete successfully: exit code: 1
+
+eterraverse@eterraverse:~/projects/hlds-docker/container$ 
+

@@ -146,18 +146,15 @@ RUN set -eux; \
       libmariadb-dev \
       libmariadb-dev-compat \
       default-mysql-client \
+      libdbi-perl \
+      libdbd-mysql-perl \
     ; \
     rm -rf /var/lib/apt/lists/*
 
-# Install required Perl modules
-# DBD::mysql needs mysql_config (or mariadb_config). The -compat package provides mysql_config.
+# Verify required Perl modules are available (installed via OS packages)
 RUN set -eux; \
-    which mysql_config || true; \
-    which mariadb_config || true; \
-    MYSQLCFG="$(command -v mysql_config || command -v mariadb_config)"; \
-    echo "Using mysql_config at: $MYSQLCFG"; \
-    cpanm --notest DBI; \
-    cpanm --notest DBD::mysql --configure-args="--mysql_config=$MYSQLCFG"
+    perl -MDBI -e 'print "DBI OK\n"'; \
+    perl -MDBD::mysql -e 'print "DBD::mysql OK\n"'
 
 # Copy PsychoStats parser/root files
 COPY psychostats/root/ /opt/psychostats/

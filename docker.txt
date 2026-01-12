@@ -1,1 +1,168 @@
+eterraverse@eterraverse:~/projects/hlds-docker/container$ 
 docker compose exec psychostats_web sh -lc 'ls -lah /var/www/html/includes; find /var/www/html -maxdepth 2 -name common.php -o -name config.php -print; wc -c /var/www/html/config.php; sed -n "1,120p" /var/www/html/index.php'
+WARN[0000] The "FLAG" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "VERSION" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "IMAGE" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "FLAG" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "VERSION" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "IMAGE" variable is not set. Defaulting to a blank string. 
+total 524K
+drwxrwxr-x 11 1000 1000 4.0K Jan 12 06:26 .
+drwxrwxr-x 10 1000 1000 4.0K Jan 12 06:27 ..
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 06:24 CMS
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 06:24 DB
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 06:24 GeoIP
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 06:27 PQ
+drwxrwxr-x  3 1000 1000 4.0K Jan 12 06:27 PS
+-rw-rw-r--  1 1000 1000  22K Jan 12 06:24 class_CMS.php
+-rw-rw-r--  1 1000 1000  31K Jan 12 06:24 class_Color.php
+-rw-rw-r--  1 1000 1000 2.2K Jan 12 06:24 class_DB.php
+-rw-rw-r--  1 1000 1000 3.9K Jan 12 06:24 class_HTTP.php
+-rw-rw-r--  1 1000 1000 3.6K Jan 12 06:24 class_PQ.php
+-rw-rw-r--  1 1000 1000 3.5K Jan 12 06:24 class_PS.php
+-rw-rw-r--  1 1000 1000  21K Jan 12 06:24 class_SteamID.php
+-rw-rw-r--  1 1000 1000 3.5K Jan 12 06:24 class_XML.php
+-rw-rw-r--  1 1000 1000 4.4K Jan 12 06:24 class_XML5.php
+-rw-rw-r--  1 1000 1000  13K Jan 12 06:24 class_calendar.php
+-rw-rw-r--  1 1000 1000  12K Jan 12 06:24 class_form.php
+-rw-rw-r--  1 1000 1000 2.8K Jan 12 06:24 class_lang.php
+-rw-rw-r--  1 1000 1000  28K Jan 12 06:24 class_session.php
+-rw-rw-r--  1 1000 1000 8.0K Jan 12 06:24 class_simplexml.php
+-rw-rw-r--  1 1000 1000  13K Jan 12 06:24 class_table.php
+-rw-rw-r--  1 1000 1000  36K Jan 12 06:24 class_theme.php
+-rw-rw-r--  1 1000 1000  18K Jan 12 06:24 class_themeManager.php
+-rw-rw-r--  1 1000 1000 3.9K Jan 12 06:24 class_timer.php
+-rw-rw-r--  1 1000 1000  14K Jan 12 06:24 class_user.php
+-rw-rw-r--  1 1000 1000 7.1K Jan 12 06:24 common.php
+-rw-rw-r--  1 1000 1000  38K Jan 12 06:24 functions.php
+-rw-rw-r--  1 1000 1000  43K Jan 12 06:24 geoip.inc
+-rw-rw-r--  1 1000 1000 5.4K Jan 12 06:24 geoipcity.inc
+-rw-rw-r--  1 1000 1000 102K Jan 12 06:24 geoipregionvars.php
+-rw-rw-r--  1 1000 1000 3.8K Jan 12 06:24 imgcommon.php
+-rw-rw-r--  1 1000 1000  295 Jan 12 06:24 index.html
+drwxrwxr-x  3 1000 1000 4.0K Jan 12 06:24 jpg5
+drwxrwxr-x  3 1000 1000 4.0K Jan 12 06:24 ofc
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 06:24 ruffle
+drwxrwxr-x  4 1000 1000 4.0K Jan 12 06:24 smarty
+/var/www/html/config.php
+162 /var/www/html/config.php
+<?php
+/**
+ *	This file is part of PsychoStats.
+ *
+ *	Written by Jason Morriss
+ *	Copyright 2008 Jason Morriss
+ *
+ *	PsychoStats is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	PsychoStats is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *
+ *	You should have received a copy of the GNU General Public License
+ *	along with PsychoStats.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *	Version: $Id: index.php 506 2008-07-02 14:29:49Z lifo $
+ */
+define("PSYCHOSTATS_PAGE", true);
+$basename = basename(__FILE__, '.php');
+include(__DIR__ . "/includes/common.php");
+$cms->theme->page_title('Player Stats—PsychoStats');
+
+// create the form variable
+$form = $cms->new_form();
+
+// Get cookie consent status from the cookie if it exists.
+$cms->session->options['cookieconsent'] ??= false;
+($ps->conf['main']['security']['enable_cookieconsent']) ? $cookieconsent = $cms->session->options['cookieconsent'] : $cookieconsent = 1;
+if (isset($cms->input['cookieconsent'])) {
+	$cookieconsent = $cms->input['cookieconsent'];
+
+	// Update cookie consent status in the cookie if they are accepted.
+	// Delete cookies if they are rejected.
+	if ($cookieconsent) {
+		$cms->session->opt('cookieconsent', $cms->input['cookieconsent']);
+		$cms->session->save_session_options();
+
+		// save a new form key in the users session cookie
+		// this will also be put into a 'hidden' field in the form
+		if ($ps->conf['main']['security']['csrf_protection']) $cms->session->key($form->key());
+		
+	} else {
+		$cms->session->delete_cookie();
+		$cms->session->delete_cookie('_id');
+		$cms->session->delete_cookie('_opts');
+		$cms->session->delete_cookie('_login');
+	}
+	previouspage($php_scnm);
+}
+
+// Is PsychoStats in maintenance mode?
+$maintenance = $ps->conf['main']['maintenance_mode']['enable'];
+
+// If PschoStats is in maintenance mode display a message
+if ($maintenance and !$cms->user->is_admin()) {
+	$cms->full_page_err('index', array(
+		'maintenance'	=> $maintenance,
+		'message_title'	=> $cms->trans("PsychoStats Maintenance"),
+		'message'		=> $cms->trans("Please try again later."),
+		'form_key'		=> $ps->conf['main']['security']['csrf_protection'] ? $cms->session->key() : '',
+		'cookieconsent'	=> $cookieconsent,
+	));
+	exit();
+}
+
+// Check to see if there is any data in the database before we continue.
+$cmd = "SELECT * FROM $ps->t_plr_data LIMIT 1";
+
+$results = array();
+$results = $ps->db->fetch_rows(1, $cmd);
+
+// if $results is empty then we have no data in the database
+if (empty($results)) {
+	$cms->full_page_err('index', array(
+		'maintenance'	=> $maintenance,
+		'message_title'	=> $cms->trans("No Stats Found"),
+		'message'		=> $cms->trans("You must run stats.pl before you will see any stats."),
+		'form_key'		=> $ps->conf['main']['security']['csrf_protection'] ? $cms->session->key() : '',
+		'cookieconsent'	=> $cookieconsent,
+	));
+	exit();
+}
+unset ($results);
+
+// change this if you want the default sort of the player listing to be something else like 'kills'
+$DEFAULT_SORT = 'skill';
+$DEFAULT_LIMIT = 100;
+
+// collect url parameters ...
+$validfields = array('sort','order','start','limit','q','search');
+$cms->theme->assign_request_vars($validfields, true);
+
+// SET DEFAULTS—santized
+$sort = ($sort and strlen($sort) <= 64) ? preg_replace('/[^A-Za-z0-9_\-\.]/', '', $sort) : $DEFAULT_SORT;
+$order = trim(strtolower($order ?? ''));
+if (!in_array($order, array('asc','desc'))) $order = 'desc';
+if (!is_numeric($start) || $start < 0) $start = 0;
+if (!is_numeric($limit) || $limit < 0 || $limit > 500) $limit = $DEFAULT_LIMIT;
+$q = trim($q ?? '');
+
+// sanitize sorts
+$sort = ($ps->db->column_exists(array($ps->t_plr, $ps->t_plr_profile, $ps->c_plr_data), $sort)) ? $sort : $DEFAULT_SORT;
+
+// if $q is longer than 50 characters we have a problem
+if (strlen($q) > 50) {
+	$cms->full_page_err('index', array(
+		'maintenance'	=> $maintenance,
+		'message_title'	=> $cms->trans("Invalid Search String"),
+		'message'	=> $cms->trans("Searches are limited to 50 characters in length."),
+		'form_key'		=> $ps->conf['main']['security']['csrf_protection'] ? $cms->session->key() : '',
+		'cookieconsent'	=> $cookieconsent,
+	));
+	exit();
+}
+

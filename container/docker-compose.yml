@@ -4,10 +4,10 @@ services:
       context: .
       target: hlds
       args:
-        - GAME=${GAME}
-        - FLAG=${FLAG}
-        - VERSION=${VERSION}
-        - IMAGE=${IMAGE}
+        - GAME=${GAME:-cstrike}
+        - FLAG=${FLAG:-}
+        - VERSION=${VERSION:-custom}
+        - IMAGE=${IMAGE:-custom}
     volumes:
       - "./config:/temp/config"
       - "./mods:/temp/mods"
@@ -18,10 +18,10 @@ services:
       - "27015:27015"
       - "26900:26900/udp"
     environment:
-      - GAME=${GAME}
-      - FLAG=${FLAG}
-      - VERSION=${VERSION}
-      - IMAGE=${IMAGE}
+      - GAME=${GAME:-cstrike}
+      - FLAG=${FLAG:-}
+      - VERSION=${VERSION:-custom}
+      - IMAGE=${IMAGE:-custom}
     command: +maxplayers 18 +log on +map cs_assault_upc +hostname "Sofa's 24/7 UPC"
     restart: unless-stopped
 
@@ -37,7 +37,7 @@ services:
     volumes:
       - psychostats_db_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u${PS_DB_USER:-ps3} -p${PS_DB_PASSWORD:-ps3pass} --silent"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u${PS_DB_USER:-ps3} -p${PS_DB_PASSWORD:-ps3pass} --silent"]
       interval: 5s
       timeout: 3s
       retries: 30
@@ -60,6 +60,8 @@ services:
       - "8088:80"
     # OPTIONAL: if you want to edit PsychoStats web files on the host, keep this bind mount.
     # If you want the container-baked files instead, comment this out.
+    # NOTE: This bind mount overrides the image content. Ensure ./psychostats/www/config.php is updated
+    # to use host "psychostats_db" (NOT localhost), or comment out the volumes block to use the baked files.
     volumes:
       - ./psychostats/www:/var/www/html
     environment:
@@ -98,7 +100,7 @@ services:
         done;
         echo 'MariaDB is up. Starting PsychoStats parser loop.';
         while true; do
-          perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
+          perl /opt/psychostats/stats.pl -config /opt/psychostats/stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
           sleep 30;
         done
       "

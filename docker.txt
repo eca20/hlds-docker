@@ -1,1 +1,1 @@
-docker compose exec psychostats_web sh -lc 'pwd; ls -lah /var/www/html; find /var/www/html -maxdepth 2 -type f -name common.php -o -name index.php'
+docker compose exec psychostats_web sh -lc 'ls -lah /var/www/html; ls -lah /var/www/html/includes 2>/dev/null || true; find /var/www/html -maxdepth 2 -type f \( -iname "*config*.php" -o -iname "common.php" -o -iname "index.php" \) -print'

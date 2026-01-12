@@ -45,7 +45,7 @@ services:
     ports:
       - "8088:80"
     volumes:
-      - ./psychostats/webroot:/var/www/html
+      - ./www:/var/www/html
 
   psychostats_parser:
     image: perl:5.38
@@ -55,12 +55,15 @@ services:
       - psychostats_db
       - hlds
     volumes:
-      - ./psychostats/parser:/ps
+      - ./root:/ps
       - cs_logs:/logs:ro
     working_dir: /ps
     command: >
-      sh -lc "cpan -T DBI DBD::mysql && while true; do perl ./stats.pl -logdir /logs || true; sleep 30; done"
-
+      sh -lc "cpan -T DBI DBD::mysql &&
+              while true; do
+                perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
+                sleep 30;
+              done"
 volumes:
   cs_logs:
   psychostats_db_data:

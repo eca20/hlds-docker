@@ -45,7 +45,7 @@ services:
     ports:
       - "8088:80"
     volumes:
-      - ./www:/var/www/html
+      - ./psychostats/www:/var/www/html
 
   psychostats_parser:
     image: perl:5.38
@@ -55,7 +55,7 @@ services:
       - psychostats_db
       - hlds
     volumes:
-      - ./root:/ps
+      - ./psychostats/root:/ps
       - cs_logs:/logs:ro
     working_dir: /ps
     command: >
@@ -64,6 +64,7 @@ services:
                 perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
                 sleep 30;
               done"
+
 volumes:
   cs_logs:
   psychostats_db_data:

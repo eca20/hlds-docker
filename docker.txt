@@ -1,16 +1,80 @@
- L 06/10/2025 - 17:02:14: [admin.amxx] Login: "PapaSofa<1><STEAM_0:0:697174><>" became an admin (account "STEAM_0:0:697174") (access "abcdefghijklmnopqrstu") (address "185.221.99.24")
-hlds-1  | L 06/10/2025 - 17:02:14: "PapaSofa<1><STEAM_0:0:697174><>" STEAM USERID validated
-hlds-1  | ERROR: couldn't open custom.hpk.
-hlds-1  | L 06/10/2025 - 17:02:16: "PapaSofa<1><STEAM_0:0:697174><>" entered the game
-hlds-1  | crash_20250610170216_2.dmp[46]: Uploading dump (out-of-process)
-hlds-1  | /tmp/dumps/crash_20250610170216_2.dmp
-hlds-1  | crash_20250610170216_2.dmp[46]: Finished uploading minidump (out-of-process): success = no
-hlds-1  | crash_20250610170216_2.dmp[46]: error: libcurl.so: cannot open shared object file: No such file or directory
-hlds-1  | crash_20250610170216_2.dmp[46]: file ''/tmp/dumps/crash_20250610170216_2.dmp'', upload no: ''libcurl.so: cannot open shared object file: No such file or directory''
-hlds-1  | Segmentation fault (core dumped)
+Creating blank custom.hpk...
+hlds-1  | touch: cannot touch '/opt/steam/hlds/cstrike/custom.hpk': Permission denied
+hlds-1  | chown: cannot access '/opt/steam/hlds/cstrike/custom.hpk': No such file or directory
+hlds-1  | Starting Half-Life Dedicated Server...
+hlds-1  | Auto-restarting the server on crash
+hlds-1  | 
+hlds-1  | Console initialized.
+hlds-1  | Using breakpad crash handler
+hlds-1  | Setting breakpad minidump AppID = 10
+hlds-1  | Forcing breakpad minidump interfaces to load
+hlds-1  | Looking up breakpad interfaces from steamclient
+hlds-1  | Calling BreakpadMiniDumpSystemInit
+hlds-1  | 01/12 03:16:32 minidumps folder is set to /tmp/dumps
+hlds-1  | 01/12 03:16:32 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(22)
+hlds-1  | FATAL ERROR (shutting down): W_LoadWadFile: couldn't load gfx.wad
 hlds-1  | email debug.log to linux@valvesoftware.com
-hlds-1  | Tue Jun 10 17:02:17 UTC 2025: Server restart in 10 seconds
+hlds-1  | Mon Jan 12 03:16:32 UTC 2026: Server restart in 10 seconds
+hlds-1  | 
+hlds-1  | Console initialized.
+hlds-1  | Using breakpad crash handler
+hlds-1  | Setting breakpad minidump AppID = 10
+hlds-1  | Forcing breakpad minidump interfaces to load
+hlds-1  | Looking up breakpad interfaces from steamclient
+hlds-1  | Calling BreakpadMiniDumpSystemInit
+hlds-1  | 01/12 03:16:42 minidumps folder is set to /tmp/dumps
+hlds-1  | 01/12 03:16:42 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(28)
+hlds-1  | FATAL ERROR (shutting down): W_LoadWadFile: couldn't load gfx.wad
+hlds-1  | email debug.log to linux@valvesoftware.com
+hlds-1  | Mon Jan 12 03:16:42 UTC 2026: Server restart in 10 seconds
+hlds-1  | 
+hlds-1  | Console initialized.
+hlds-1  | Using breakpad crash handler
+hlds-1  | Setting breakpad minidump AppID = 10
+hlds-1  | Forcing breakpad minidump interfaces to load
+hlds-1  | Looking up breakpad interfaces from steamclient
+hlds-1  | Calling BreakpadMiniDumpSystemInit
+hlds-1  | 01/12 03:16:53 minidumps folder is set to /tmp/dumps
+hlds-1  | 01/12 03:16:53 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(34)
+hlds-1  | FATAL ERROR (shutting down): W_LoadWadFile: couldn't load gfx.wad
+hlds-1  | email debug.log to linux@valvesoftware.com
+hlds-1  | Mon Jan 12 03:16:53 UTC 2026: Server restart in 10 seconds
 hlds-1  | Using breakpad crash handler
 hlds-1  | Setting breakpad minidump AppID = 10
 hlds-1  | Forcing breakpad minidump interfaces to load
 hlds-1  | 
+hlds-1  | Console initialized.
+hlds-1  | Looking up breakpad interfaces from steamclient
+hlds-1  | Calling BreakpadMiniDumpSystemInit
+hlds-1  | 01/12 03:17:03 minidumps folder is set to /tmp/dumps
+hlds-1  | 01/12 03:17:03 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(40)
+hlds-1  | FATAL ERROR (shutting down): W_LoadWadFile: couldn't load gfx.wad
+hlds-1  | email debug.log to linux@valvesoftware.com
+hlds-1  | Mon Jan 12 03:17:03 UTC 2026: Server restart in 10 seconds
+hlds-1  | Using breakpad crash handler
+hlds-1  | Setting breakpad minidump AppID = 10
+hlds-1  | Forcing breakpad minidump interfaces to load
+hlds-1  | 
+hlds-1  | Console initialized.
+hlds-1  | Looking up breakpad interfaces from steamclient
+hlds-1  | Calling BreakpadMiniDumpSystemInit
+hlds-1  | 01/12 03:17:13 minidumps folder is set to /tmp/dumps
+hlds-1  | 01/12 03:17:13 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(46)
+hlds-1  | FATAL ERROR (shutting down): W_LoadWadFile: couldn't load gfx.wad
+hlds-1  | email debug.log to linux@valvesoftware.com
+hlds-1  | Mon Jan 12 03:17:13 UTC 2026: Server restart in 10 seconds
+Gracefully Stopping... press Ctrl+C again to force
+ Container container-hlds-1  Stopping
+hlds-1  | Using breakpad crash handler
+hlds-1  | Setting breakpad minidump AppID = 10
+hlds-1  | Forcing breakpad minidump interfaces to load
+hlds-1  | 
+hlds-1  | Console initialized.
+hlds-1  | Looking up breakpad interfaces from steamclient
+hlds-1  | Calling BreakpadMiniDumpSystemInit
+hlds-1  | 01/12 03:17:23 minidumps folder is set to /tmp/dumps
+hlds-1  | 01/12 03:17:23 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(52)
+hlds-1  | FATAL ERROR (shutting down): W_LoadWadFile: couldn't load gfx.wad
+hlds-1  | email debug.log to linux@valvesoftware.com
+hlds-1  | Mon Jan 12 03:17:23 UTC 2026: Server restart in 10 seconds
+ Container container-hlds-1  Stopped

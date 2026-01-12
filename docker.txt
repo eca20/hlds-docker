@@ -1,446 +1,57 @@
-hlds-1          | Starting Half-Life Dedicated Server...
-hlds-1          | Auto-restarting the server on crash
-hlds-1          | 
-hlds-1          | Console initialized.
-hlds-1          | Using breakpad crash handler
-hlds-1          | Setting breakpad minidump AppID = 10
-hlds-1          | Forcing breakpad minidump interfaces to load
-hlds-1          | Looking up breakpad interfaces from steamclient
-hlds-1          | Calling BreakpadMiniDumpSystemInit
-psychostats_db  | 2026-01-12 18:26:22+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
-psychostats_db  | 2026-01-12 18:26:22+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-hlds-1          | 01/12 18:26:22 minidumps folder is set to /tmp/dumps
-hlds-1          | 01/12 18:26:22 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(22)
-psychostats_db  | 2026-01-12 18:26:22+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
-hlds-1          | Protocol version 48
-hlds-1          | Exe version 1.1.2.7/Stdio (cstrike)
-hlds-1          | Exe build: 01:34:04 Oct  8 2024 (10211)
-hlds-1          | STEAM Auth Server
-hlds-1          | Unable to open logfiles under logs/L0112
-hlds-1          | Logging disabled
-hlds-1          | Server IP address 172.20.0.2:27015
-psychostats_db  | 2026-01-12 18:26:22+00:00 [Note] [Entrypoint]: Initializing database files
-psychostats_db  | 2026-01-12 18:26:23 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+psychostats_db  | 
+psychostats_db  | 2026-01-12 18:35:03+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+psychostats_db  | 
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] Starting MariaDB 10.11.15-MariaDB-ubu2204 source revision cb0d6dd835023a7162ace471cd047161f205dd58 server_uid 12Zj1wWoR82GbI+3NtDfPIIPCtY= as process 1
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Number of transaction pools: 1
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+psychostats_db  | 2026-01-12 18:35:03 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
 psychostats_db  | create_uring failed: falling back to libaio
-hlds-1          | couldn't exec maps/cs_assault_upc_load.cfg
-hlds-1          | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-hlds-1          | Looking up breakpad interfaces from steamclient
-hlds-1          | Calling BreakpadMiniDumpSystemInit
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-hlds-1          | IPC function call IClientUtils::GetSteamRealm took too long: 520 msec
-hlds-1          | IPC function call IClientUtils::GetConnectedUniverse took too long: 52 msec
-hlds-1          | IPC function call IClientUtils::GetIPCountry took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::GetServerRealTime took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::SetAppIDForCurrentPipe took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::SetLauncherType took too long: 51 msec
-hlds-1          | IPC function call IClientUtils::GetAppID took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::GetAppID took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::GetAppID took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::InitGameServerSerialized took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::GetSteamID took too long: 50 msec
-hlds-1          | IPC function call IClientUtils::GetAppID took too long: 49 msec
-hlds-1          | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::SetProduct took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::SetModDir took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::SetDedicatedServer took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::SetGameDescription took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::LogOnAnonymous took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::EnableHeartbeats took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::SetMaxPlayerCount took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::SetBotPlayerCount took too long: 50 msec
-hlds-1          | IPC function call IClientGameServerInternal::SetServerName took too long: 876 msec
-hlds-1          | 
-hlds-1          | couldn't exec listip.cfg
-hlds-1          | couldn't exec banned.cfg
-hlds-1          | Connection to Steam servers successful.
-hlds-1          |    VAC secure mode is activated.
-psychostats_db  | 2026-01-12 18:26:49+00:00 [Note] [Entrypoint]: Database files initialized
-psychostats_db  | 2026-01-12 18:26:49+00:00 [Note] [Entrypoint]: Starting temporary server
-psychostats_db  | 2026-01-12 18:26:49+00:00 [Note] [Entrypoint]: Waiting for server startup
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] Starting MariaDB 10.11.15-MariaDB-ubu2204 source revision cb0d6dd835023a7162ace471cd047161f205dd58 server_uid Sc9TxXS7fmssDYrjFcLKXrVltjY= as process 129
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: Number of transaction pools: 1
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
-psychostats_db  | 2026-01-12 18:26:49 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
-psychostats_db  | create_uring failed: falling back to libaio
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: Using Linux native AIO
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: Completed initialization of buffer pool
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: End of log at LSN=45426
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: 128 rollback segments are active.
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] InnoDB: log sequence number 45426; transaction id 14
-psychostats_db  | 2026-01-12 18:26:49 0 [Note] Plugin 'FEEDBACK' is disabled.
-psychostats_db  | 2026-01-12 18:26:50 0 [Note] mariadbd: ready for connections.
-psychostats_db  | Version: '10.11.15-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
-psychostats_db  | 2026-01-12 18:26:50+00:00 [Note] [Entrypoint]: Temporary server started.
-psychostats_db  | 2026-01-12 18:26:55+00:00 [Note] [Entrypoint]: Creating database psychostats3_1
-psychostats_db  | 2026-01-12 18:26:55+00:00 [Note] [Entrypoint]: Creating user ps3
-psychostats_db  | 2026-01-12 18:26:55+00:00 [Note] [Entrypoint]: Giving user ps3 access to schema psychostats3_1
-psychostats_db  | 2026-01-12 18:26:55+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
-psychostats_db  | 
-psychostats_db  | 2026-01-12 18:26:55+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01-disable-user-ssl.sql
-psychostats_db  | 
-psychostats_db  | 
-psychostats_db  | 2026-01-12 18:26:56+00:00 [Note] [Entrypoint]: Stopping temporary server
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: FTS optimize thread exiting.
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Starting shutdown...
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Buffer pool(s) dump completed at 260112 18:26:56
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Shutdown completed; log sequence number 45426; transaction id 15
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] mariadbd: Shutdown complete
-psychostats_db  | 2026-01-12 18:26:56+00:00 [Note] [Entrypoint]: Temporary server stopped
-psychostats_db  | 
-psychostats_db  | 2026-01-12 18:26:56+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
-psychostats_db  | 
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] Starting MariaDB 10.11.15-MariaDB-ubu2204 source revision cb0d6dd835023a7162ace471cd047161f205dd58 server_uid Sc9TxXS7fmssDYrjFcLKXrVltjY= as process 1
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Number of transaction pools: 1
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
-psychostats_db  | 2026-01-12 18:26:56 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
-psychostats_db  | create_uring failed: falling back to libaio
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Using Linux native AIO
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: Completed initialization of buffer pool
-psychostats_db  | 2026-01-12 18:26:56 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] InnoDB: End of log at LSN=45426
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] InnoDB: 128 rollback segments are active.
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] InnoDB: log sequence number 45426; transaction id 14
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] Plugin 'FEEDBACK' is disabled.
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
-psychostats_db  | 2026-01-12 18:26:57 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] Server socket created on IP: '::', port: '3306'.
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] InnoDB: Buffer pool(s) load completed at 260112 18:26:57
-psychostats_db  | 2026-01-12 18:26:57 0 [Note] mariadbd: ready for connections.
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Using Linux native AIO
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Completed initialization of buffer pool
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: End of log at LSN=45410
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: 128 rollback segments are active.
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: log sequence number 45410; transaction id 14
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] Plugin 'FEEDBACK' is disabled.
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+psychostats_db  | 2026-01-12 18:35:03 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] Server socket created on IP: '::', port: '3306'.
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] InnoDB: Buffer pool(s) load completed at 260112 18:35:03
+psychostats_db  | 2026-01-12 18:35:03 0 [Note] mariadbd: ready for connections.
 psychostats_db  | Version: '10.11.15-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
-psychostats_web  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.5. Set the 'ServerName' directive globally to suppress this message
-psychostats_web  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.5. Set the 'ServerName' directive globally to suppress this message
-psychostats_web  | [Mon Jan 12 18:27:00.663736 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
-psychostats_web  | [Mon Jan 12 18:27:00.663805 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
-psychostats_parser  | NAME
-psychostats_parser  |     PsychoStats - Comprehensive Statistics
+psychostats_web  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_web  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_web  | [Mon Jan 12 18:35:10.177022 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
+psychostats_web  | [Mon Jan 12 18:35:10.177059 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 psychostats_parser  | 
-psychostats_parser  | SYNOPSIS
-psychostats_parser  |     stats.pl [options]
+psychostats_parser exited with code 0
 psychostats_parser  | 
-psychostats_parser  |     stats.pl -daily [daily options]
 psychostats_parser  | 
-psychostats_parser  | OPTIONS
-psychostats_parser  |     -config <filename>, -noconfig
-psychostats_parser  |         Specifies an alternate filename to load the required database
-psychostats_parser  |         settings for PsychoStats. By default the stats.cfg file is loaded.
+psychostats_parser exited with code 0
 psychostats_parser  | 
-psychostats_parser  |     -noconfig
-psychostats_parser  |         Disables the loading of any database config file. When -noconfig is
-psychostats_parser  |         used it is assumed that the actual database connection settings are
-psychostats_parser  |         specified using the -db* command line options explained below.
 psychostats_parser  | 
-psychostats_parser  |     -daily [all,maxdays,decay,players,clans,ranks,awards]
-psychostats_parser  |         The daily process performs several intensive stats updates that can
-psychostats_parser  |         not be done in 'real-time'. This includes calculating player ranks,
-psychostats_parser  |         removing stale clans, applying skill decay to players and removing
-psychostats_parser  |         old stats that are older than the current maxdays setting.
+psychostats_parser exited with code 0
 psychostats_parser  | 
-psychostats_parser  |     -dbcompress [0,1]
-psychostats_parser  |         Enables or disables client to server compression when talking to the
-psychostats_parser  |         mysql server. This should usually be disabled for databases that are
-psychostats_parser  |         local but can be enabled for remote database for a possible
-psychostats_parser  |         performance gain. The trade off is while compression will generally
-psychostats_parser  |         decrease the amount of data transfered between the server, more CPU
-psychostats_parser  |         is required by both sides and may hinder performance.
 psychostats_parser  | 
-psychostats_parser  |     -dbtype [mysql]
-psychostats_parser  |         The database engine type to use. 'mysql' is the default. 'mysql' is
-psychostats_parser  |         actually the only working option.
+psychostats_parser exited with code 0
+psychostats_parser exited with code 0
+
 psychostats_parser  | 
-psychostats_parser  |     -dbhost
-psychostats_parser  |         The hostname or IP address of the database to connect to.
-psychostats_parser  |         'localhost' is the default.
-psychostats_parser  | 
-psychostats_parser  |     -dbport
-psychostats_parser  |         The port to connect to. Defaults to the standard port of the
-psychostats_parser  |         database type specified. Ex: 3306 for mysql.
-psychostats_parser  | 
-psychostats_parser  |     -dbname
-psychostats_parser  |         Name of the database to use. Defaults to 'psychostats'. This is not
-psychostats_parser  |         to be confused with the host of the database server. The 'name' is a
-psychostats_parser  |         database within the server where the tables are stored.
-psychostats_parser  | 
-psychostats_parser  |     -dbuser
-psychostats_parser  |         The username to connect to the database server. Defaults to NULL.
-psychostats_parser  | 
-psychostats_parser  |     -dbpass
-psychostats_parser  |         The password to connect to the database server. Defaults to NULL.
-psychostats_parser  | 
-psychostats_parser  |     -dbtblprefix
-psychostats_parser  |         The table prefix string to use for all tables within the PsychoStats
-psychostats_parser  |         database. Defaults to 'ps_'.
-psychostats_parser  | 
-psychostats_parser  |     -debug [1,2,3,4,5]
-psychostats_parser  |         Enables Debug output. If no numberic value is given it defaults to
-psychostats_parser  |         1. The higher the value the more debug output shown. 5 will show all
-psychostats_parser  |         SQL commands queried and is not normally recommended.
-psychostats_parser  | 
-psychostats_parser  |     -debugfile <filename>
-psychostats_parser  |         All debug output is written to a debug.txt file in the current
-psychostats_parser  |         directory. If a filename is specified its name is used instead.
-psychostats_parser  |         Using this implies "-debug 1" if no debug was specified.
-psychostats_parser  | 
-psychostats_parser  |     -echo
-psychostats_parser  |         For STREAM log sources only. The stream feeder will echo all log
-psychostats_parser  |         events to STDOUT.
-psychostats_parser  | 
-psychostats_parser  |     -gametype <type>
-psychostats_parser  |         Processes logs using the specified GAME type. IE: halflife, cod.
-psychostats_parser  |         Using this option has a side effect of actually changing the value
-psychostats_parser  |         in your database configuration permanently. Most users will not have
-psychostats_parser  |         to use this. The update will fail if an unknown gametype is
-psychostats_parser  |         specified. See also: -modtype
-psychostats_parser  | 
-psychostats_parser  |     -help
-psychostats_parser  |         If you do not know what this does by now, go seek help, YOU NEED IT!
-psychostats_parser  | 
-psychostats_parser  |     -logsource <path>
-psychostats_parser  |         Process the log source given. Will ignore all log sources currently
-psychostats_parser  |         configured in the database. This does not add the logsource to your
-psychostats_parser  |         configuration permanently.
-psychostats_parser  | 
-psychostats_parser  |     -maxlines <number>
-psychostats_parser  |         Specifies the maximum number of log lines to process before exiting.
-psychostats_parser  |         Normally you never need this but on some systems that have system
-psychostats_parser  |         resource restraints using this can help limit resource usage. By
-psychostats_parser  |         default all available lines will be processed.
-psychostats_parser  | 
-psychostats_parser  |     -maxlogs <number>
-psychostats_parser  |         Specifies the maximum number of logs to process before exiting, see
-psychostats_parser  |         -maxlines for more information.
-psychostats_parser  | 
-psychostats_parser  |     -modtype <type>
-psychostats_parser  |         Processes logs using the specified MOD type. IE: cstrike, dod. Using
-psychostats_parser  |         this option has a side effect of actually changing the value in your
-psychostats_parser  |         database configuration permanently. Most users will not have to use
-psychostats_parser  |         this. The update will fail if an unknown modtype is specified. See
-psychostats_parser  |         also: -gametype
-psychostats_parser  | 
-psychostats_parser  |     -nodaily
-psychostats_parser  |         Skips all daily processing procedures after logs are processed.
-psychostats_parser  | 
-psychostats_parser  |     -passive, -pasv
-psychostats_parser  |         Enables PASSIVE mode for FTP logsources. This provides a quick way
-psychostats_parser  |         to toggle passive mode on or off w/o having to edit the
-psychostats_parser  |         configuration first. Once you figure out which method works you can
-psychostats_parser  |         edit the config to make it permanent.
-psychostats_parser  | 
-psychostats_parser  |     -reset [all,players,clans,weapons]
-psychostats_parser  |         Resets all stats in your database. If 'players', 'clans' or
-psychostats_parser  |         'weapons; is specified then the profiles for each will also be
-psychostats_parser  |         reset. By default profiles and weapons are saved.
-psychostats_parser  | 
-psychostats_parser  |         *** IMPORTANT *** This can NOT be undone! Use at your own risk.
-psychostats_parser  | 
-psychostats_parser  |     -scanclantags [all]
-psychostats_parser  |         Rescans all players currently not associated with a clan for
-psychostats_parser  |         matching clantags. Run this if you just configured a new clantag.
-psychostats_parser  |         Otherwise players that match will not actually assoicate with the
-psychostats_parser  |         new clantag until they reconnect to the server.
-psychostats_parser  | 
-psychostats_parser  |         If "all" is specified then ALL PLAYERS will be scanned regardless if
-psychostats_parser  |         they are already in a clan. This is usefull if player names have
-psychostats_parser  |         changed and they need to be matched against a new clan instead of
-psychostats_parser  |         their original clan. NOTE: this will cause all current clans to be
-psychostats_parser  |         rescanned. Your clans listing will be emptied and repopulated.
-psychostats_parser  | 
-psychostats_parser  |         This forces a "-daily clans" update.
-psychostats_parser  | 
-psychostats_parser  |     -unknown
-psychostats_parser  |         Temporarily enables the errlog.report_unknown option from the
-psychostats_parser  |         config. This does not update the database and only lasts for the
-psychostats_parser  |         current process.
-psychostats_parser  | 
-psychostats_parser  |     -verbose
-psychostats_parser  |         Enable stats progress output. As stats are updated the progress is
-psychostats_parser  |         displayed. If running under Windows verbose defaults to ON. Use
-psychostats_parser  |         -quiet to turn it off.
-psychostats_parser  | 
-psychostats_parser  |     -V, -version
-psychostats_parser  |         Display software version
-psychostats_parser  | 
-psychostats_parser  |     -quiet
-psychostats_parser  |         Overrides the verbose option and disables it if verbose was already
-psychostats_parser  |         enabled.
-psychostats_parser  | 
-psychostats_parser  | DESCRIPTION
-psychostats_parser  |     PsychoStats is awesome!
-psychostats_parser  | 
+psychostats_parser exited with code 0
+psychostats_web     | 172.20.0.1 - - [12/Jan/2026:18:35:22 +0000] "GET / HTTP/1.1" 200 370 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+psychostats_web     | 172.20.0.1 - - [12/Jan/2026:18:35:23 +0000] "GET / HTTP/1.1" 200 369 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+
+psychostats_parser exited with code 0
+psychostats_web     | [Mon Jan 12 18:35:27.808317 2026] [php:error] [pid 17:tid 17] [client 172.20.0.1:41068] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67\nStack trace:\n#0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', '', Object(SensitiveParameterValue))\n#1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect()\n#2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array)\n#3 /var/www/html/install/common.php(83): PsychoDB::create(Array)\n#4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...')\n#5 {main}\n  thrown in /var/www/html/includes/DB/mysql.php on line 67
+psychostats_web     | 172.20.0.1 - - [12/Jan/2026:18:35:27 +0000] "GET /install/ HTTP/1.1" 200 623 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
 hlds-1              | flock /sys/devices/virtual/dmi/id/sys_vendor LOCK_SH failed. errno = 13flock /sys/devices/virtual/dmi/id/product_name LOCK_SH failed. errno = 13[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.
-psychostats_parser exited with code 1
-psychostats_parser  | NAME
-psychostats_parser  |     PsychoStats - Comprehensive Statistics
-psychostats_parser  | 
-psychostats_parser  | SYNOPSIS
-psychostats_parser  |     stats.pl [options]
-psychostats_parser  | 
-psychostats_parser  |     stats.pl -daily [daily options]
-psychostats_parser  | 
-psychostats_parser  | OPTIONS
-psychostats_parser  |     -config <filename>, -noconfig
-psychostats_parser  |         Specifies an alternate filename to load the required database
-psychostats_parser  |         settings for PsychoStats. By default the stats.cfg file is loaded.
-psychostats_parser  | 
-psychostats_parser  |     -noconfig
-psychostats_parser  |         Disables the loading of any database config file. When -noconfig is
-psychostats_parser  |         used it is assumed that the actual database connection settings are
-psychostats_parser  |         specified using the -db* command line options explained below.
-psychostats_parser  | 
-psychostats_parser  |     -daily [all,maxdays,decay,players,clans,ranks,awards]
-psychostats_parser  |         The daily process performs several intensive stats updates that can
-psychostats_parser  |         not be done in 'real-time'. This includes calculating player ranks,
-psychostats_parser  |         removing stale clans, applying skill decay to players and removing
-psychostats_parser  |         old stats that are older than the current maxdays setting.
-psychostats_parser  | 
-psychostats_parser  |     -dbcompress [0,1]
-psychostats_parser  |         Enables or disables client to server compression when talking to the
-psychostats_parser  |         mysql server. This should usually be disabled for databases that are
-psychostats_parser  |         local but can be enabled for remote database for a possible
-psychostats_parser  |         performance gain. The trade off is while compression will generally
-psychostats_parser  |         decrease the amount of data transfered between the server, more CPU
-psychostats_parser  |         is required by both sides and may hinder performance.
-psychostats_parser  | 
-psychostats_parser  |     -dbtype [mysql]
-psychostats_parser  |         The database engine type to use. 'mysql' is the default. 'mysql' is
-psychostats_parser  |         actually the only working option.
-psychostats_parser  | 
-psychostats_parser  |     -dbhost
-psychostats_parser  |         The hostname or IP address of the database to connect to.
-psychostats_parser  |         'localhost' is the default.
-psychostats_parser  | 
-psychostats_parser  |     -dbport
-psychostats_parser  |         The port to connect to. Defaults to the standard port of the
-psychostats_parser  |         database type specified. Ex: 3306 for mysql.
-psychostats_parser  | 
-psychostats_parser  |     -dbname
-psychostats_parser  |         Name of the database to use. Defaults to 'psychostats'. This is not
-psychostats_parser  |         to be confused with the host of the database server. The 'name' is a
-psychostats_parser  |         database within the server where the tables are stored.
-psychostats_parser  | 
-psychostats_parser  |     -dbuser
-psychostats_parser  |         The username to connect to the database server. Defaults to NULL.
-psychostats_parser  | 
-psychostats_parser  |     -dbpass
-psychostats_parser  |         The password to connect to the database server. Defaults to NULL.
-psychostats_parser  | 
-psychostats_parser  |     -dbtblprefix
-psychostats_parser  |         The table prefix string to use for all tables within the PsychoStats
-psychostats_parser  |         database. Defaults to 'ps_'.
-psychostats_parser  | 
-psychostats_parser  |     -debug [1,2,3,4,5]
-psychostats_parser  |         Enables Debug output. If no numberic value is given it defaults to
-psychostats_parser  |         1. The higher the value the more debug output shown. 5 will show all
-psychostats_parser  |         SQL commands queried and is not normally recommended.
-psychostats_parser  | 
-psychostats_parser  |     -debugfile <filename>
-psychostats_parser  |         All debug output is written to a debug.txt file in the current
-psychostats_parser  |         directory. If a filename is specified its name is used instead.
-psychostats_parser  |         Using this implies "-debug 1" if no debug was specified.
-psychostats_parser  | 
-psychostats_parser  |     -echo
-psychostats_parser  |         For STREAM log sources only. The stream feeder will echo all log
-psychostats_parser  |         events to STDOUT.
-psychostats_parser  | 
-psychostats_parser  |     -gametype <type>
-psychostats_parser  |         Processes logs using the specified GAME type. IE: halflife, cod.
-psychostats_parser  |         Using this option has a side effect of actually changing the value
-psychostats_parser  |         in your database configuration permanently. Most users will not have
-psychostats_parser  |         to use this. The update will fail if an unknown gametype is
-psychostats_parser  |         specified. See also: -modtype
-psychostats_parser  | 
-psychostats_parser  |     -help
-psychostats_parser  |         If you do not know what this does by now, go seek help, YOU NEED IT!
-psychostats_parser  | 
-psychostats_parser  |     -logsource <path>
-psychostats_parser  |         Process the log source given. Will ignore all log sources currently
-psychostats_parser  |         configured in the database. This does not add the logsource to your
-psychostats_parser  |         configuration permanently.
-psychostats_parser  | 
-psychostats_parser  |     -maxlines <number>
-psychostats_parser  |         Specifies the maximum number of log lines to process before exiting.
-psychostats_parser  |         Normally you never need this but on some systems that have system
-psychostats_parser  |         resource restraints using this can help limit resource usage. By
-psychostats_parser  |         default all available lines will be processed.
-psychostats_parser  | 
-psychostats_parser  |     -maxlogs <number>
-psychostats_parser  |         Specifies the maximum number of logs to process before exiting, see
-psychostats_parser  |         -maxlines for more information.
-psychostats_parser  | 
-psychostats_parser  |     -modtype <type>
-psychostats_parser  |         Processes logs using the specified MOD type. IE: cstrike, dod. Using
-psychostats_parser  |         this option has a side effect of actually changing the value in your
-psychostats_parser  |         database configuration permanently. Most users will not have to use
-psychostats_parser  |         this. The update will fail if an unknown modtype is specified. See
-psychostats_parser  |         also: -gametype
-psychostats_parser  | 
-psychostats_parser  |     -nodaily
-psychostats_parser  |         Skips all daily processing procedures after logs are processed.
-psychostats_parser  | 
-psychostats_parser  |     -passive, -pasv
-psychostats_parser  |         Enables PASSIVE mode for FTP logsources. This provides a quick way
-psychostats_parser  |         to toggle passive mode on or off w/o having to edit the
-psychostats_parser  |         configuration first. Once you figure out which method works you can
-psychostats_parser  |         edit the config to make it permanent.
-psychostats_parser  | 
-psychostats_parser  |     -reset [all,players,clans,weapons]
-psychostats_parser  |         Resets all stats in your database. If 'players', 'clans' or
-psychostats_parser  |         'weapons; is specified then the profiles for each will also be
-psychostats_parser  |         reset. By default profiles and weapons are saved.
-psychostats_parser  | 
-psychostats_parser  |         *** IMPORTANT *** This can NOT be undone! Use at your own risk.
-psychostats_parser  | 
-psychostats_parser  |     -scanclantags [all]
-psychostats_parser  |         Rescans all players currently not associated with a clan for
-psychostats_parser  |         matching clantags. Run this if you just configured a new clantag.
-psychostats_parser  |         Otherwise players that match will not actually assoicate with the
-psychostats_parser  |         new clantag until they reconnect to the server.
-psychostats_parser  | 
-psychostats_parser  |         If "all" is specified then ALL PLAYERS will be scanned regardless if
-psychostats_parser  |         they are already in a clan. This is usefull if player names have
-psychostats_parser  |         changed and they need to be matched against a new clan instead of
-psychostats_parser  |         their original clan. NOTE: this will cause all current clans to be
-psychostats_parser  |         rescanned. Your clans listing will be emptied and repopulated.
-psychostats_parser  | 
-psychostats_parser  |         This forces a "-daily clans" update.
-psychostats_parser  | 
-psychostats_parser  |     -unknown
-psychostats_parser  |         Temporarily enables the errlog.report_unknown option from the
-psychostats_parser  |         config. This does not update the database and only lasts for the
-psychostats_parser  |         current process.
-psychostats_parser  | 
-psychostats_parser  |     -verbose
-psychostats_parser  |         Enable stats progress output. As stats are updated the progress is
-psychostats_parser  |         displayed. If running under Windows verbose defaults to ON. Use
-psychostats_parser  |         -quiet to turn it off.
-psychostats_parser  | 
-psychostats_parser  |     -V, -version
-psychostats_parser  |         Display software version
-psychostats_parser  | 
-psychostats_parser  |     -quiet
-psychostats_parser  |         Overrides the verbose option and disables it if verbose was already
-psychostats_parser  |         enabled.
-psychostats_parser  | 
-psychostats_parser  | DESCRIPTION
-psychostats_parser  |     PsychoStats is awesome!
-psychostats_parser  | 
-psychostats_parser exited with code 1
+
+psychostats_parser exited with code 0
+
+psychostats_parser exited with code 0

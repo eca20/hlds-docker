@@ -72,31 +72,42 @@ services:
       PS_DB_NAME: ${PS_DB_NAME:-psychostats3_1}
       PS_DB_USER: ${PS_DB_USER:-ps3}
       PS_DB_PASSWORD: ${PS_DB_PASSWORD:-ps3pass}
-    entrypoint: ["/bin/sh", "-lc", "set -e; \
-. /etc/apache2/envvars || true; \
-: \"${APACHE_RUN_DIR:=/var/run/apache2}\"; \
-: \"${APACHE_LOCK_DIR:=/var/lock/apache2}\"; \
-mkdir -p \"$APACHE_RUN_DIR\" \"$APACHE_LOCK_DIR\"; \
-cat > /var/www/html/config.php <<'PHP'\n<?php\n// PsychoStats web configuration (DB connection + site URL)\n// Intentionally forces TCP connections inside Docker (no localhost / no socket)\n\n$dbtype = 'mysql';\n$dbhost = '@@DBHOST@@';   // Docker service name, NOT localhost\n$dbport = '@@DBPORT@@';   // Force TCP, avoids mysqld.sock\n$dbname = '@@DBNAME@@';\n$dbuser = '@@DBUSER@@';\n$dbpass = '@@DBPASS@@';\n\n// Table prefix used during install\n$dbtblprefix = 'ps_';\n\n// Base URL used by PsychoStats\n$site_url = 'http://localhost:8088';\n?>\nPHP\n\
-# Replace placeholders without touching PHP $variables\nDBHOST=\"${PS_DB_HOST:-psychostats_db}\"; \
-DBPORT=\"${PS_DB_PORT:-3306}\"; \
-DBNAME=\"${PS_DB_NAME:-psychostats3_1}\"; \
-DBUSER=\"${PS_DB_USER:-ps3}\"; \
-DBPASS=\"${PS_DB_PASSWORD:-ps3pass}\"; \
-# Minimal escaping for sed delimiter '|'
-DBHOST_ESC=\"$(printf '%s' \"$DBHOST\" | sed 's/|/\\\\|/g')\"; \
-DBPORT_ESC=\"$(printf '%s' \"$DBPORT\" | sed 's/|/\\\\|/g')\"; \
-DBNAME_ESC=\"$(printf '%s' \"$DBNAME\" | sed 's/|/\\\\|/g')\"; \
-DBUSER_ESC=\"$(printf '%s' \"$DBUSER\" | sed 's/|/\\\\|/g')\"; \
-DBPASS_ESC=\"$(printf '%s' \"$DBPASS\" | sed 's/|/\\\\|/g')\"; \
-sed -i \
-  -e \"s|@@DBHOST@@|$DBHOST_ESC|g\" \
-  -e \"s|@@DBPORT@@|$DBPORT_ESC|g\" \
-  -e \"s|@@DBNAME@@|$DBNAME_ESC|g\" \
-  -e \"s|@@DBUSER@@|$DBUSER_ESC|g\" \
-  -e \"s|@@DBPASS@@|$DBPASS_ESC|g\" \
-  /var/www/html/config.php; \
-exec apache2 -D FOREGROUND" ]
+    entrypoint:
+      - /bin/sh
+      - -lc
+    command: |
+      set -e
+
+      # Ensure Apache env vars are available so ${APACHE_RUN_DIR} is defined.
+      if [ -f /etc/apache2/envvars ]; then
+        . /etc/apache2/envvars
+      fi
+
+      # Create runtime dirs expected by Debian Apache packaging.
+      mkdir -p "${APACHE_RUN_DIR:-/var/run/apache2}" /var/lock/apache2
+
+      # Write PsychoStats config.php with env-expanded values (no quoted heredoc).
+      cat > /var/www/html/config.php <<PHP
+      <?php
+      // PsychoStats web configuration (DB connection + site URL)
+      // Forces TCP connections inside Docker (no localhost / no socket)
+
+      $dbtype = 'mysql';
+      $dbhost = '${PS_DB_HOST:-psychostats_db}';   // Docker service name, NOT localhost
+      $dbport = '${PS_DB_PORT:-3306}';             // Force TCP, avoids mysqld.sock
+      $dbname = '${PS_DB_NAME:-psychostats3_1}';
+      $dbuser = '${PS_DB_USER:-ps3}';
+      $dbpass = '${PS_DB_PASSWORD:-ps3pass}';
+
+      // Table prefix used during install
+      $dbtblprefix = 'ps_';
+
+      // Base URL used by PsychoStats
+      $site_url = 'http://localhost:8088';
+      ?>
+      PHP
+
+      exec apache2 -D FOREGROUND
 
   psychostats_parser:
     build:

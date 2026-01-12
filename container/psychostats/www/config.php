@@ -1,17 +1,17 @@
 <?php
 // PsychoStats web configuration (DB connection + site URL)
-// Intentionally forces TCP connections inside Docker (no localhost / no socket)
+// Docker: use service DNS name, not localhost, to avoid socket connections.
 
-$dbtype = 'mysql';
-$dbhost = 'psychostats_db';   // Docker service name, NOT localhost
-$dbport = '3306';             // Force TCP, avoids mysqld.sock
-$dbname = 'psychostats3_1';
-$dbuser = 'ps3';
-$dbpass = 'ps3pass';
+$CONF = $CONF ?? [];
 
-// Table prefix used during install
-$dbtblprefix = 'ps_';
+// DB settings
+$CONF['dbtype'] = 'mysql';
+$CONF['dbhost'] = 'psychostats_db';
+$CONF['dbport'] = 3306;
+$CONF['dbname'] = 'psychostats3_1';
+$CONF['dbuser'] = 'ps3';
+$CONF['dbpass'] = 'ps3pass';
+$CONF['dbtblprefix'] = 'ps_';
 
-// Base URL used by PsychoStats
-$site_url = 'http://localhost:8088';
-?>
+// Site URL
+$CONF['site_url'] = 'http://localhost:8088';

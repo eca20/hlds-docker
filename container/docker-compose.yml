@@ -36,6 +36,16 @@ services:
       MARIADB_PASSWORD: ${PS_DB_PASSWORD:-ps3pass}
     volumes:
       - psychostats_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u${PS_DB_USER:-ps3} -p${PS_DB_PASSWORD:-ps3pass} --silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 20s
+    networks:
+      default:
+        aliases:
+          - psychostats_db
 
   psychostats_web:
     build:
@@ -44,7 +54,8 @@ services:
     container_name: psychostats_web
     restart: unless-stopped
     depends_on:
-      - psychostats_db
+      psychostats_db:
+        condition: service_healthy
     ports:
       - "8088:80"
     # OPTIONAL: if you want to edit PsychoStats web files on the host, keep this bind mount.
@@ -65,8 +76,10 @@ services:
     container_name: psychostats_parser
     restart: unless-stopped
     depends_on:
-      - psychostats_db
-      - hlds
+      psychostats_db:
+        condition: service_healthy
+      hlds:
+        condition: service_started
     volumes:
       - ./psychostats/root:/opt/psychostats
       - cs_logs:/logs:ro
@@ -78,7 +91,17 @@ services:
       PS_DB_USER: ${PS_DB_USER:-ps3}
       PS_DB_PASSWORD: ${PS_DB_PASSWORD:-ps3pass}
     command: >
-      sh -lc "while true; do perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true; sleep 30; done"
+      sh -lc "
+        echo 'Waiting for MariaDB at psychostats_db:3306...';
+        until mysqladmin ping -h psychostats_db -u${PS_DB_USER:-ps3} -p${PS_DB_PASSWORD:-ps3pass} --silent; do
+          sleep 2;
+        done;
+        echo 'MariaDB is up. Starting PsychoStats parser loop.';
+        while true; do
+          perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
+          sleep 30;
+        done
+      "
 
 volumes:
   cs_logs:

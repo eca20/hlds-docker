@@ -1,16 +1,16 @@
- ✔ container-psychostats_web     Built                                                                                              0.0s 
+#45 [hlds] resolving provenance for metadata file
+#45 DONE 1.5s
+[+] Running 8/8
  ✔ container-hlds                Built                                                                                              0.0s 
+ ✔ container-psychostats_web     Built                                                                                              0.0s 
  ✔ container-psychostats_parser  Built                                                                                              0.0s 
- ✔ Network container_default     Created                                                                                            0.2s 
- ✔ Container container-hlds-1    Created                                                                                            1.5s 
- ✔ Container psychostats_db      Created                                                                                            1.6s 
- ✔ Container psychostats_parser  Created                                                                                            1.6s 
- ✔ Container psychostats_web     Created                                                                                            1.6s 
+ ✔ Network container_default     Created                                                                                            2.3s 
+ ✔ Container container-hlds-1    Created                                                                                            4.1s 
+ ✔ Container psychostats_db      Created                                                                                            4.7s 
+ ✔ Container psychostats_parser  Created                                                                                            2.1s 
+ ✔ Container psychostats_web     Created                                                                                            2.9s 
 Attaching to hlds-1, psychostats_db, psychostats_parser, psychostats_web
-psychostats_db  | 2026-01-12 07:21:49+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
-psychostats_db  | 2026-01-12 07:21:49+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
-psychostats_db  | 2026-01-12 07:21:49+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-psychostats_db  | 2026-01-12 07:21:49+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
+psychostats_db  | 2026-01-12 07:48:43+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
 hlds-1          |                           ..::::::..
 hlds-1          |                       :-=++++++++++++=-:
 hlds-1          |                   :=++++=--::...::-=++++=:
@@ -48,72 +48,59 @@ hlds-1          | █                                                           
 hlds-1          | ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 hlds-1          | Starting Half-Life Dedicated Server...
 hlds-1          | Auto-restarting the server on crash
-hlds-1          | Using breakpad crash handler
-hlds-1          | Setting breakpad minidump AppID = 10
 hlds-1          | 
 hlds-1          | Console initialized.
+hlds-1          | Using breakpad crash handler
+hlds-1          | Setting breakpad minidump AppID = 10
 hlds-1          | Forcing breakpad minidump interfaces to load
-psychostats_db  | 2026-01-12 07:21:50+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
 hlds-1          | Looking up breakpad interfaces from steamclient
 hlds-1          | Calling BreakpadMiniDumpSystemInit
-hlds-1          | 01/12 07:21:50 minidumps folder is set to /tmp/dumps
-hlds-1          | 01/12 07:21:50 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(22)
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] Starting MariaDB 10.11.15-MariaDB-ubu2204 source revision cb0d6dd835023a7162ace471cd047161f205dd58 server_uid XcQIJpRUikz2U+gDq9kGgRXlN44= as process 1
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: Number of transaction pools: 1
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+hlds-1          | 01/12 07:48:51 minidumps folder is set to /tmp/dumps
+hlds-1          | 01/12 07:48:51 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(22)
 hlds-1          | Protocol version 48
 hlds-1          | Exe version 1.1.2.7/Stdio (cstrike)
 hlds-1          | Exe build: 01:34:04 Oct  8 2024 (10211)
 hlds-1          | STEAM Auth Server
-psychostats_db  | 2026-01-12  7:21:50 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
-psychostats_db  | create_uring failed: falling back to libaio
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: Using Linux native AIO
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: Completed initialization of buffer pool
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
 hlds-1          | Unable to open logfiles under logs/L0112
 hlds-1          | Logging disabled
 hlds-1          | Server IP address 172.20.0.3:27015
-hlds-1          |    
-hlds-1          |    Metamod version 1.21.1-am  Copyright (c) 2001-2013 Will Day <willday@metamod.org>
-hlds-1          |    Metamod comes with ABSOLUTELY NO WARRANTY; for details type `meta gpl'.
-hlds-1          |    This is free software, and you are welcome to redistribute it
-hlds-1          |    under certain conditions; type `meta gpl' for details.
-hlds-1          |    
-hlds-1          | 
-hlds-1          |    AMX Mod X version 1.50 Copyright (c) 2004-2005 AMX Mod X Development Team 
-hlds-1          |    AMX Mod X comes with ABSOLUTELY NO WARRANTY; for details type `amxx gpl'.
-hlds-1          |    This is free software and you are welcome to redistribute it under 
-hlds-1          |    certain conditions; type 'amxx gpl' for details.
-hlds-1          |   
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: End of log at LSN=45426
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: 128 rollback segments are active.
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: log sequence number 45426; transaction id 14
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] Plugin 'FEEDBACK' is disabled.
-psychostats_db  | 2026-01-12  7:21:50 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
-psychostats_db  | 2026-01-12  7:21:51 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
-psychostats_db  | 2026-01-12  7:21:51 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
-psychostats_db  | 2026-01-12  7:21:51 0 [Note] Server socket created on IP: '::', port: '3306'.
-psychostats_db  | 2026-01-12  7:21:51 0 [Note] InnoDB: Buffer pool(s) load completed at 260112  7:21:51
-psychostats_db  | 2026-01-12  7:21:51 0 [Note] mariadbd: ready for connections.
-psychostats_db  | Version: '10.11.15-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
-hlds-1          | L 01/12/2026 - 07:21:51: -------- Mapchange --------
-hlds-1          | L 01/12/2026 - 07:21:51: [AMXX] Plugin file open error (plugin "pluginmenu.amxx")
-hlds-1          | L 01/12/2026 - 07:21:51: [AMXX] Plugin "statsx.amxx" failed to load: Plugin uses an unknown function (name "get_user_rstats") - check your modules.ini.
 hlds-1          | couldn't exec maps/cs_assault_upc_load.cfg
-hlds-1          | [AMXX] Loaded 2 admins from file
+psychostats_db  | 2026-01-12 07:48:52+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+psychostats_db  | 2026-01-12 07:48:52+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+psychostats_db  | 2026-01-12 07:48:52+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
+psychostats_db  | 2026-01-12 07:48:53+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] Starting MariaDB 10.11.15-MariaDB-ubu2204 source revision cb0d6dd835023a7162ace471cd047161f205dd58 server_uid bIq08XA83IggeTefYHD0x8t06Pw= as process 1
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] InnoDB: Number of transaction pools: 1
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+psychostats_db  | 2026-01-12  7:48:53 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+psychostats_db  | create_uring failed: falling back to libaio
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] InnoDB: Using Linux native AIO
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] InnoDB: Completed initialization of buffer pool
+psychostats_db  | 2026-01-12  7:48:53 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+psychostats_db  | 2026-01-12  7:48:54 0 [Note] InnoDB: End of log at LSN=45426
 hlds-1          | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] InnoDB: 128 rollback segments are active.
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] InnoDB: log sequence number 45426; transaction id 14
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] Plugin 'FEEDBACK' is disabled.
+psychostats_db  | 2026-01-12  7:48:56 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] InnoDB: Buffer pool(s) load completed at 260112  7:48:56
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] Server socket created on IP: '::', port: '3306'.
 hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
 hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
 hlds-1          | Looking up breakpad interfaces from steamclient
 hlds-1          | Calling BreakpadMiniDumpSystemInit
 hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
 hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-hlds-1          | IPC function call IClientUtils::GetSteamRealm took too long: 366 msec
+psychostats_db  | 2026-01-12  7:48:56 0 [Note] mariadbd: ready for connections.
+psychostats_db  | Version: '10.11.15-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+hlds-1          | IPC function call IClientUtils::GetSteamRealm took too long: 828 msec
 hlds-1          | IPC function call IClientUtils::GetConnectedUniverse took too long: 52 msec
 hlds-1          | IPC function call IClientUtils::GetIPCountry took too long: 50 msec
 hlds-1          | IPC function call IClientUtils::GetServerRealTime took too long: 50 msec
@@ -121,101 +108,110 @@ hlds-1          | IPC function call IClientUtils::SetAppIDForCurrentPipe took to
 hlds-1          | IPC function call IClientUtils::SetLauncherType took too long: 51 msec
 hlds-1          | IPC function call IClientUtils::GetAppID took too long: 50 msec
 hlds-1          | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::GetAppID took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::GetAppID took too long: 50 msec
+hlds-1          | IPC function call IClientGameServerInternal::InitGameServerSerialized took too long: 50 msec
+hlds-1          | IPC function call IClientGameServerInternal::GetSteamID took too long: 50 msec
 hlds-1          | 
-hlds-1          | Executing AMX Mod X Configuration File 
-hlds-1          | Scrolling message displaying frequency: 10:00 minutes
+hlds-1          | couldn't exec listip.cfg
+hlds-1          | couldn't exec banned.cfg
+hlds-1          | Connection to Steam servers successful.
+hlds-1          |    VAC secure mode is activated.
 psychostats_parser  | Waiting for MariaDB at psychostats_db:3306...
-hlds-1              | Server IP address 172.20.0.3:27015
-hlds-1              | L 01/12/2026 - 07:21:56: -------- Mapchange --------
-hlds-1              | L 01/12/2026 - 07:21:56: [AMXX] Plugin file open error (plugin "pluginmenu.amxx")
-hlds-1              | L 01/12/2026 - 07:21:56: [AMXX] Plugin "statsx.amxx" failed to load: Plugin uses an unknown function (name "get_user_rstats") - check your modules.ini.
-hlds-1              | Unable to open logfiles under logs/L0112
-hlds-1              | Logging disabled
-hlds-1              | couldn't exec maps/cs_assault_upc_unload.cfg
-hlds-1              | couldn't exec maps/cs_assault_upc_load.cfg
-hlds-1              | [AMXX] Loaded 2 admins from file
-hlds-1              | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
-hlds-1              | Forcing breakpad minidump interfaces to load
-hlds-1              | Looking up breakpad interfaces from steamclient
-hlds-1              | Calling BreakpadMiniDumpSystemInit
-hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
-hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
-hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-hlds-1              | Looking up breakpad interfaces from steamclient
-hlds-1              | Calling BreakpadMiniDumpSystemInit
-hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
-hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-hlds-1              | 
-hlds-1              | Executing AMX Mod X Configuration File 
-hlds-1              | Scrolling message displaying frequency: 10:00 minutes
-hlds-1              | Connection to Steam servers successful.
-hlds-1              |    VAC secure mode is activated.
-psychostats_db      | 2026-01-12  7:21:58 4 [Warning] Aborted connection 4 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_web     | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.5. Set the 'ServerName' directive globally to suppress this message
-psychostats_web     | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.5. Set the 'ServerName' directive globally to suppress this message
-psychostats_web     | [Mon Jan 12 07:21:58.461939 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
-psychostats_web     | [Mon Jan 12 07:21:58.461984 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
-psychostats_db      | 2026-01-12  7:22:00 5 [Warning] Aborted connection 5 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:02 7 [Warning] Aborted connection 7 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:04 8 [Warning] Aborted connection 8 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:06 10 [Warning] Aborted connection 10 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:08 11 [Warning] Aborted connection 11 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:10 12 [Warning] Aborted connection 12 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:12 14 [Warning] Aborted connection 14 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:14 15 [Warning] Aborted connection 15 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:16 17 [Warning] Aborted connection 17 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:18 18 [Warning] Aborted connection 18 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:20 19 [Warning] Aborted connection 19 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:22 21 [Warning] Aborted connection 21 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:24 22 [Warning] Aborted connection 22 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:26 24 [Warning] Aborted connection 24 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:28 25 [Warning] Aborted connection 25 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_web     | [Mon Jan 12 07:22:29.117757 2026] [php:error] [pid 17:tid 17] [client 172.20.0.1:55440] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67\nStack trace:\n#0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', 'ps3', Object(SensitiveParameterValue))\n#1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect()\n#2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array)\n#3 /var/www/html/install/common.php(83): PsychoDB::create(Array)\n#4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...')\n#5 {main}\n  thrown in /var/www/html/includes/DB/mysql.php on line 67
-psychostats_web     | 172.20.0.1 - - [12/Jan/2026:07:22:29 +0000] "GET /install/ HTTP/1.1" 200 627 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
-psychostats_web     | [Mon Jan 12 07:22:30.199376 2026] [php:error] [pid 17:tid 17] [client 172.20.0.1:55440] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67\nStack trace:\n#0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', 'ps3', Object(SensitiveParameterValue))\n#1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect()\n#2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array)\n#3 /var/www/html/install/common.php(83): PsychoDB::create(Array)\n#4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...')\n#5 {main}\n  thrown in /var/www/html/includes/DB/mysql.php on line 67
-psychostats_web     | 172.20.0.1 - - [12/Jan/2026:07:22:30 +0000] "GET /install/ HTTP/1.1" 200 626 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
-psychostats_db      | 2026-01-12  7:22:30 26 [Warning] Aborted connection 26 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:32 28 [Warning] Aborted connection 28 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:34 29 [Warning] Aborted connection 29 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_web     | 172.20.0.1 - - [12/Jan/2026:07:22:35 +0000] "GET / HTTP/1.1" 200 370 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
-psychostats_db      | 2026-01-12  7:22:36 31 [Warning] Aborted connection 31 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:38 32 [Warning] Aborted connection 32 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:40 33 [Warning] Aborted connection 33 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:42 35 [Warning] Aborted connection 35 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:44 36 [Warning] Aborted connection 36 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:46 38 [Warning] Aborted connection 38 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:48 39 [Warning] Aborted connection 39 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:50 40 [Warning] Aborted connection 40 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:52 42 [Warning] Aborted connection 42 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:54 43 [Warning] Aborted connection 43 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:56 45 [Warning] Aborted connection 45 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:22:58 46 [Warning] Aborted connection 46 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:23:00 47 [Warning] Aborted connection 47 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:05 4 [Warning] Aborted connection 4 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_web     | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_web     | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_db      | 2026-01-12  7:49:07 6 [Warning] Aborted connection 6 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_web     | [Mon Jan 12 07:49:07.722254 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
+psychostats_web     | [Mon Jan 12 07:49:07.722296 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+psychostats_db      | 2026-01-12  7:49:09 7 [Warning] Aborted connection 7 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:11 9 [Warning] Aborted connection 9 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:13 10 [Warning] Aborted connection 10 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:15 11 [Warning] Aborted connection 11 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:17 13 [Warning] Aborted connection 13 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:19 14 [Warning] Aborted connection 14 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:21 16 [Warning] Aborted connection 16 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:23 17 [Warning] Aborted connection 17 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:25 18 [Warning] Aborted connection 18 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:27 20 [Warning] Aborted connection 20 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:29 21 [Warning] Aborted connection 21 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:31 22 [Warning] Aborted connection 22 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+hlds-1              | flock /sys/devices/virtual/dmi/id/sys_vendor LOCK_SH failed. errno = 13flock /sys/devices/virtual/dmi/id/product_name LOCK_SH failed. errno = 13[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.
+psychostats_db      | 2026-01-12  7:49:33 24 [Warning] Aborted connection 24 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_web     | 172.20.0.1 - - [12/Jan/2026:07:49:33 +0000] "GET / HTTP/1.1" 200 370 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+psychostats_db      | 2026-01-12  7:49:35 25 [Warning] Aborted connection 25 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_web     | 172.20.0.1 - - [12/Jan/2026:07:49:37 +0000] "GET / HTTP/1.1" 200 370 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+psychostats_db      | 2026-01-12  7:49:37 27 [Warning] Aborted connection 27 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:39 28 [Warning] Aborted connection 28 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:41 29 [Warning] Aborted connection 29 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:43 31 [Warning] Aborted connection 31 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:45 32 [Warning] Aborted connection 32 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_web     | [Mon Jan 12 07:49:45.905490 2026] [php:error] [pid 19:tid 19] [client 172.20.0.1:55026] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67\nStack trace:\n#0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', 'ps3', Object(SensitiveParameterValue))\n#1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect()\n#2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array)\n#3 /var/www/html/install/common.php(83): PsychoDB::create(Array)\n#4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...')\n#5 {main}\n  thrown in /var/www/html/includes/DB/mysql.php on line 67
+psychostats_web     | 172.20.0.1 - - [12/Jan/2026:07:49:45 +0000] "GET /install/ HTTP/1.1" 200 627 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+psychostats_db      | 2026-01-12  7:49:47 34 [Warning] Aborted connection 34 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:49 35 [Warning] Aborted connection 35 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:51 36 [Warning] Aborted connection 36 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:53 38 [Warning] Aborted connection 38 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:55 39 [Warning] Aborted connection 39 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:57 40 [Warning] Aborted connection 40 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:49:59 42 [Warning] Aborted connection 42 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:01 43 [Warning] Aborted connection 43 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:03 45 [Warning] Aborted connection 45 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:05 46 [Warning] Aborted connection 46 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:08 47 [Warning] Aborted connection 47 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:10 49 [Warning] Aborted connection 49 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:12 50 [Warning] Aborted connection 50 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:14 52 [Warning] Aborted connection 52 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:16 53 [Warning] Aborted connection 53 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:18 54 [Warning] Aborted connection 54 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:20 56 [Warning] Aborted connection 56 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:22 57 [Warning] Aborted connection 57 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:24 59 [Warning] Aborted connection 59 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:26 60 [Warning] Aborted connection 60 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:28 61 [Warning] Aborted connection 61 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:30 63 [Warning] Aborted connection 63 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:32 64 [Warning] Aborted connection 64 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:34 66 [Warning] Aborted connection 66 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:36 67 [Warning] Aborted connection 67 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:38 68 [Warning] Aborted connection 68 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:40 70 [Warning] Aborted connection 70 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_web     | [Mon Jan 12 07:50:41.780541 2026] [php:error] [pid 20:tid 20] [client 172.20.0.1:43694] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67\nStack trace:\n#0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', 'ps3', Object(SensitiveParameterValue))\n#1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect()\n#2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array)\n#3 /var/www/html/install/common.php(83): PsychoDB::create(Array)\n#4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...')\n#5 {main}\n  thrown in /var/www/html/includes/DB/mysql.php on line 67
+psychostats_web     | 172.20.0.1 - - [12/Jan/2026:07:50:41 +0000] "GET /install/ HTTP/1.1" 200 627 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+psychostats_db      | 2026-01-12  7:50:42 71 [Warning] Aborted connection 71 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:44 73 [Warning] Aborted connection 73 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:46 74 [Warning] Aborted connection 74 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:48 75 [Warning] Aborted connection 75 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:50 77 [Warning] Aborted connection 77 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:52 78 [Warning] Aborted connection 78 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:54 80 [Warning] Aborted connection 80 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:56 81 [Warning] Aborted connection 81 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:50:58 82 [Warning] Aborted connection 82 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:00 84 [Warning] Aborted connection 84 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:02 85 [Warning] Aborted connection 85 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:04 87 [Warning] Aborted connection 87 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:06 88 [Warning] Aborted connection 88 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:08 89 [Warning] Aborted connection 89 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:10 91 [Warning] Aborted connection 91 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:12 92 [Warning] Aborted connection 92 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:14 94 [Warning] Aborted connection 94 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:16 95 [Warning] Aborted connection 95 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:18 96 [Warning] Aborted connection 96 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:20 98 [Warning] Aborted connection 98 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
 Gracefully Stopping... press Ctrl+C again to force
- Container psychostats_parser  Stopping
+
  Container psychostats_web  Stopping
-psychostats_web     | [Mon Jan 12 07:23:01.422139 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
-psychostats_db      | 2026-01-12  7:23:02 49 [Warning] Aborted connection 49 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
+ Container psychostats_parser  Stopping
+psychostats_db      | 2026-01-12  7:51:22 99 [Warning] Aborted connection 99 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_web     | [Mon Jan 12 07:51:22.464469 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+psychostats_db      | 2026-01-12  7:51:24 100 [Warning] Aborted connection 100 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
  Container psychostats_web  Stopped
 psychostats_web exited with code 0
-psychostats_db      | 2026-01-12  7:23:04 50 [Warning] Aborted connection 50 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:23:06 51 [Warning] Aborted connection 51 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:23:08 53 [Warning] Aborted connection 53 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
-psychostats_db      | 2026-01-12  7:23:10 54 [Warning] Aborted connection 54 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.4' (This connection closed normally without authentication)
- Container psychostats_parser  Stopped
- Container psychostats_db  Stopping
- Container container-hlds-1  Stopping
-psychostats_parser exited with code 137
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] InnoDB: FTS optimize thread exiting.
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] InnoDB: Starting shutdown...
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] InnoDB: Buffer pool(s) dump completed at 260112  7:23:12
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] InnoDB: Shutdown completed; log sequence number 45426; transaction id 15
-psychostats_db      | 2026-01-12  7:23:12 0 [Note] mariadbd: Shutdown complete
- Container psychostats_db  Stopped
-psychostats_db exited with code 0
-hlds-1              | flock /sys/devices/virtual/dmi/id/sys_vendor LOCK_SH failed. errno = 13flock /sys/devices/virtual/dmi/id/product_name LOCK_SH failed. errno = 13
- Container container-hlds-1  Stopped
+psychostats_db      | 2026-01-12  7:51:26 102 [Warning] Aborted connection 102 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:28 103 [Warning] Aborted connection 103 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:30 105 [Warning] Aborted connection 105 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12  7:51:32 106 [Warning] Aborted connection 106 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+
+
+
+Fatal error: Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67 Stack trace: #0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', 'ps3', Object(SensitiveParameterValue)) #1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect() #2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array) #3 /var/www/html/install/common.php(83): PsychoDB::create(Array) #4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...') #5 {main} thrown in /var/www/html/includes/DB/mysql.php on line 67

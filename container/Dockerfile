@@ -61,7 +61,6 @@ WORKDIR /opt/steam
 
 # Copies the hlds.txt file to the container.
 COPY ./hlds.txt /opt/steam
-COPY ./config/server.cfg /opt/steam/hlds/cstrike
 
 # Replaces $GAME with the requested mod to install in hlds.txt.
 # Additionally replaces $FLAG with any additional flags that should be passed to the SteamCMD installer to support betas.
@@ -90,8 +89,8 @@ WORKDIR /opt/steam/hlds
 
 # Copies the entrypoint script to the container and sets the necessary permissions.
 COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
-COPY --chown=steam:steam config $GAME
-COPY --chown=steam:steam mods .
+COPY --chown=steam:steam config /temp/config
+COPY --chown=steam:steam mods /temp/mods
 
 # Sets the entrypoint script as executable.
 RUN chmod +x ./entrypoint.sh

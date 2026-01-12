@@ -1,27 +1,721 @@
-#24 [19/22] COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
-#24 DONE 1.2s
+Warning: include(/var/www/html/includes/common.php): Failed to open stream: No such file or directory in /var/www/html/index.php on line 25
 
-#25 [20/22] COPY --chown=steam:steam config cstrike
-#25 ERROR: cannot copy to non-directory: /var/snap/docker/common/var-lib-docker/overlay2/haqs3vygst6hsrge0ydzypwpv/merged/opt/steam/hlds/cstrike
-------
- > [20/22] COPY --chown=steam:steam config cstrike:
-------
-Dockerfile:93
+Warning: include(): Failed opening '/var/www/html/includes/common.php' for inclusion (include_path='.:/usr/local/lib/php') in /var/www/html/index.php on line 25
 
---------------------
+Warning: Undefined variable $cms in /var/www/html/index.php on line 26
 
-  91 |     # Copies the entrypoint script to the container and sets the necessary permissions.
+Warning: Attempt to read property "theme" on null in /var/www/html/index.php on line 26
 
-  92 |     COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
+Fatal error: Uncaught Error: Call to a member function page_title() on null in /var/www/html/index.php:26 Stack trace: #0 {main} thrown in /var/www/html/index.php on line 26
 
-  93 | >>> COPY --chown=steam:steam config $GAME
-
-  94 |     COPY --chown=steam:steam mods .
-
-  95 |     
-
---------------------
-
-failed to solve: cannot copy to non-directory: /var/snap/docker/common/var-lib-docker/overlay2/haqs3vygst6hsrge0ydzypwpv/merged/opt/steam/hlds/cstrike
-
-eterraverse@eterraverse:~/projects/hlds-docker/container$ 
+hlds-1          | Forcing breakpad minidump interfaces to load
+psychostats_db  | 2026-01-12 06:03:42+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+psychostats_db  | 2026-01-12 06:03:42+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+psychostats_db  | 2026-01-12 06:03:42+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
+psychostats_db  | 2026-01-12 06:03:42+00:00 [Note] [Entrypoint]: Initializing database files
+psychostats_db  | 2026-01-12  6:03:45 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+psychostats_db  | create_uring failed: falling back to libaio
+psychostats_web  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_web  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_parser  | Loading internal logger. Log::Log4perl recommended for better logging
+psychostats_parser  | 
+psychostats_parser  | CPAN.pm requires configuration, but most of it can be done automatically.
+psychostats_parser  | If you answer 'no' below, you will enter an interactive dialog for each
+psychostats_parser  | configuration option instead.
+psychostats_parser  | 
+psychostats_parser  | Would you like to configure as much as possible automatically? [yes] yes
+hlds-1              | Looking up breakpad interfaces from steamclient
+hlds-1              | Calling BreakpadMiniDumpSystemInit
+hlds-1              | 01/12 06:03:49 minidumps folder is set to /tmp/dumps
+hlds-1              | 01/12 06:03:49 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(22)
+hlds-1              | Protocol version 48
+hlds-1              | Exe version 1.1.2.7/Stdio (cstrike)
+hlds-1              | Exe build: 01:34:04 Oct  8 2024 (10211)
+hlds-1              | STEAM Auth Server
+hlds-1              | Unable to open logfiles under logs/L0112
+hlds-1              | Logging disabled
+hlds-1              | Server IP address 172.20.0.3:27015
+hlds-1              |    
+hlds-1              |    Metamod version 1.21.1-am  Copyright (c) 2001-2013 Will Day <willday@metamod.org>
+hlds-1              |    Metamod comes with ABSOLUTELY NO WARRANTY; for details type `meta gpl'.
+hlds-1              |    This is free software, and you are welcome to redistribute it
+hlds-1              |    under certain conditions; type `meta gpl' for details.
+hlds-1              |    
+hlds-1              | 
+hlds-1              |    AMX Mod X version 1.50 Copyright (c) 2004-2005 AMX Mod X Development Team 
+hlds-1              |    AMX Mod X comes with ABSOLUTELY NO WARRANTY; for details type `amxx gpl'.
+hlds-1              |    This is free software and you are welcome to redistribute it under 
+hlds-1              |    certain conditions; type 'amxx gpl' for details.
+hlds-1              |   
+hlds-1              | L 01/12/2026 - 06:03:50: -------- Mapchange --------
+hlds-1              | L 01/12/2026 - 06:03:50: [AMXX] Plugin file open error (plugin "pluginmenu.amxx")
+hlds-1              | L 01/12/2026 - 06:03:50: [AMXX] Plugin "statsx.amxx" failed to load: Plugin uses an unknown function (name "get_user_rstats") - check your modules.ini.
+hlds-1              | couldn't exec maps/cs_assault_upc_load.cfg
+hlds-1              | [AMXX] Loaded 2 admins from file
+psychostats_parser  | Fetching with HTTP::Tiny:
+psychostats_parser  | https://cpan.org/authors/01mailrc.txt.gz
+psychostats_web     | [Mon Jan 12 06:03:55.979094 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
+psychostats_web     | [Mon Jan 12 06:03:55.979142 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+hlds-1              | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+psychostats_parser  | Reading '/root/.cpan/sources/authors/01mailrc.txt.gz'
+psychostats_parser  | ............................................................................DONE
+psychostats_parser  | Fetching with HTTP::Tiny:
+psychostats_parser  | https://cpan.org/modules/02packages.details.txt.gz
+psychostats_parser  | Reading '/root/.cpan/sources/modules/02packages.details.txt.gz'
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1              | Looking up breakpad interfaces from steamclient
+hlds-1              | Calling BreakpadMiniDumpSystemInit
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+psychostats_parser  |   Database was generated on Mon, 12 Jan 2026 04:29:02 GMT
+psychostats_parser  |   HTTP::Date not available
+hlds-1              | IPC function call IClientUtils::GetSteamRealm took too long: 1043 msec
+hlds-1              | IPC function call IClientUtils::GetConnectedUniverse took too long: 53 msec
+hlds-1              | IPC function call IClientUtils::SetAppIDForCurrentPipe took too long: 43 msec
+hlds-1              | IPC function call IClientUtils::GetAppID took too long: 50 msec
+hlds-1              | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
+hlds-1              | IPC function call IClientUtils::GetAppID took too long: 50 msec
+hlds-1              | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
+hlds-1              | IPC function call IClientUtils::GetAppID took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::InitGameServerSerialized took too long: 50 msec
+hlds-1              | IPC function call IClientUtils::GetAppID took too long: 49 msec
+hlds-1              | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetProduct took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetModDir took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetDedicatedServer took too long: 47 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetGameDescription took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::LogOnAnonymous took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::EnableHeartbeats took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetMaxPlayerCount took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetBotPlayerCount took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetServerName took too long: 50 msec
+hlds-1              | IPC function call IClientGameServerInternal::SetMapName took too long: 370 msec
+hlds-1              | 
+hlds-1              | Executing AMX Mod X Configuration File 
+hlds-1              | Scrolling message displaying frequency: 10:00 minutes
+psychostats_parser  | ..............
+psychostats_parser  |   New CPAN.pm version (v2.38) available.
+psychostats_parser  |   [Currently running version is v2.36]
+psychostats_parser  |   You might want to try
+psychostats_parser  |     install CPAN
+psychostats_parser  |     reload cpan
+psychostats_parser  |   to both upgrade CPAN.pm and run the new version without leaving
+psychostats_parser  |   the current session.
+psychostats_parser  | 
+psychostats_parser  | 
+hlds-1              | IPC function call IClientNetworkingSocketsSerialized::GetSTUNServer took too long: 362 msec
+hlds-1              | Server IP address 172.20.0.3:27015
+hlds-1              | L 01/12/2026 - 06:04:09: -------- Mapchange --------
+hlds-1              | L 01/12/2026 - 06:04:09: [AMXX] Plugin file open error (plugin "pluginmenu.amxx")
+hlds-1              | L 01/12/2026 - 06:04:09: [AMXX] Plugin "statsx.amxx" failed to load: Plugin uses an unknown function (name "get_user_rstats") - check your modules.ini.
+hlds-1              | Unable to open logfiles under logs/L0112
+hlds-1              | Logging disabled
+hlds-1              | couldn't exec maps/cs_assault_upc_unload.cfg
+hlds-1              | couldn't exec maps/cs_assault_upc_load.cfg
+hlds-1              | [AMXX] Loaded 2 admins from file
+hlds-1              | flock /sys/devices/virtual/dmi/id/sys_vendor LOCK_SH failed. errno = 13flock /sys/devices/virtual/dmi/id/product_name LOCK_SH failed. errno = 13[S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+hlds-1              | Forcing breakpad minidump interfaces to load
+hlds-1              | Looking up breakpad interfaces from steamclient
+hlds-1              | Calling BreakpadMiniDumpSystemInit
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1              | Looking up breakpad interfaces from steamclient
+hlds-1              | Calling BreakpadMiniDumpSystemInit
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1              | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1              | IPC function call IClientUtils::GetSteamRealm took too long: 46 msec
+hlds-1              | 
+hlds-1              | Executing AMX Mod X Configuration File 
+hlds-1              | Scrolling message displaying frequency: 10:00 minutes
+hlds-1              | Connection to Steam servers successful.
+hlds-1              |    VAC secure mode is activated.
+psychostats_parser  | ..............................................................DONE
+psychostats_parser  | Fetching with HTTP::Tiny:
+psychostats_parser  | https://cpan.org/modules/03modlist.data.gz
+psychostats_parser  | Reading '/root/.cpan/sources/modules/03modlist.data.gz'
+psychostats_parser  | DONE
+psychostats_parser  | Writing /root/.cpan/Metadata
+psychostats_parser  | Running install for module 'DBI'
+psychostats_parser  | Fetching with HTTP::Tiny:
+psychostats_parser  | https://cpan.org/authors/id/H/HM/HMBRAND/DBI-1.647.tgz
+psychostats_parser  | Fetching with HTTP::Tiny:
+psychostats_parser  | https://cpan.org/authors/id/H/HM/HMBRAND/CHECKSUMS
+psychostats_parser  | Checksum for /root/.cpan/sources/authors/id/H/HM/HMBRAND/DBI-1.647.tgz ok
+psychostats_parser  | 'YAML' not installed, will not store persistent state
+psychostats_parser  | Configuring H/HM/HMBRAND/DBI-1.647.tgz with Makefile.PL
+psychostats_parser  | Your perl was compiled with gcc (version 14.2.0), okay.
+psychostats_parser  | Creating test wrappers for DBD::Gofer:
+psychostats_parser  | t/zvg_01basics.t 
+psychostats_parser  | t/zvg_02dbidrv.t 
+psychostats_parser  | t/zvg_03handle.t 
+psychostats_parser  | t/zvg_04mods.t 
+psychostats_parser  | t/zvg_05concathash.t 
+psychostats_parser  | t/zvg_06attrs.t 
+psychostats_parser  | t/zvg_07kids.t 
+psychostats_parser  | t/zvg_08keeperr.t 
+psychostats_parser  | t/zvg_09trace.t 
+psychostats_parser  | t/zvg_10examp.t 
+psychostats_parser  | t/zvg_11fetch.t 
+psychostats_parser  | t/zvg_12quote.t 
+psychostats_parser  | t/zvg_13taint.t 
+psychostats_parser  | t/zvg_14utf8.t 
+psychostats_parser  | t/zvg_15array.t 
+psychostats_parser  | t/zvg_16destroy.t 
+psychostats_parser  | t/zvg_17handle_error.t 
+psychostats_parser  | t/zvg_19fhtrace.t 
+psychostats_parser  | t/zvg_20meta.t 
+psychostats_parser  | t/zvg_30subclass.t 
+psychostats_parser  | t/zvg_31methcache.t 
+psychostats_parser  | t/zvg_35thrclone.t 
+psychostats_parser  | t/zvg_40profile.t 
+psychostats_parser  | t/zvg_41prof_dump.t 
+psychostats_parser  | t/zvg_42prof_data.t 
+psychostats_parser  | t/zvg_43prof_env.t 
+psychostats_parser  | t/zvg_48dbi_dbd_sqlengine.t 
+psychostats_parser  | t/zvg_49dbd_file.t 
+psychostats_parser  | t/zvg_50dbm_simple.t 
+psychostats_parser  | t/zvg_51dbm_file.t 
+psychostats_parser  | t/zvg_52dbm_complex.t 
+psychostats_parser  | t/zvg_53sqlengine_adv.t 
+psychostats_parser  | t/zvg_54_dbd_mem.t 
+psychostats_parser  | t/zvg_60preparse.t 
+psychostats_parser  | t/zvg_65transact.t 
+psychostats_parser  | t/zvg_70callbacks.t 
+psychostats_parser  | t/zvg_72childhandles.t 
+psychostats_parser  | t/zvg_73cachedkids.t 
+psychostats_parser  | t/zvg_80proxy.t 
+psychostats_parser  | t/zvg_85gofer.t 
+psychostats_parser  | t/zvg_86gofer_fail.t 
+psychostats_parser  | t/zvg_87gofer_cache.t 
+psychostats_parser  | t/zvg_90sql_type_cast.t 
+psychostats_parser  | t/zvg_91_store_warning.t 
+psychostats_parser  | Creating test wrappers for DBI::SQL::Nano:
+psychostats_parser  | t/zvn_48dbi_dbd_sqlengine.t 
+psychostats_parser  | t/zvn_49dbd_file.t 
+psychostats_parser  | t/zvn_50dbm_simple.t 
+psychostats_parser  | t/zvn_51dbm_file.t 
+psychostats_parser  | t/zvn_52dbm_complex.t 
+psychostats_parser  | t/zvn_85gofer.t 
+psychostats_parser  | Creating test wrappers for DBI::PurePerl:
+psychostats_parser  | t/zvp_01basics.t 
+psychostats_parser  | t/zvp_02dbidrv.t 
+psychostats_parser  | t/zvp_03handle.t 
+psychostats_parser  | t/zvp_04mods.t 
+psychostats_parser  | t/zvp_05concathash.t 
+psychostats_parser  | t/zvp_06attrs.t 
+psychostats_parser  | t/zvp_07kids.t 
+psychostats_parser  | t/zvp_08keeperr.t 
+psychostats_parser  | t/zvp_09trace.t 
+psychostats_parser  | t/zvp_10examp.t 
+psychostats_parser  | t/zvp_11fetch.t 
+psychostats_parser  | t/zvp_12quote.t 
+psychostats_parser  | t/zvp_13taint.t 
+psychostats_parser  | t/zvp_14utf8.t 
+psychostats_parser  | t/zvp_15array.t 
+psychostats_parser  | t/zvp_16destroy.t 
+psychostats_parser  | t/zvp_17handle_error.t 
+psychostats_parser  | t/zvp_19fhtrace.t 
+psychostats_parser  | t/zvp_20meta.t 
+psychostats_parser  | t/zvp_30subclass.t 
+psychostats_parser  | t/zvp_31methcache.t 
+psychostats_parser  | t/zvp_35thrclone.t 
+psychostats_parser  | t/zvp_40profile.t 
+psychostats_parser  | t/zvp_41prof_dump.t 
+psychostats_parser  | t/zvp_42prof_data.t 
+psychostats_parser  | t/zvp_43prof_env.t 
+psychostats_parser  | t/zvp_48dbi_dbd_sqlengine.t 
+psychostats_parser  | t/zvp_49dbd_file.t 
+psychostats_parser  | t/zvp_50dbm_simple.t 
+psychostats_parser  | t/zvp_51dbm_file.t 
+psychostats_parser  | t/zvp_52dbm_complex.t 
+psychostats_parser  | t/zvp_53sqlengine_adv.t 
+psychostats_parser  | t/zvp_54_dbd_mem.t 
+psychostats_parser  | t/zvp_60preparse.t 
+psychostats_parser  | t/zvp_65transact.t 
+psychostats_parser  | t/zvp_70callbacks.t 
+psychostats_parser  | t/zvp_72childhandles.t 
+psychostats_parser  | t/zvp_73cachedkids.t 
+psychostats_parser  | t/zvp_80proxy.t 
+psychostats_parser  | t/zvp_85gofer.t 
+psychostats_parser  | t/zvp_86gofer_fail.t 
+psychostats_parser  | t/zvp_87gofer_cache.t 
+psychostats_parser  | t/zvp_90sql_type_cast.t 
+psychostats_parser  | t/zvp_91_store_warning.t 
+psychostats_parser  | Creating test wrappers for DBD::Gofer + DBI::SQL::Nano:
+psychostats_parser  | t/zvxgn_48dbi_dbd_sqlengine.t 
+psychostats_parser  | t/zvxgn_49dbd_file.t 
+psychostats_parser  | t/zvxgn_50dbm_simple.t 
+psychostats_parser  | t/zvxgn_51dbm_file.t 
+psychostats_parser  | t/zvxgn_52dbm_complex.t 
+psychostats_parser  | t/zvxgn_85gofer.t 
+psychostats_parser  | Creating test wrappers for DBD::Gofer + DBI::PurePerl:
+psychostats_parser  | t/zvxgp_01basics.t 
+psychostats_parser  | t/zvxgp_02dbidrv.t 
+psychostats_parser  | t/zvxgp_03handle.t 
+psychostats_parser  | t/zvxgp_04mods.t 
+psychostats_parser  | t/zvxgp_05concathash.t 
+psychostats_parser  | t/zvxgp_06attrs.t 
+psychostats_parser  | t/zvxgp_07kids.t 
+psychostats_parser  | t/zvxgp_08keeperr.t 
+psychostats_parser  | t/zvxgp_09trace.t 
+psychostats_parser  | t/zvxgp_10examp.t 
+psychostats_parser  | t/zvxgp_11fetch.t 
+psychostats_parser  | t/zvxgp_12quote.t 
+psychostats_parser  | t/zvxgp_13taint.t 
+psychostats_parser  | t/zvxgp_14utf8.t 
+psychostats_parser  | t/zvxgp_15array.t 
+psychostats_parser  | t/zvxgp_16destroy.t 
+psychostats_parser  | t/zvxgp_17handle_error.t 
+psychostats_parser  | t/zvxgp_19fhtrace.t 
+psychostats_parser  | t/zvxgp_20meta.t 
+psychostats_parser  | t/zvxgp_30subclass.t 
+psychostats_parser  | t/zvxgp_31methcache.t 
+psychostats_parser  | t/zvxgp_35thrclone.t 
+psychostats_parser  | t/zvxgp_40profile.t 
+psychostats_parser  | t/zvxgp_41prof_dump.t 
+psychostats_parser  | t/zvxgp_42prof_data.t 
+psychostats_parser  | t/zvxgp_43prof_env.t 
+psychostats_parser  | t/zvxgp_48dbi_dbd_sqlengine.t 
+psychostats_parser  | t/zvxgp_49dbd_file.t 
+psychostats_parser  | t/zvxgp_50dbm_simple.t 
+psychostats_parser  | t/zvxgp_51dbm_file.t 
+psychostats_parser  | t/zvxgp_52dbm_complex.t 
+psychostats_parser  | t/zvxgp_53sqlengine_adv.t 
+psychostats_parser  | t/zvxgp_54_dbd_mem.t 
+psychostats_parser  | t/zvxgp_60preparse.t 
+psychostats_parser  | t/zvxgp_65transact.t 
+psychostats_parser  | t/zvxgp_70callbacks.t 
+psychostats_parser  | t/zvxgp_72childhandles.t 
+psychostats_parser  | t/zvxgp_73cachedkids.t 
+psychostats_parser  | t/zvxgp_80proxy.t 
+psychostats_parser  | t/zvxgp_85gofer.t 
+psychostats_parser  | t/zvxgp_86gofer_fail.t 
+psychostats_parser  | t/zvxgp_87gofer_cache.t 
+psychostats_parser  | t/zvxgp_90sql_type_cast.t 
+psychostats_parser  | t/zvxgp_91_store_warning.t 
+psychostats_parser  | Creating test wrappers for DBI::SQL::Nano + DBI::PurePerl:
+psychostats_parser  | t/zvxnp_48dbi_dbd_sqlengine.t 
+psychostats_parser  | t/zvxnp_49dbd_file.t 
+psychostats_parser  | t/zvxnp_50dbm_simple.t 
+psychostats_parser  | t/zvxnp_51dbm_file.t 
+psychostats_parser  | t/zvxnp_52dbm_complex.t 
+psychostats_parser  | t/zvxnp_85gofer.t 
+psychostats_parser  | Creating test wrappers for DBD::Gofer + DBI::SQL::Nano + DBI::PurePerl:
+psychostats_parser  | t/zvxgnp_48dbi_dbd_sqlengine.t 
+psychostats_parser  | t/zvxgnp_49dbd_file.t 
+psychostats_parser  | t/zvxgnp_50dbm_simple.t 
+psychostats_parser  | t/zvxgnp_51dbm_file.t 
+psychostats_parser  | t/zvxgnp_52dbm_complex.t 
+psychostats_parser  | t/zvxgnp_85gofer.t 
+psychostats_parser  | Checking if your kit is complete...
+psychostats_parser  | Looks good
+psychostats_parser  | 
+psychostats_parser  |     I see you're using perl 5.038005 on x86_64-linux-gnu, okay.
+psychostats_parser  |     Remember to actually *read* the README file!
+psychostats_parser  |     Use  'make' to build the software (dmake or nmake on Windows).
+psychostats_parser  |     Then 'make test' to execute self tests.
+psychostats_parser  |     Then 'make install' to install the DBI and then delete this working
+psychostats_parser  |     directory before unpacking and building any DBD::* drivers.
+psychostats_parser  | 
+psychostats_parser  | Generating a Unix-style Makefile
+psychostats_parser  | Writing Makefile for DBI
+psychostats_parser  | Writing MYMETA.yml and MYMETA.json
+psychostats_parser  |   HMBRAND/DBI-1.647.tgz
+psychostats_parser  |   /usr/local/bin/perl Makefile.PL -- OK
+psychostats_parser  | Running make for H/HM/HMBRAND/DBI-1.647.tgz
+psychostats_parser  | cp lib/DBI/Const/GetInfo/ODBC.pm blib/lib/DBI/Const/GetInfo/ODBC.pm
+psychostats_parser  | cp dbipport.h blib/arch/auto/DBI/dbipport.h
+psychostats_parser  | cp DBI.pm blib/lib/DBI.pm
+psychostats_parser  | cp lib/DBI/Gofer/Execute.pm blib/lib/DBI/Gofer/Execute.pm
+psychostats_parser  | cp lib/DBD/Gofer/Transport/corostream.pm blib/lib/DBD/Gofer/Transport/corostream.pm
+psychostats_parser  | cp lib/DBD/NullP.pm blib/lib/DBD/NullP.pm
+psychostats_parser  | cp lib/DBD/Gofer/Policy/classic.pm blib/lib/DBD/Gofer/Policy/classic.pm
+psychostats_parser  | cp lib/DBD/Gofer.pm blib/lib/DBD/Gofer.pm
+psychostats_parser  | cp lib/DBD/File/Developers.pod blib/lib/DBD/File/Developers.pod
+psychostats_parser  | cp lib/DBD/Gofer/Policy/Base.pm blib/lib/DBD/Gofer/Policy/Base.pm
+psychostats_parser  | cp lib/DBI/DBD/SqlEngine.pm blib/lib/DBI/DBD/SqlEngine.pm
+psychostats_parser  | cp lib/DBD/Gofer/Transport/stream.pm blib/lib/DBD/Gofer/Transport/stream.pm
+psychostats_parser  | cp Driver.xst blib/arch/auto/DBI/Driver.xst
+psychostats_parser  | cp lib/DBD/Proxy.pm blib/lib/DBD/Proxy.pm
+psychostats_parser  | cp dbivport.h blib/arch/auto/DBI/dbivport.h
+psychostats_parser  | cp lib/DBI/Gofer/Request.pm blib/lib/DBI/Gofer/Request.pm
+psychostats_parser  | cp lib/DBI/DBD/SqlEngine/Developers.pod blib/lib/DBI/DBD/SqlEngine/Developers.pod
+psychostats_parser  | cp dbixs_rev.pl blib/lib/dbixs_rev.pl
+psychostats_parser  | cp lib/DBD/Gofer/Policy/rush.pm blib/lib/DBD/Gofer/Policy/rush.pm
+psychostats_parser  | cp lib/DBI/Changes.pm blib/lib/DBI/Changes.pm
+psychostats_parser  | cp lib/DBD/File/Roadmap.pod blib/lib/DBD/File/Roadmap.pod
+psychostats_parser  | cp lib/DBD/Mem.pm blib/lib/DBD/Mem.pm
+psychostats_parser  | cp dbi_sql.h blib/arch/auto/DBI/dbi_sql.h
+psychostats_parser  | cp lib/Bundle/DBI.pm blib/lib/Bundle/DBI.pm
+psychostats_parser  | cp lib/DBI/DBD/Metadata.pm blib/lib/DBI/DBD/Metadata.pm
+psychostats_parser  | cp Driver_xst.h blib/arch/auto/DBI/Driver_xst.h
+psychostats_parser  | cp lib/DBD/File.pm blib/lib/DBD/File.pm
+psychostats_parser  | cp lib/DBD/Gofer/Transport/Base.pm blib/lib/DBD/Gofer/Transport/Base.pm
+psychostats_parser  | cp lib/DBI/Const/GetInfo/ANSI.pm blib/lib/DBI/Const/GetInfo/ANSI.pm
+psychostats_parser  | cp lib/DBI/DBD/SqlEngine/HowTo.pod blib/lib/DBI/DBD/SqlEngine/HowTo.pod
+psychostats_parser  | cp dbixs_rev.h blib/arch/auto/DBI/dbixs_rev.h
+psychostats_parser  | cp lib/DBD/Gofer/Policy/pedantic.pm blib/lib/DBD/Gofer/Policy/pedantic.pm
+psychostats_parser  | cp lib/DBD/Gofer/Transport/null.pm blib/lib/DBD/Gofer/Transport/null.pm
+psychostats_parser  | cp dbd_xsh.h blib/arch/auto/DBI/dbd_xsh.h
+psychostats_parser  | cp lib/DBI/Const/GetInfoType.pm blib/lib/DBI/Const/GetInfoType.pm
+psychostats_parser  | cp lib/DBD/ExampleP.pm blib/lib/DBD/ExampleP.pm
+psychostats_parser  | cp lib/DBD/DBM.pm blib/lib/DBD/DBM.pm
+psychostats_parser  | cp lib/DBI/Const/GetInfoReturn.pm blib/lib/DBI/Const/GetInfoReturn.pm
+psychostats_parser  | cp lib/DBI/DBD.pm blib/lib/DBI/DBD.pm
+psychostats_parser  | cp DBIXS.h blib/arch/auto/DBI/DBIXS.h
+psychostats_parser  | cp lib/DBD/File/HowTo.pod blib/lib/DBD/File/HowTo.pod
+psychostats_parser  | cp lib/DBD/Sponge.pm blib/lib/DBD/Sponge.pm
+psychostats_parser  | cp lib/DBD/Gofer/Transport/pipeone.pm blib/lib/DBD/Gofer/Transport/pipeone.pm
+psychostats_parser  | cp lib/DBI/Gofer/Transport/Base.pm blib/lib/DBI/Gofer/Transport/Base.pm
+psychostats_parser  | cp lib/DBI/W32ODBC.pm blib/lib/DBI/W32ODBC.pm
+psychostats_parser  | cp lib/DBI/Util/_accessor.pm blib/lib/DBI/Util/_accessor.pm
+psychostats_parser  | cp lib/DBI/ProfileData.pm blib/lib/DBI/ProfileData.pm
+psychostats_parser  | cp lib/DBI/PurePerl.pm blib/lib/DBI/PurePerl.pm
+psychostats_parser  | cp lib/DBI/Gofer/Serializer/Storable.pm blib/lib/DBI/Gofer/Serializer/Storable.pm
+psychostats_parser  | cp lib/DBI/ProxyServer.pm blib/lib/DBI/ProxyServer.pm
+psychostats_parser  | cp lib/DBI/Gofer/Transport/stream.pm blib/lib/DBI/Gofer/Transport/stream.pm
+psychostats_parser  | cp lib/DBI/SQL/Nano.pm blib/lib/DBI/SQL/Nano.pm
+psychostats_parser  | cp lib/DBI/Util/CacheMemory.pm blib/lib/DBI/Util/CacheMemory.pm
+psychostats_parser  | cp lib/DBI/ProfileDumper.pm blib/lib/DBI/ProfileDumper.pm
+psychostats_parser  | cp lib/DBI/Gofer/Transport/pipeone.pm blib/lib/DBI/Gofer/Transport/pipeone.pm
+psychostats_parser  | cp lib/DBI/Gofer/Serializer/DataDumper.pm blib/lib/DBI/Gofer/Serializer/DataDumper.pm
+psychostats_parser  | cp lib/Win32/DBIODBC.pm blib/lib/Win32/DBIODBC.pm
+psychostats_parser  | cp lib/DBI/ProfileDumper/Apache.pm blib/lib/DBI/ProfileDumper/Apache.pm
+psychostats_parser  | cp lib/DBI/Profile.pm blib/lib/DBI/Profile.pm
+psychostats_parser  | cp lib/DBI/Gofer/Response.pm blib/lib/DBI/Gofer/Response.pm
+psychostats_parser  | cp lib/DBI/Gofer/Serializer/Base.pm blib/lib/DBI/Gofer/Serializer/Base.pm
+psychostats_parser  | cp lib/DBI/ProfileSubs.pm blib/lib/DBI/ProfileSubs.pm
+psychostats_parser  | Running Mkbootstrap for DBI ()
+psychostats_parser  | chmod 644 "DBI.bs"
+psychostats_parser  | "/usr/local/bin/perl" -MExtUtils::Command::MM -e 'cp_nonempty' -- DBI.bs blib/arch/auto/DBI/DBI.bs 644
+psychostats_parser  | "/usr/local/bin/perl" -p -e "s/~DRIVER~/Perl/g" ./Driver.xst > Perl.xsi
+psychostats_parser  | "/usr/local/bin/perl" "/usr/local/lib/perl5/5.38.5/ExtUtils/xsubpp"  -typemap '/usr/local/lib/perl5/5.38.5/ExtUtils/typemap' -typemap '/root/.cpan/build/DBI-1.647-0/typemap'  Perl.xs > Perl.xsc
+psychostats_parser  | mv Perl.xsc Perl.c
+psychostats_parser  | cc -c   -fwrapv -fno-strict-aliasing -pipe -fstack-protector-strong -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -O2   -DVERSION=\"1.647\" -DXS_VERSION=\"1.647\" -fPIC "-I/usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE"  -W -Wall -Wpointer-arith -Wbad-function-cast -Wno-comment -Wno-sign-compare -Wno-cast-qual -DDBI_NO_THREADS Perl.c
+psychostats_parser  | In file included from /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:3327,
+psychostats_parser  |                  from DBIXS.h:24,
+psychostats_parser  |                  from Perl.xs:7:
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/inline.h: In function 'Perl_is_utf8_valid_partial_char_flags':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'STRLEN' {aka 'long unsigned int'} to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/inline.h:2334:12: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  2334 |     return cBOOL(is_utf8_char_helper_(s0, e, flags));
+psychostats_parser  |       |            ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv_inline.h: In function 'Perl_sv_setpv_freshbuf':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4252:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4252 | #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1724:13: note: in expansion of macro 'UNLIKELY'
+psychostats_parser  |  1724 |         if (UNLIKELY(TAINT_get))        \
+psychostats_parser  |       |             ^~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1724:22: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |  1724 |         if (UNLIKELY(TAINT_get))        \
+psychostats_parser  |       |                      ^~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv_inline.h:1009:5: note: in expansion of macro 'SvTAINT'
+psychostats_parser  |  1009 |     SvTAINT(sv);
+psychostats_parser  |       |     ^~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4252:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4252 | #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:42: note: in expansion of macro 'UNLIKELY'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                          ^~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:997:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   997 | #   define TAINTING_get         (cBOOL(UNLIKELY(PL_tainting)))
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:51: note: in expansion of macro 'TAINTING_get'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                                   ^~~~~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1725:13: note: in expansion of macro 'SvTAINTED_on'
+psychostats_parser  |  1725 |             SvTAINTED_on(sv);           \
+psychostats_parser  |       |             ^~~~~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv_inline.h:1009:5: note: in expansion of macro 'SvTAINT'
+psychostats_parser  |  1009 |     SvTAINT(sv);
+psychostats_parser  |       |     ^~~~~~~
+psychostats_parser  | Perl.xs: In function 'dbi_get_state':
+psychostats_parser  | DBIXS.h:500:32: warning: cast between incompatible function types from 'void (*)(CV *)' {aka 'void (*)(struct cv *)'} to 'dbistate_t ** (*)(void)' {aka 'struct dbistate_st ** (*)(void)'} [-Wcast-function-type]
+psychostats_parser  |   500 |             dbi_state_lval_p = (_dbi_state_lval_t)CvXSUB(cv);               \
+psychostats_parser  |       |                                ^
+psychostats_parser  | DBIXS.h:518:5: note: in expansion of macro '_DBISTATE_DECLARE_COMMON'
+psychostats_parser  |   518 |     _DBISTATE_DECLARE_COMMON
+psychostats_parser  |       |     ^~~~~~~~~~~~~~~~~~~~~~~~
+psychostats_parser  | Perl.xs:13:1: note: in expansion of macro 'DBISTATE_DECLARE'
+psychostats_parser  |    13 | DBISTATE_DECLARE;
+psychostats_parser  |       | ^~~~~~~~~~~~~~~~
+hlds-1              | flock /sys/devices/virtual/dmi/id/sys_vendor LOCK_SH failed. errno = 13flock /sys/devices/virtual/dmi/id/product_name LOCK_SH failed. errno = 13[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.
+psychostats_parser  | "/usr/local/bin/perl" "/usr/local/lib/perl5/5.38.5/ExtUtils/xsubpp"  -typemap '/usr/local/lib/perl5/5.38.5/ExtUtils/typemap' -typemap '/root/.cpan/build/DBI-1.647-0/typemap'  DBI.xs > DBI.xsc
+psychostats_parser  | mv DBI.xsc DBI.c
+psychostats_parser  | cc -c   -fwrapv -fno-strict-aliasing -pipe -fstack-protector-strong -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -O2   -DVERSION=\"1.647\" -DXS_VERSION=\"1.647\" -fPIC "-I/usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE"  -W -Wall -Wpointer-arith -Wbad-function-cast -Wno-comment -Wno-sign-compare -Wno-cast-qual -DDBI_NO_THREADS DBI.c
+psychostats_parser  | In file included from /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:3327,
+psychostats_parser  |                  from DBIXS.h:24,
+psychostats_parser  |                  from DBI.xs:14:
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/inline.h: In function 'Perl_is_utf8_valid_partial_char_flags':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'STRLEN' {aka 'long unsigned int'} to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/inline.h:2334:12: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  2334 |     return cBOOL(is_utf8_char_helper_(s0, e, flags));
+psychostats_parser  |       |            ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv_inline.h: In function 'Perl_sv_setpv_freshbuf':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4252:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4252 | #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1724:13: note: in expansion of macro 'UNLIKELY'
+psychostats_parser  |  1724 |         if (UNLIKELY(TAINT_get))        \
+psychostats_parser  |       |             ^~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1724:22: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |  1724 |         if (UNLIKELY(TAINT_get))        \
+psychostats_parser  |       |                      ^~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv_inline.h:1009:5: note: in expansion of macro 'SvTAINT'
+psychostats_parser  |  1009 |     SvTAINT(sv);
+psychostats_parser  |       |     ^~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4252:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4252 | #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:42: note: in expansion of macro 'UNLIKELY'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                          ^~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:997:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   997 | #   define TAINTING_get         (cBOOL(UNLIKELY(PL_tainting)))
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:51: note: in expansion of macro 'TAINTING_get'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                                   ^~~~~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1725:13: note: in expansion of macro 'SvTAINTED_on'
+psychostats_parser  |  1725 |             SvTAINTED_on(sv);           \
+psychostats_parser  |       |             ^~~~~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv_inline.h:1009:5: note: in expansion of macro 'SvTAINT'
+psychostats_parser  |  1009 |     SvTAINT(sv);
+psychostats_parser  |       |     ^~~~~~~
+psychostats_parser  | DBI.xs: In function 'XS_DBI_dispatch':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4252:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4252 | #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:42: note: in expansion of macro 'UNLIKELY'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                          ^~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:997:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   997 | #   define TAINTING_get         (cBOOL(UNLIKELY(PL_tainting)))
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:51: note: in expansion of macro 'TAINTING_get'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                                   ^~~~~~~~~~~~
+psychostats_parser  | DBI.xs:3960:25: note: in expansion of macro 'SvTAINTED_on'
+psychostats_parser  |  3960 |                         SvTAINTED_on(s);
+psychostats_parser  |       |                         ^~~~~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4252:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4252 | #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:42: note: in expansion of macro 'UNLIKELY'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                          ^~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:997:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   997 | #   define TAINTING_get         (cBOOL(UNLIKELY(PL_tainting)))
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1718:51: note: in expansion of macro 'TAINTING_get'
+psychostats_parser  |  1718 | #define SvTAINTED_on(sv)  STMT_START{ if(UNLIKELY(TAINTING_get)){sv_taint(sv);}   }STMT_END
+psychostats_parser  |       |                                                   ^~~~~~~~~~~~
+psychostats_parser  | DBI.xs:3967:25: note: in expansion of macro 'SvTAINTED_on'
+psychostats_parser  |  3967 |                         SvTAINTED_on(s);
+psychostats_parser  |       |                         ^~~~~~~~~~~~
+psychostats_parser  | DBI.c: In function 'XS_DBI_constant':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4251:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4251 | #define LIKELY(cond)                        EXPECT(cBOOL(cond),TRUE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:429:13: note: in expansion of macro 'LIKELY'
+psychostats_parser  |   429 |         if (LIKELY(                                                     \
+psychostats_parser  |       |             ^~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:431:28: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |   431 |             & (do_taint ? !TAINT_get : 1)))                             \
+psychostats_parser  |       |                            ^~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:495:38: note: in expansion of macro 'TARGi'
+psychostats_parser  |   495 | #define PUSHi(i)        STMT_START { TARGi(i,1); PUSHs(TARG); } STMT_END
+psychostats_parser  |       |                                      ^~~~~
+psychostats_parser  | DBI.c:4632:9: note: in expansion of macro 'PUSHi'
+psychostats_parser  |  4632 |         PUSHi((IV)RETVAL);
+psychostats_parser  |       |         ^~~~~
+psychostats_parser  | DBI.c: In function 'XS_DBI_hash':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4251:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4251 | #define LIKELY(cond)                        EXPECT(cBOOL(cond),TRUE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:429:13: note: in expansion of macro 'LIKELY'
+psychostats_parser  |   429 |         if (LIKELY(                                                     \
+psychostats_parser  |       |             ^~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:431:28: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |   431 |             & (do_taint ? !TAINT_get : 1)))                             \
+psychostats_parser  |       |                            ^~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:495:38: note: in expansion of macro 'TARGi'
+psychostats_parser  |   495 | #define PUSHi(i)        STMT_START { TARGi(i,1); PUSHs(TARG); } STMT_END
+psychostats_parser  |       |                                      ^~~~~
+psychostats_parser  | DBI.c:4842:9: note: in expansion of macro 'PUSHi'
+psychostats_parser  |  4842 |         PUSHi((IV)RETVAL);
+psychostats_parser  |       |         ^~~~~
+psychostats_parser  | DBI.c: In function 'XS_DBI_trace':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4251:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4251 | #define LIKELY(cond)                        EXPECT(cBOOL(cond),TRUE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:429:13: note: in expansion of macro 'LIKELY'
+psychostats_parser  |   429 |         if (LIKELY(                                                     \
+psychostats_parser  |       |             ^~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:431:28: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |   431 |             & (do_taint ? !TAINT_get : 1)))                             \
+psychostats_parser  |       |                            ^~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:495:38: note: in expansion of macro 'TARGi'
+psychostats_parser  |   495 | #define PUSHi(i)        STMT_START { TARGi(i,1); PUSHs(TARG); } STMT_END
+psychostats_parser  |       |                                      ^~~~~
+psychostats_parser  | DBI.c:5038:9: note: in expansion of macro 'PUSHi'
+psychostats_parser  |  5038 |         PUSHi((IV)RETVAL);
+psychostats_parser  |       |         ^~~~~
+psychostats_parser  | DBI.c: In function 'XS_DBI_dbi_time':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4251:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4251 | #define LIKELY(cond)                        EXPECT(cBOOL(cond),TRUE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:474:13: note: in expansion of macro 'LIKELY'
+psychostats_parser  |   474 |         if (LIKELY(                                                     \
+psychostats_parser  |       |             ^~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:476:28: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |   476 |             & (do_taint ? !TAINT_get : 1)))                             \
+psychostats_parser  |       |                            ^~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:494:38: note: in expansion of macro 'TARGn'
+psychostats_parser  |   494 | #define PUSHn(n)        STMT_START { TARGn(n,1); PUSHs(TARG); } STMT_END
+psychostats_parser  |       |                                      ^~~~~
+psychostats_parser  | DBI.c:5114:9: note: in expansion of macro 'PUSHn'
+psychostats_parser  |  5114 |         PUSHn((NV)RETVAL);
+psychostats_parser  |       |         ^~~~~
+psychostats_parser  | DBI.c: In function 'XS_DBI_sql_type_cast':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4251:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4251 | #define LIKELY(cond)                        EXPECT(cBOOL(cond),TRUE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:429:13: note: in expansion of macro 'LIKELY'
+psychostats_parser  |   429 |         if (LIKELY(                                                     \
+psychostats_parser  |       |             ^~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:431:28: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |   431 |             & (do_taint ? !TAINT_get : 1)))                             \
+psychostats_parser  |       |                            ^~~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/pp.h:495:38: note: in expansion of macro 'TARGi'
+psychostats_parser  |   495 | #define PUSHi(i)        STMT_START { TARGi(i,1); PUSHs(TARG); } STMT_END
+psychostats_parser  |       |                                      ^~~~~
+psychostats_parser  | DBI.c:5281:9: note: in expansion of macro 'PUSHi'
+psychostats_parser  |  5281 |         PUSHi((IV)RETVAL);
+psychostats_parser  |       |         ^~~~~
+psychostats_parser  | DBI.c: In function 'XS_DBD_____db_preparse':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:2494:33: warning: cast from function call of type 'IV' {aka 'long int'} to non-matching type 'void *' [-Wbad-function-cast]
+psychostats_parser  |  2494 | #  define INT2PTR(any,d)        (any)(d)
+psychostats_parser  |       |                                 ^
+psychostats_parser  | DBI.c:5427:19: note: in expansion of macro 'INT2PTR'
+psychostats_parser  |  5427 |             foo = INT2PTR(void *,SvIV(ST(4)))
+psychostats_parser  |       |                   ^~~~~~~
+psychostats_parser  | DBI.xs: In function 'XS_DBD_____st__set_fbav':
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]
+psychostats_parser  |   155 | #define cBOOL(cbool) ((bool) (cbool))
+psychostats_parser  |       |                       ^
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4231:62: note: in definition of macro 'EXPECT'
+psychostats_parser  |  4231 | #  define EXPECT(expr,val)                  __builtin_expect(expr,val)
+psychostats_parser  |       |                                                              ^~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:4252:52: note: in expansion of macro 'cBOOL'
+psychostats_parser  |  4252 | #define UNLIKELY(cond)                      EXPECT(cBOOL(cond),FALSE)
+psychostats_parser  |       |                                                    ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1724:13: note: in expansion of macro 'UNLIKELY'
+psychostats_parser  |  1724 |         if (UNLIKELY(TAINT_get))        \
+psychostats_parser  |       |             ^~~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/perl.h:996:34: note: in expansion of macro 'cBOOL'
+psychostats_parser  |   996 | #   define TAINT_get            (cBOOL(UNLIKELY(PL_tainted)))    /* Is something tainted? */
+psychostats_parser  |       |                                  ^~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/sv.h:1724:22: note: in expansion of macro 'TAINT_get'
+psychostats_parser  |  1724 |         if (UNLIKELY(TAINT_get))        \
+psychostats_parser  |       |                      ^~~~~~~~~
+psychostats_parser  | DBI.xs:5233:13: note: in expansion of macro 'SvTAINT'
+psychostats_parser  |  5233 |             SvTAINT(AvARRAY(src_av)[i]);
+psychostats_parser  |       |             ^~~~~~~
+psychostats_parser  | /usr/local/lib/perl5/5.38.5/x86_64-linux-gnu/CORE/handy.h:155:23: warning: cast from function call of type 'long int' to non-matching type '_Bool' [-Wbad-function-cast]

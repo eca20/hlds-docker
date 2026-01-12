@@ -1,1 +1,56 @@
-docker compose exec psychostats_web sh -lc 'ls -lah /var/www/html; ls -lah /var/www/html/includes 2>/dev/null || true; find /var/www/html -maxdepth 2 -type f \( -iname "*config*.php" -o -iname "common.php" -o -iname "index.php" \) -print'
+root@094beca3f591:/var/www/html# ls -lah /var/www/html; ls -lah /var/www/html/includes 2>/dev/null || true; find /var/www/html -maxdepth 2 -type f \( -iname "*config*.php" -o -iname "common.php" -o -iname "index.php" \) -print
+total 336K
+drwxrwxr-x 10 1000 1000 4.0K Jan 12 05:25 .
+drwxr-xr-x  3 root root 4.0K Jan  9 22:42 ..
+drwxrwxr-x  3 1000 1000 4.0K Jan 12 05:21 admin
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 05:21 ajax
+-rw-rw-r--  1 1000 1000  13K Jan 12 05:21 awards.php
+-rw-rw-r--  1 1000 1000  12K Jan 12 05:21 clan.php
+-rw-rw-r--  1 1000 1000 6.5K Jan 12 05:21 clans.php
+-rw-rw-r--  1 1000 1000  162 Jan 12 05:24 config.php
+-rw-rw-r--  1 1000 1000 2.5K Jan 12 05:21 credits.php
+-rw-rw-r--  1 1000 1000  11K Jan 12 05:21 editclan.php
+-rw-rw-r--  1 1000 1000  13K Jan 12 05:21 editplr.php
+-rw-rw-r--  1 1000 1000 1.2K Jan 12 05:21 heatimg.php
+drwxrwxr-x  5 1000 1000 4.0K Jan 12 05:24 img
+-rw-rw-r--  1 1000 1000 3.9K Jan 12 05:21 imgcc.php
+-rw-rw-r--  1 1000 1000 6.2K Jan 12 05:21 imgconn.php
+-rw-rw-r--  1 1000 1000 5.8K Jan 12 05:21 imgquick.php
+-rw-rw-r--  1 1000 1000 6.3K Jan 12 05:21 imgsess.php
+drwxrwxr-x  4 1000 1000 4.0K Jan 12 05:24 includes
+-rw-rw-r--  1 1000 1000 9.6K Jan 12 05:21 index.php
+drwxrwxr-x  4 1000 1000 4.0K Jan 12 05:24 install
+-rw-rw-r--  1 1000 1000 7.1K Jan 12 05:21 live.php
+-rw-rw-r--  1 1000 1000 5.1K Jan 12 05:21 login.php
+-rw-rw-r--  1 1000 1000 2.8K Jan 12 05:21 logout.php
+-rw-rw-r--  1 1000 1000 5.9K Jan 12 05:21 map.php
+-rw-rw-r--  1 1000 1000 5.6K Jan 12 05:21 mapheat.php
+-rw-rw-r--  1 1000 1000 5.8K Jan 12 05:21 maps.php
+-rw-rw-r--  1 1000 1000 2.1K Jan 12 05:21 opt.php
+-rw-rw-r--  1 1000 1000  19K Jan 12 05:21 overview.php
+-rw-rw-r--  1 1000 1000  22K Jan 12 05:21 player.php
+-rw-rw-r--  1 1000 1000 8.4K Jan 12 05:21 plrhist.php
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 05:21 plugins
+-rw-rw-r--  1 1000 1000 2.1K Jan 12 05:21 pq_test.php
+-rw-rw-r--  1 1000 1000 2.6K Jan 12 05:21 privacy.php
+-rw-rw-r--  1 1000 1000 5.6K Jan 12 05:21 query.php
+-rw-rw-r--  1 1000 1000 6.0K Jan 12 05:21 register.php
+-rw-rw-r--  1 1000 1000 6.4K Jan 12 05:21 role.php
+-rw-rw-r--  1 1000 1000 6.6K Jan 12 05:21 roles.php
+-rw-rw-r--  1 1000 1000 4.4K Jan 12 05:21 script.php
+-rw-rw-r--  1 1000 1000 3.8K Jan 12 05:21 server.php
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 05:21 temp
+drwxrwxr-x  7 1000 1000 4.0K Jan 12 05:24 themes
+-rw-rw-r--  1 1000 1000 2.5K Jan 12 05:21 themes.php
+-rw-rw-r--  1 1000 1000 7.5K Jan 12 05:21 weapon.php
+-rw-rw-r--  1 1000 1000 8.4K Jan 12 05:21 weapons.php
+total 16K
+drwxrwxr-x  4 1000 1000 4.0K Jan 12 05:24 .
+drwxrwxr-x 10 1000 1000 4.0K Jan 12 05:25 ..
+drwxrwxr-x  2 1000 1000 4.0K Jan 12 05:24 PQ
+drwxrwxr-x  3 1000 1000 4.0K Jan 12 05:24 PS
+/var/www/html/config.php
+/var/www/html/index.php
+/var/www/html/admin/index.php
+/var/www/html/admin/common.php
+root@094beca3f591:/var/www/html# 

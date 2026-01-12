@@ -30,10 +30,10 @@ services:
     container_name: psychostats_db
     restart: unless-stopped
     environment:
-      MARIADB_DATABASE: psychostats
-      MARIADB_USER: psuser
-      MARIADB_PASSWORD: pspass
-      MARIADB_ROOT_PASSWORD: rootpass
+      MARIADB_ROOT_PASSWORD: ${PS_DB_ROOT_PASSWORD:-rootpass}
+      MARIADB_DATABASE: ${PS_DB_NAME:-psychostats3_1}
+      MARIADB_USER: ${PS_DB_USER:-ps3}
+      MARIADB_PASSWORD: ${PS_DB_PASSWORD:-ps3pass}
     volumes:
       - psychostats_db_data:/var/lib/mysql
 
@@ -51,6 +51,12 @@ services:
     # If you want the container-baked files instead, comment this out.
     volumes:
       - ./psychostats/www:/var/www/html
+    environment:
+      PS_DB_HOST: psychostats_db
+      PS_DB_PORT: "3306"
+      PS_DB_NAME: ${PS_DB_NAME:-psychostats3_1}
+      PS_DB_USER: ${PS_DB_USER:-ps3}
+      PS_DB_PASSWORD: ${PS_DB_PASSWORD:-ps3pass}
 
   psychostats_parser:
     build:
@@ -65,11 +71,14 @@ services:
       - ./psychostats/root:/opt/psychostats
       - cs_logs:/logs:ro
     working_dir: /opt/psychostats
+    environment:
+      PS_DB_HOST: psychostats_db
+      PS_DB_PORT: "3306"
+      PS_DB_NAME: ${PS_DB_NAME:-psychostats3_1}
+      PS_DB_USER: ${PS_DB_USER:-ps3}
+      PS_DB_PASSWORD: ${PS_DB_PASSWORD:-ps3pass}
     command: >
-      sh -lc "while true; do
-        perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;
-        sleep 30;
-      done"
+      sh -lc "while true; do perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true; sleep 30; done"
 
 volumes:
   cs_logs:

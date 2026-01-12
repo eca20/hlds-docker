@@ -72,6 +72,7 @@ services:
       PS_DB_NAME: ${PS_DB_NAME:-psychostats3_1}
       PS_DB_USER: ${PS_DB_USER:-ps3}
       PS_DB_PASSWORD: ${PS_DB_PASSWORD:-ps3pass}
+    entrypoint: ["/bin/sh", "-lc", "set -e; cat > /var/www/html/config.php <<'PHP'\n<?php\n// PsychoStats web configuration (DB connection + site URL)\n// Intentionally forces TCP connections inside Docker (no localhost / no socket)\n\n$dbtype = 'mysql';\n$dbhost = '${PS_DB_HOST:-psychostats_db}';   // Docker service name, NOT localhost\n$dbport = '${PS_DB_PORT:-3306}';             // Force TCP, avoids mysqld.sock\n$dbname = '${PS_DB_NAME:-psychostats3_1}';\n$dbuser = '${PS_DB_USER:-ps3}';\n$dbpass = '${PS_DB_PASSWORD:-ps3pass}';\n\n// Table prefix used during install\n$dbtblprefix = 'ps_';\n\n// Base URL used by PsychoStats\n$site_url = 'http://localhost:8088';\n?>\nPHP\nexec apache2 -D FOREGROUND" ]
 
   psychostats_parser:
     build:
@@ -88,18 +89,14 @@ services:
       - ./psychostats:/opt/psychostats
       - cs_logs:/logs:ro
     working_dir: /opt/psychostats/root
-    entrypoint: ["sh", "-lc"]
-    command: |
+    entrypoint: ["/bin/sh", "-lc"]
+    command: >
+      set -eux;
+      echo 'Starting psychostats_parser...';
       echo 'Waiting for MariaDB TCP...';
-      until mysqladmin ping -h psychostats_db -uroot -p"${PS_DB_ROOT_PASSWORD:-rootpass}" --silent; do
-        sleep 2;
-      done;
-
+      until mysqladmin ping -h psychostats_db -uroot -p"${PS_DB_ROOT_PASSWORD:-rootpass}" --silent; do sleep 2; done;
       echo 'MariaDB is up. Waiting for ps3 credentials...';
-      until mysql -h psychostats_db -P 3306 -u"${PS_DB_USER:-ps3}" -p"${PS_DB_PASSWORD:-ps3pass}" -e "SELECT 1;" "${PS_DB_NAME:-psychostats3_1}" >/dev/null 2>&1; do
-        sleep 2;
-      done;
-
+      until mysql --protocol=TCP -h psychostats_db -P 3306 -u"${PS_DB_USER:-ps3}" -p"${PS_DB_PASSWORD:-ps3pass}" -e 'SELECT 1;' "${PS_DB_NAME:-psychostats3_1}" >/dev/null 2>&1; do sleep 2; done;
       echo 'DB login OK. Starting PsychoStats parser loop.';
       while true; do
         perl ./stats.pl -config ./stats.cfg -logsource /logs -gametype halflife -modtype cstrike || true;

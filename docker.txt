@@ -1,4 +1,126 @@
-docker compose exec psychostats_db sh -lc "mysql -uroot -p\"${PS_DB_ROOT_PASSWORD:-rootpass}\" -e \"
-ALTER USER '${PS_DB_USER:-ps3}'@'%' REQUIRE NONE;
-FLUSH PRIVILEGES;
-\""
+hlds-1  | Starting Half-Life Dedicated Server...
+hlds-1  | Auto-restarting the server on crash
+hlds-1  | 
+hlds-1  | Console initialized.
+hlds-1  | Using breakpad crash handler
+hlds-1  | Setting breakpad minidump AppID = 10
+hlds-1  | Forcing breakpad minidump interfaces to load
+hlds-1  | Looking up breakpad interfaces from steamclient
+hlds-1  | Calling BreakpadMiniDumpSystemInit
+hlds-1  | 01/12 18:18:01 minidumps folder is set to /tmp/dumps
+hlds-1  | 01/12 18:18:01 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(22)
+psychostats_db  | 2026-01-12 18:18:01+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
+hlds-1          | Protocol version 48
+hlds-1          | Exe version 1.1.2.7/Stdio (cstrike)
+hlds-1          | Exe build: 01:34:04 Oct  8 2024 (10211)
+hlds-1          | STEAM Auth Server
+hlds-1          | Unable to open logfiles under logs/L0112
+hlds-1          | Logging disabled
+hlds-1          | Server IP address 172.20.0.2:27015
+hlds-1          | couldn't exec maps/cs_assault_upc_load.cfg
+psychostats_db  | 2026-01-12 18:18:01+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+psychostats_db  | 2026-01-12 18:18:01+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+psychostats_db  | 2026-01-12 18:18:01+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.15+maria~ubu2204 started.
+hlds-1          | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+psychostats_db  | 2026-01-12 18:18:01+00:00 [Note] [Entrypoint]: Initializing database files
+hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1          | Looking up breakpad interfaces from steamclient
+hlds-1          | Calling BreakpadMiniDumpSystemInit
+hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+psychostats_db  | 2026-01-12 18:18:02 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+psychostats_db  | create_uring failed: falling back to libaio
+hlds-1          | IPC function call IClientUtils::GetSteamRealm took too long: 162 msec
+hlds-1          | IPC function call IClientUtils::GetConnectedUniverse took too long: 52 msec
+hlds-1          | IPC function call IClientUtils::GetIPCountry took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::GetServerRealTime took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::SetAppIDForCurrentPipe took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::SetLauncherType took too long: 51 msec
+hlds-1          | IPC function call IClientUtils::GetAppID took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::RecordSteamInterfaceCreation took too long: 50 msec
+hlds-1          | IPC function call IClientUtils::GetAppID took too long: 47 msec
+hlds-1          | 
+hlds-1          | couldn't exec listip.cfg
+hlds-1          | couldn't exec banned.cfg
+hlds-1          | Connection to Steam servers successful.
+hlds-1          |    VAC secure mode is activated.
+psychostats_db  | 2026-01-12 18:18:24+00:00 [Note] [Entrypoint]: Database files initialized
+psychostats_db  | 2026-01-12 18:18:24+00:00 [Note] [Entrypoint]: Starting temporary server
+psychostats_db  | 2026-01-12 18:18:24+00:00 [Note] [Entrypoint]: Waiting for server startup
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] Starting MariaDB 10.11.15-MariaDB-ubu2204 source revision cb0d6dd835023a7162ace471cd047161f205dd58 server_uid oi6SznrkU0wiklXKXt9rBWJgv6I= as process 121
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: Number of transaction pools: 1
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+psychostats_db  | 2026-01-12 18:18:24 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+psychostats_db  | create_uring failed: falling back to libaio
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: Using Linux native AIO
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: Completed initialization of buffer pool
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: End of log at LSN=45410
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: 128 rollback segments are active.
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] InnoDB: log sequence number 45410; transaction id 14
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] Plugin 'FEEDBACK' is disabled.
+psychostats_db  | 2026-01-12 18:18:24 0 [Note] mariadbd: ready for connections.
+psychostats_db  | Version: '10.11.15-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
+psychostats_db  | 2026-01-12 18:18:25+00:00 [Note] [Entrypoint]: Temporary server started.
+psychostats_db  | 2026-01-12 18:18:26 5 [Warning] Access denied for user 'ps3'@'localhost' (using password: YES)
+psychostats_parser  | Waiting for MariaDB at psychostats_db:3306...
+psychostats_web     | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_web     | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+psychostats_web     | [Mon Jan 12 18:18:29.628403 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
+psychostats_web     | [Mon Jan 12 18:18:29.628451 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+psychostats_db      | 2026-01-12 18:18:31 6 [Warning] Access denied for user 'ps3'@'localhost' (using password: YES)
+psychostats_db      | 2026-01-12 18:18:32+00:00 [Note] [Entrypoint]: Creating database psychostats3_1
+psychostats_db      | 2026-01-12 18:18:32+00:00 [Note] [Entrypoint]: Creating user ps3
+psychostats_db      | 2026-01-12 18:18:32+00:00 [Note] [Entrypoint]: Giving user ps3 access to schema psychostats3_1
+psychostats_db      | 2026-01-12 18:18:32+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
+psychostats_db      | 
+psychostats_db      | 2026-01-12 18:18:32+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01-disable-user-ssl.sql
+psychostats_db      | 
+psychostats_db      | 
+psychostats_db      | 2026-01-12 18:18:32+00:00 [Note] [Entrypoint]: Stopping temporary server
+psychostats_db      | 2026-01-12 18:18:32 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
+psychostats_db      | 2026-01-12 18:18:32 0 [Note] InnoDB: FTS optimize thread exiting.
+psychostats_db      | 2026-01-12 18:18:32 0 [Note] InnoDB: Starting shutdown...
+psychostats_db      | 2026-01-12 18:18:32 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+psychostats_db      | 2026-01-12 18:18:32 0 [Note] InnoDB: Buffer pool(s) dump completed at 260112 18:18:32
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Shutdown completed; log sequence number 45410; transaction id 15
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] mariadbd: Shutdown complete
+psychostats_db      | 2026-01-12 18:18:33+00:00 [Note] [Entrypoint]: Temporary server stopped
+psychostats_db      | 
+psychostats_db      | 2026-01-12 18:18:33+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+psychostats_db      | 
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] Starting MariaDB 10.11.15-MariaDB-ubu2204 source revision cb0d6dd835023a7162ace471cd047161f205dd58 server_uid oi6SznrkU0wiklXKXt9rBWJgv6I= as process 1
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Number of transaction pools: 1
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+psychostats_db      | 2026-01-12 18:18:33 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+psychostats_db      | create_uring failed: falling back to libaio
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Using Linux native AIO
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Completed initialization of buffer pool
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: End of log at LSN=45410
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: 128 rollback segments are active.
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: log sequence number 45410; transaction id 14
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] Plugin 'FEEDBACK' is disabled.
+psychostats_db      | 2026-01-12 18:18:33 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] Server socket created on IP: '::', port: '3306'.
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] InnoDB: Buffer pool(s) load completed at 260112 18:18:33
+psychostats_db      | 2026-01-12 18:18:33 0 [Note] mariadbd: ready for connections.
+psychostats_db      | Version: '10.11.15-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+psychostats_db      | 2026-01-12 18:18:34 3 [Warning] Aborted connection 3 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12 18:18:36 4 [Warning] Aborted connection 4 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12 18:18:38 6 [Warning] Aborted connection 6 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)
+psychostats_db      | 2026-01-12 18:18:40 7 [Warning] Aborted connection 7 to db: 'unconnected' user: 'unauthenticated' host: '172.20.0.5' (This connection closed normally without authentication)

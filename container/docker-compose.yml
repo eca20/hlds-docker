@@ -10,6 +10,7 @@ services:
     volumes:
       - "./config:/temp/config"
       - "./mods:/temp/mods"
+      - "./data/hlds_logs:/opt/steam/hlds/cstrike/logs"
       - ./config/server.cfg:/opt/steam/hlds/cstrike/cfg/server.cfg:ro
     ports:
       - "27015:27015/udp"

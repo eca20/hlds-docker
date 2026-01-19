@@ -41,3 +41,17 @@ services:
       timeout: 5s
       retries: 10
     restart: unless-stopped
+
+  psychostats_web:
+    build:
+      context: ./psychostats/web
+    container_name: psychostats_web
+    depends_on:
+      psychostats_db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    volumes:
+      # PsychoStats web files (you will copy PsychoStats' `www/` contents here)
+      - "./psychostats/webroot:/var/www/html"
+    restart: unless-stopped

@@ -23,3 +23,21 @@ services:
       - IMAGE=${IMAGE}
     command: +maxplayers 18 +log on +map cs_assault_upc +hostname "Sofa's 24/7 UPC"
     restart: unless-stopped
+
+  psychostats_db:
+    image: mariadb:10.3
+    container_name: psychostats_db
+    environment:
+      # NOTE: Move these to a .env file for production
+      - MARIADB_DATABASE=psychostats
+      - MARIADB_USER=psychostats
+      - MARIADB_PASSWORD=psychostats_pass
+      - MARIADB_ROOT_PASSWORD=change_me_root
+    volumes:
+      - "./data/mysql:/var/lib/mysql"
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h 127.0.0.1 -uroot -p$$MARIADB_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped

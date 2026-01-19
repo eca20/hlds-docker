@@ -1,0 +1,13 @@
+# Runtime server configuration (bind-mounted)
+config/
+mods/
+
+# Persistent runtime data (bind-mounted)
+data/
+
+# PsychoStats runtime files (bind-mounted)
+psychostats/
+
+# Logs and temporary files
+*.log
+*.tmp

@@ -44,7 +44,7 @@ services:
 
   psychostats_web:
     build:
-      context: ./psychostats/web
+      context: .
     container_name: psychostats_web
     depends_on:
       psychostats_db:
@@ -53,5 +53,5 @@ services:
       - "8080:80"
     volumes:
       # PsychoStats web files (you will copy PsychoStats' `www/` contents here)
-      - "./psychostats/webroot:/var/www/html"
+      - "./psychostats/www:/var/www/html"
     restart: unless-stopped

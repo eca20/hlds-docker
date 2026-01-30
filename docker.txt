@@ -1,13 +1,1 @@
-eterraverse@eterraverse:~/projects/hlds-docker/container$ docker logs psychostats_web --tail=200
-AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
-AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
-[Fri Jan 30 00:43:11.799730 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
-[Fri Jan 30 00:43:11.799770 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
-[Fri Jan 30 00:43:28.323366 2026] [autoindex:error] [pid 17:tid 17] [client 172.20.0.1:41436] AH01276: Cannot serve directory /var/www/html/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive
-172.20.0.1 - - [30/Jan/2026:00:43:28 +0000] "GET / HTTP/1.1" 403 493 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
-172.20.0.1 - - [30/Jan/2026:00:43:28 +0000] "GET /favicon.ico HTTP/1.1" 404 489 "http://localhost:8080/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
-172.20.0.1 - - [30/Jan/2026:00:44:42 +0000] "\x16\x03\x01\x07a\x01" 400 484 "-" "-"
-172.20.0.1 - - [30/Jan/2026:00:44:42 +0000] "\x16\x03\x01\x07a\x01" 400 484 "-" "-"
-172.20.0.1 - - [30/Jan/2026:00:44:42 +0000] "\x16\x03\x01\x02\x90\x01" 400 484 "-" "-"
-[Fri Jan 30 00:44:50.536317 2026] [autoindex:error] [pid 21:tid 21] [client 172.20.0.1:52038] AH01276: Cannot serve directory /var/www/html/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive
-172.20.0.1 - - [30/Jan/2026:00:44:50 +0000] "GET / HTTP/1.1" 403 493 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+Fatal error: Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67 Stack trace: #0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', 'ps3', Object(SensitiveParameterValue)) #1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect() #2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array) #3 /var/www/html/install/common.php(83): PsychoDB::create(Array) #4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...') #5 {main} thrown in /var/www/html/includes/DB/mysql.php on line 67

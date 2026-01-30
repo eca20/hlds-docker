@@ -1,37 +1,135 @@
-eterraverse@eterraverse:~/projects/hlds-docker/container$ docker inspect psychostats_db --format '{{json .State.Health}}' | jq
-{
-  "Status": "unhealthy",
-  "FailingStreak": 42,
-  "Log": [
-    {
-      "Start": "2026-01-30T00:20:02.456047144Z",
-      "End": "2026-01-30T00:20:02.51588053Z",
-      "ExitCode": 127,
-      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
-    },
-    {
-      "Start": "2026-01-30T00:20:12.517224913Z",
-      "End": "2026-01-30T00:20:12.576467682Z",
-      "ExitCode": 127,
-      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
-    },
-    {
-      "Start": "2026-01-30T00:20:22.577973097Z",
-      "End": "2026-01-30T00:20:22.635162832Z",
-      "ExitCode": 127,
-      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
-    },
-    {
-      "Start": "2026-01-30T00:20:32.636031052Z",
-      "End": "2026-01-30T00:20:32.695887883Z",
-      "ExitCode": 127,
-      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
-    },
-    {
-      "Start": "2026-01-30T00:20:42.697513446Z",
-      "End": "2026-01-30T00:20:42.758775912Z",
-      "ExitCode": 127,
-      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
-    }
-  ]
-}
+psychostats_db  | Version: '10.3.39-MariaDB-1:10.3.39+maria~ubu2004'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+hlds-1          | 
+hlds-1          |                           ..::::::..              
+hlds-1          |                       :-=++++++++++++=-:          
+hlds-1          |                   :=++++=--::...::-=++++=:       
+hlds-1          |                 :=+++=:              :-++++:     
+hlds-1          |                 =+++-     =====:         -+++=    
+hlds-1          |               ++++.      ===+++.         .=+++   
+hlds-1          |               =+++           :+++           =+++  
+hlds-1          |             :+++.           -+++=          .+++: 
+hlds-1          |             =++=           =+++++-          =++= 
+hlds-1          |             =++-         .=++-:+++:         -+++ 
+hlds-1          |             =++=        .+++-  -+++.        =++= 
+hlds-1          |             :+++.      :+++.    =+++       .+++: 
+hlds-1          |               =+++     =++=.      ++++++=   =++=  
+hlds-1          |               =+++.  -==-        .+++=-: .=+++   
+hlds-1          |                 =+++-.                   -+++=    
+hlds-1          |                 :=+++=:              :=+++=:     
+hlds-1          |                   :=+++++=-::..::-=+++++=:       
+hlds-1          |                       :-=++++++++++++=-:          
+hlds-1          |                           ..::::::..              
+hlds-1          | 
+hlds-1          |                           hlds-docker 
+hlds-1          | 
+hlds-1          | ====================================================================
+hlds-1          | 💿 Image: custom
+hlds-1          | 📎 Version: custom
+hlds-1          | 🎮 Game: cstrike
+hlds-1          | ====================================================================
+hlds-1          | 
+hlds-1          | ▄▄ LINKS ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+hlds-1          | █                                                                  █
+hlds-1          | █  🔧 Maintained by Jives: https://jives.dev                       █
+hlds-1          | █  💖 Support: https://github.com/sponsors/JamesIves               █
+hlds-1          | █  🔔 Feedback / Issues: https://github.com/JamesIves/hlds-docker  █
+hlds-1          | █                                                                  █
+hlds-1          | ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+hlds-1          | 
+hlds-1          | Starting Half-Life Dedicated Server...
+hlds-1          | Auto-restarting the server on crash
+hlds-1          | 
+hlds-1          | Console initialized.
+hlds-1          | Using breakpad crash handler
+hlds-1          | Setting breakpad minidump AppID = 10
+hlds-1          | Forcing breakpad minidump interfaces to load
+hlds-1          | Looking up breakpad interfaces from steamclient
+hlds-1          | Calling BreakpadMiniDumpSystemInit
+hlds-1          | 01/30 00:27:22 minidumps folder is set to /tmp/dumps
+hlds-1          | 01/30 00:27:22 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(19)
+hlds-1          | Protocol version 48
+hlds-1          | Exe version 1.1.2.7/Stdio (cstrike)
+hlds-1          | Exe build: 01:34:04 Oct  8 2024 (10211)
+hlds-1          | STEAM Auth Server
+hlds-1          | Unable to open logfiles under logs/L0130
+hlds-1          | Logging disabled
+hlds-1          | Server IP address 172.20.0.3:27015
+hlds-1          | couldn't exec maps/cs_assault_upc_load.cfg
+psychostats_web  | -e Warning: No +map specified in the command. Server will start but may not be joinable.
+psychostats_web  | rsync: [sender] link_stat "/temp/mods/*" failed: No such file or directory (2)
+psychostats_web  | rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+psychostats_web  | rsync: [sender] link_stat "/temp/config/*" failed: No such file or directory (2)
+psychostats_web  | rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+psychostats_web  | 
+psychostats_web  |                           ..::::::..              
+psychostats_web  |                       :-=++++++++++++=-:          
+psychostats_web  |                   :=++++=--::...::-=++++=:       
+psychostats_web  |                 :=+++=:              :-++++:     
+psychostats_web  |                 =+++-     =====:         -+++=    
+psychostats_web  |               ++++.      ===+++.         .=+++   
+psychostats_web  |               =+++           :+++           =+++  
+psychostats_web  |             :+++.           -+++=          .+++: 
+psychostats_web  |             =++=           =+++++-          =++= 
+psychostats_web  |             =++-         .=++-:+++:         -+++ 
+psychostats_web  |             =++=        .+++-  -+++.        =++= 
+psychostats_web  |             :+++.      :+++.    =+++       .+++: 
+psychostats_web  |               =+++     =++=.      ++++++=   =++=  
+psychostats_web  |               =+++.  -==-        .+++=-: .=+++   
+psychostats_web  |                 =+++-.                   -+++=    
+psychostats_web  |                 :=+++=:              :=+++=:     
+psychostats_web  |                   :=+++++=-::..::-=+++++=:       
+psychostats_web  |                       :-=++++++++++++=-:          
+psychostats_web  |                           ..::::::..              
+psychostats_web  | 
+psychostats_web  |                           hlds-docker 
+psychostats_web  | 
+psychostats_web  | ====================================================================
+psychostats_web  | 💿 Image: custom
+psychostats_web  | 📎 Version: custom
+psychostats_web  | 🎮 Game: valve
+psychostats_web  | ====================================================================
+psychostats_web  | 
+psychostats_web  | ▄▄ LINKS ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+psychostats_web  | █                                                                  █
+psychostats_web  | █  🔧 Maintained by Jives: https://jives.dev                       █
+psychostats_web  | █  💖 Support: https://github.com/sponsors/JamesIves               █
+psychostats_web  | █  🔔 Feedback / Issues: https://github.com/JamesIves/hlds-docker  █
+psychostats_web  | █                                                                  █
+psychostats_web  | ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+psychostats_web  | 
+psychostats_web  | Starting Half-Life Dedicated Server...
+psychostats_web  | Auto-restarting the server on crash
+psychostats_web  | Using breakpad crash handler
+psychostats_web  | 
+psychostats_web  | Console initialized.
+psychostats_web  | Setting breakpad minidump AppID = 70
+psychostats_web  | Forcing breakpad minidump interfaces to load
+hlds-1           | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+psychostats_web  | Looking up breakpad interfaces from steamclient
+psychostats_web  | Calling BreakpadMiniDumpSystemInit
+psychostats_web  | 01/30 00:27:29 minidumps folder is set to /tmp/dumps
+psychostats_web  | 01/30 00:27:29 Init: Installing breakpad exception handler for appid(70)/version(10211)/tid(19)
+psychostats_web  | Protocol version 48
+psychostats_web  | Exe version 1.1.2.2/Stdio (valve)
+psychostats_web  | Exe build: 01:34:04 Oct  8 2024 (10211)
+psychostats_web  | STEAM Auth Server
+psychostats_web  | Server IP address 172.20.0.4:27015
+psychostats_web  | couldn't exec listip.cfg
+psychostats_web  | couldn't exec banned.cfg
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1           | Looking up breakpad interfaces from steamclient
+hlds-1           | Calling BreakpadMiniDumpSystemInit
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1           | IPC function call IClientUtils::GetSteamRealm took too long: 553 msec
+hlds-1           | IPC function call IClientUtils::GetConnectedUniverse took too long: 52 msec
+hlds-1           | IPC function call IClientUtils::GetIPCountry took too long: 49 msec
+hlds-1           | IPC function call IClientUtils::GetServerRealTime took too long: 50 msec
+hlds-1           | IPC function call IClientUtils::SetAppIDForCurrentPipe took too long: 50 msec
+hlds-1           | IPC function call IClientUtils::SetLauncherType took too long: 51 msec
+hlds-1           | 
+hlds-1           | couldn't exec listip.cfg
+hlds-1           | couldn't exec banned.cfg
+hlds-1           | Connection to Steam servers successful.
+hlds-1           |    VAC secure mode is activated.

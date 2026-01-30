@@ -3,10 +3,10 @@ services:
     build:
       context: .
       args:
-        - GAME=${GAME}
-        - FLAG=${FLAG}
-        - VERSION=${VERSION}
-        - IMAGE=${IMAGE}
+        - GAME=${GAME:-cstrike}
+        - FLAG=${FLAG:-}
+        - VERSION=${VERSION:-custom}
+        - IMAGE=${IMAGE:-custom}
     volumes:
       - "./config:/temp/config"
       - "./mods:/temp/mods"
@@ -17,10 +17,10 @@ services:
       - "27015:27015"
       - "26900:2690/udp"
     environment:
-      - GAME=${GAME}
-      - FLAG=${FLAG}
-      - VERSION=${VERSION}
-      - IMAGE=${IMAGE}
+      - GAME=${GAME:-cstrike}
+      - FLAG=${FLAG:-}
+      - VERSION=${VERSION:-custom}
+      - IMAGE=${IMAGE:-custom}
     command: +maxplayers 18 +log on +map cs_assault_upc +hostname "Sofa's 24/7 UPC"
     restart: unless-stopped
 
@@ -44,8 +44,7 @@ services:
     restart: unless-stopped
 
   psychostats_web:
-    build:
-      context: .
+    image: php:8.2-apache
     container_name: psychostats_web
     depends_on:
       psychostats_db:

@@ -1,0 +1,45 @@
+<div class="ps-plr-profile">
+	{if $conf.theme.map.google_key and $plr.latitude and $plr.longitude}
+	<script>
+		var plr_lat = parseInt('{$plr.latitude}');
+		var plr_lng = parseInt('{$plr.longitude}');
+	</script>
+	<div id="map"></div>
+	{/if}
+	{if $plr.steam_community_url}
+	<div class="row">
+		<label><#Steam Profile#>:</label>
+		<p><a href="{$plr.steam_community_url|escape}" target="_blank">{$plr.steam_community_url|escape}</a><em class="add-friend"> (<a href="{$plr.steam_add_friend_url}"><#Add Friend#></a>)</em></p>
+	</div>
+	{/if}
+	{if $plr.website}
+	<div class="row">
+		<label><#Website#>:</label>
+		<p><a href="{$plr.website|escape}" target="_blank">{$plr.website|urltruncate:60|escape}</a></p>
+	</div>
+	{/if}
+	{if $plr.discord}
+	<div class="row">
+		<label><#Discord Profile#>:</label>
+		<p><a href="https://discordapp.com/users/{$plr.discord|escape}/" target="_blank">https://discordapp.com/users/{$plr.discord|escape}/</a></p>
+	</div>
+	{/if}
+	{if $plr.twitch}
+	<div class="row">
+		<label><#Twitch Channel#></label>
+		<p><a href="https://www.twitch.tv/{$plr.twitch|escape}" target="_blank">https://www.twitch.tv/{$plr.twitch|escape}</a></p>
+	</div>
+	{/if}
+	{if $plr.youtube}
+	<div class="row">
+		<label><#YouTube Channel#>:</label>
+		<p><a href="https://www.youtube.com/user/{$plr.youtube|escape}" target="_blank">https://www.youtube.com/user/{$plr.youtube|escape}</a></p>
+	</div>
+	{/if}
+	{if $plr.socialclub}
+	<div class="row">
+		<label><#SocialClub Profile#>:</label>
+		<p><a href="https://socialclub.rockstargames.com/member/{$plr.socialclub|escape}" target="_blank">https://socialclub.rockstargames.com/member/{$plr.socialclub|escape}</a></p>
+	</div>
+	{/if}
+</div>

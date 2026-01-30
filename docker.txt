@@ -1,284 +1,37 @@
-eterraverse@eterraverse:~/projects/hlds-docker/container$ docker compose up --build
-WARN[0000] The "FLAG" variable is not set. Defaulting to a blank string. 
-WARN[0000] The "VERSION" variable is not set. Defaulting to a blank string. 
-WARN[0000] The "IMAGE" variable is not set. Defaulting to a blank string. 
-WARN[0000] The "FLAG" variable is not set. Defaulting to a blank string. 
-WARN[0000] The "VERSION" variable is not set. Defaulting to a blank string. 
-WARN[0000] The "IMAGE" variable is not set. Defaulting to a blank string. 
-#1 [internal] load local bake definitions
-#1 reading from stdin 1.16kB done
-#1 DONE 0.0s
-
-#2 [hlds internal] load build definition from Dockerfile
-#2 DONE 0.0s
-
-#2 [hlds internal] load build definition from Dockerfile
-#2 transferring dockerfile:
-#2 transferring dockerfile: 3.96kB 0.1s done
-#2 DONE 0.3s
-
-#3 [psychostats_web internal] load metadata for docker.io/library/ubuntu:24.04
-#3 DONE 1.8s
-
-#4 [psychostats_web internal] load .dockerignore
-#4 transferring context: 247B 0.0s done
-#4 DONE 0.2s
-
-#5 [psychostats_web  1/19] FROM docker.io/library/ubuntu:24.04@sha256:cd1dba651b3080c3686ecf4e3c4220f026b521fb76978881737d24f200828b2b
-#5 DONE 0.0s
-
-#6 [hlds internal] load build context
-#6 transferring context: 63B 0.0s done
-#6 DONE 0.2s
-
-#7 [hlds 16/19] WORKDIR /opt/steam/hlds
-#7 CACHED
-
-#8 [hlds  6/19] RUN mkdir /temp
-#8 CACHED
-
-#9 [hlds 15/19] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt
-#9 CACHED
-
-#10 [hlds  8/19] RUN mkdir /temp/mods
-#10 CACHED
-
-#11 [hlds 13/19] RUN sed -i "s/$FLAG//g" /opt/steam/hlds.txt
-#11 CACHED
-
-#12 [hlds  9/19] RUN apt-get update &&     apt-get install -y lib32gcc-s1 lib32z1 lib32stdc++6     libcurl4 libcurl4-openssl-dev     curl unzip ca-certificates tmux tar &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
-#12 CACHED
-
-#13 [hlds  7/19] RUN mkdir /temp/config
-#13 CACHED
-
-#14 [hlds 11/19] COPY ./hlds.txt /opt/steam
-#14 CACHED
-
-#15 [hlds  2/19] RUN dpkg --add-architecture i386 &&     apt-get update &&     apt-get install -y --no-install-recommends curl rsync file libc6:i386 lib32stdc++6 ca-certificates &&     rm -rf /var/lib/apt/lists/*
-#15 CACHED
-
-#16 [hlds  5/19] RUN mkdir /mods
-#16 CACHED
-
-#17 [hlds 10/19] WORKDIR /opt/steam
-#17 CACHED
-
-#18 [hlds 18/19] RUN mkdir -p "/opt/steam/hlds/cstrike" "/opt/steam/hlds/cstrike/cfg" "/opt/steam/hlds/cstrike/logs"
-#18 CACHED
-
-#19 [hlds  4/19] RUN mkdir /config
-#19 CACHED
-
-#20 [hlds  3/19] RUN groupadd -r steam &&     useradd -r -g steam -m -d /opt/steam steam
-#20 CACHED
-
-#21 [hlds 12/19] RUN sed -i "s/$GAME/cstrike/g" /opt/steam/hlds.txt
-#21 CACHED
-
-#22 [hlds 17/19] COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
-#22 CACHED
-
-#23 [hlds 14/19] RUN curl -v -sL media.steampowered.com/client/installer/steamcmd_linux.tar.gz | tar xzvf - &&     file /opt/steam/linux32/steamcmd &&     ./steamcmd.sh +runscript /opt/steam/hlds.txt
-#23 CACHED
-
-#24 [hlds 19/19] RUN chmod +x ./entrypoint.sh
-#24 CACHED
-
-#25 [psychostats_web 16/19] WORKDIR /opt/steam/hlds
-#25 CACHED
-
-#26 [psychostats_web 12/19] RUN sed -i "s/$GAME/valve/g" /opt/steam/hlds.txt
-#26 CACHED
-
-#27 [psychostats_web  6/19] RUN mkdir /temp
-#27 CACHED
-
-#28 [psychostats_web 18/19] RUN mkdir -p "/opt/steam/hlds/valve" "/opt/steam/hlds/valve/cfg" "/opt/steam/hlds/valve/logs"
-#28 CACHED
-
-#29 [psychostats_web  8/19] RUN mkdir /temp/mods
-#29 CACHED
-
-#30 [psychostats_web  4/19] RUN mkdir /config
-#30 CACHED
-
-#31 [psychostats_web  5/19] RUN mkdir /mods
-#31 CACHED
-
-#32 [psychostats_web 11/19] COPY ./hlds.txt /opt/steam
-#32 CACHED
-
-#33 [psychostats_web 14/19] RUN curl -v -sL media.steampowered.com/client/installer/steamcmd_linux.tar.gz | tar xzvf - &&     file /opt/steam/linux32/steamcmd &&     ./steamcmd.sh +runscript /opt/steam/hlds.txt
-#33 CACHED
-
-#34 [psychostats_web 10/19] WORKDIR /opt/steam
-#34 CACHED
-
-#35 [psychostats_web  2/19] RUN dpkg --add-architecture i386 &&     apt-get update &&     apt-get install -y --no-install-recommends curl rsync file libc6:i386 lib32stdc++6 ca-certificates &&     rm -rf /var/lib/apt/lists/*
-#35 CACHED
-
-#36 [psychostats_web  7/19] RUN mkdir /temp/config
-#36 CACHED
-
-#37 [psychostats_web 15/19] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt
-#37 CACHED
-
-#38 [psychostats_web  9/19] RUN apt-get update &&     apt-get install -y lib32gcc-s1 lib32z1 lib32stdc++6     libcurl4 libcurl4-openssl-dev     curl unzip ca-certificates tmux tar &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
-#38 CACHED
-
-#39 [psychostats_web  3/19] RUN groupadd -r steam &&     useradd -r -g steam -m -d /opt/steam steam
-#39 CACHED
-
-#40 [psychostats_web 17/19] COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
-#40 CACHED
-
-#41 [psychostats_web 13/19] RUN sed -i "s/$FLAG//g" /opt/steam/hlds.txt
-#41 CACHED
-
-#42 [psychostats_web 19/19] RUN chmod +x ./entrypoint.sh
-#42 CACHED
-
-#43 [hlds] exporting to image
-#43 exporting layers
-#43 exporting layers done
-#43 writing image sha256:83781f984e664b8eeb5c6a56debf6f577bd6578f45a834f0391ee3d5827ae204 0.2s done
-#43 naming to docker.io/library/container-hlds
-#43 naming to docker.io/library/container-hlds 0.2s done
-#43 ...
-
-#44 [psychostats_web] exporting to image
-#44 exporting layers done
-#44 writing image sha256:a15aa4862b31cb46c6447356945c5c6c62255555c0e3209e8e10f69519fa3a2d 0.1s done
-#44 naming to docker.io/library/container-psychostats_web 0.1s done
-#44 DONE 0.4s
-
-#43 [hlds] exporting to image
-#43 DONE 0.5s
-
-#45 [psychostats_web] resolving provenance for metadata file
-#45 DONE 0.7s
-
-#46 [hlds] resolving provenance for metadata file
-#46 DONE 0.3s
-[+] Running 6/6
- ✔ container-psychostats_web   Built                                                                                              0.0s 
- ✔ container-hlds              Built                                                                                              0.0s 
- ✔ Network container_default   Created                                                                                            0.3s 
- ✔ Container container-hlds-1  Created                                                                                            2.2s 
- ✔ Container psychostats_db    Created                                                                                            1.8s 
- ✔ Container psychostats_web   Created                                                                                            1.8s 
-Attaching to hlds-1, psychostats_db, psychostats_web
-psychostats_db  | 2026-01-30 00:13:19+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.3.39+maria~ubu2004 started.
-hlds-1          | 
-hlds-1          |                           ..::::::..              
-hlds-1          |                       :-=++++++++++++=-:          
-hlds-1          |                   :=++++=--::...::-=++++=:       
-hlds-1          |                 :=+++=:              :-++++:     
-hlds-1          |                 =+++-     =====:         -+++=    
-hlds-1          |               ++++.      ===+++.         .=+++   
-hlds-1          |               =+++           :+++           =+++  
-hlds-1          |             :+++.           -+++=          .+++: 
-hlds-1          |             =++=           =+++++-          =++= 
-hlds-1          |             =++-         .=++-:+++:         -+++ 
-hlds-1          |             =++=        .+++-  -+++.        =++= 
-hlds-1          |             :+++.      :+++.    =+++       .+++: 
-hlds-1          |               =+++     =++=.      ++++++=   =++=  
-hlds-1          |               =+++.  -==-        .+++=-: .=+++   
-hlds-1          |                 =+++-.                   -+++=    
-hlds-1          |                 :=+++=:              :=+++=:     
-hlds-1          |                   :=+++++=-::..::-=+++++=:       
-hlds-1          |                       :-=++++++++++++=-:          
-hlds-1          |                           ..::::::..              
-hlds-1          | 
-hlds-1          |                           hlds-docker 
-hlds-1          | 
-hlds-1          | ====================================================================
-hlds-1          | 💿 Image: custom
-hlds-1          | 📎 Version: custom
-hlds-1          | 🎮 Game: cstrike
-hlds-1          | ====================================================================
-hlds-1          | 
-hlds-1          | ▄▄ LINKS ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-hlds-1          | █                                                                  █
-hlds-1          | █  🔧 Maintained by Jives: https://jives.dev                       █
-hlds-1          | █  💖 Support: https://github.com/sponsors/JamesIves               █
-hlds-1          | █  🔔 Feedback / Issues: https://github.com/JamesIves/hlds-docker  █
-hlds-1          | █                                                                  █
-hlds-1          | ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-hlds-1          | 
-hlds-1          | Starting Half-Life Dedicated Server...
-hlds-1          | Auto-restarting the server on crash
-hlds-1          | Using breakpad crash handler
-hlds-1          | Setting breakpad minidump AppID = 10
-hlds-1          | Forcing breakpad minidump interfaces to load
-hlds-1          | 
-hlds-1          | Console initialized.
-hlds-1          | Looking up breakpad interfaces from steamclient
-hlds-1          | Calling BreakpadMiniDumpSystemInit
-hlds-1          | 01/30 00:13:20 minidumps folder is set to /tmp/dumps
-hlds-1          | 01/30 00:13:20 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(19)
-hlds-1          | Protocol version 48
-hlds-1          | Exe version 1.1.2.7/Stdio (cstrike)
-hlds-1          | Exe build: 01:34:04 Oct  8 2024 (10211)
-hlds-1          | STEAM Auth Server
-hlds-1          | Unable to open logfiles under logs/L0130
-hlds-1          | Logging disabled
-hlds-1          | Server IP address 172.20.0.3:27015
-hlds-1          | couldn't exec maps/cs_assault_upc_load.cfg
-psychostats_db  | 2026-01-30 00:13:20+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-hlds-1          | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-hlds-1          | Looking up breakpad interfaces from steamclient
-hlds-1          | Calling BreakpadMiniDumpSystemInit
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
-hlds-1          | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
-psychostats_db  | 2026-01-30 00:13:20+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.3.39+maria~ubu2004 started.
-hlds-1          | IPC function call IClientUtils::GetSteamRealm took too long: 181 msec
-hlds-1          | 
-hlds-1          | couldn't exec listip.cfg
-hlds-1          | couldn't exec banned.cfg
-psychostats_db  | 2026-01-30 00:13:21+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] Starting MariaDB 10.3.39-MariaDB-1:10.3.39+maria~ubu2004 source revision ca001cf2048f0152689e1895e2dc15486dd0b1af as process 1
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Using Linux native AIO
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Uses event mutexes
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Number of pools: 1
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Using SSE2 crc32 instructions
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Initializing buffer pool, total size = 256M, instances = 1, chunk size = 128M
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Completed initialization of buffer pool
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Creating shared tablespace for temporary tables
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: 10.3.39 started; log sequence number 1625455; transaction id 20
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] Plugin 'FEEDBACK' is disabled.
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] InnoDB: Buffer pool(s) load completed at 260130  0:13:21
-hlds-1          | IPC function call IClientGameServerPacketHandler::GetNextOutgoingPacket took too long: 251 msec
-hlds-1          | Connection to Steam servers successful.
-psychostats_db  | 2026-01-30  0:13:21 0 [Note] Server socket created on IP: '::'.
-hlds-1          |    VAC secure mode is activated.
-psychostats_db  | 2026-01-30  0:13:22 0 [Note] Reading of all Master_info entries succeeded
-psychostats_db  | 2026-01-30  0:13:22 0 [Note] Added new Master_info '' to hash table
-psychostats_db  | 2026-01-30  0:13:22 0 [Note] mysqld: ready for connections.
-psychostats_db  | Version: '10.3.39-MariaDB-1:10.3.39+maria~ubu2004'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
-hlds-1          | flock /sys/devices/virtual/dmi/id/sys_vendor LOCK_SH failed. errno = 13flock /sys/devices/virtual/dmi/id/product_name LOCK_SH failed. errno = 13[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.
-dependency failed to start: container psychostats_db is unhealthy
-eterraverse@eterraverse:~/projects/hlds-docker/container$ 
-
-
-eterraverse@eterraverse:~/projects/hlds-docker/container$ docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"
-NAMES                     PORTS                                                                                                                                             STATUS
-container-hlds-1          0.0.0.0:27015->27015/tcp, 0.0.0.0:27015->27015/udp, [::]:27015->27015/tcp, [::]:27015->27015/udp, 0.0.0.0:26900->2690/udp, [::]:26900->2690/udp   Up 3 minutes
-psychostats_db            3306/tcp                                                                                                                                          Up 3 minutes (unhealthy)
-api                       0.0.0.0:8787->8787/tcp, [::]:8787->8787/tcp                                                                                                       Up 2 months
-destiny-mongo-express-1   0.0.0.0:8082->8081/tcp, [::]:8082->8081/tcp                                                                                                       Up 2 months
-mongo                     0.0.0.0:27018->27017/tcp, [::]:27018->27017/tcp                                                                                                   Up 2 months
-portainer                 0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp, 0.0.0.0:9443->9443/tcp, [::]:9443->9443/tcp, 9000/tcp                                                Up 2 months
-eterraverse@eterraverse:~/projects/hlds-docker/container$ docker logs psychostats_web --tail 200
-eterraverse@eterraverse:~/projects/hlds-docker/container$ docker logs psychostats_web --tail=200
-eterraverse@eterraverse:~/projects/hlds-docker/container$ 
+eterraverse@eterraverse:~/projects/hlds-docker/container$ docker inspect psychostats_db --format '{{json .State.Health}}' | jq
+{
+  "Status": "unhealthy",
+  "FailingStreak": 42,
+  "Log": [
+    {
+      "Start": "2026-01-30T00:20:02.456047144Z",
+      "End": "2026-01-30T00:20:02.51588053Z",
+      "ExitCode": 127,
+      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
+    },
+    {
+      "Start": "2026-01-30T00:20:12.517224913Z",
+      "End": "2026-01-30T00:20:12.576467682Z",
+      "ExitCode": 127,
+      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
+    },
+    {
+      "Start": "2026-01-30T00:20:22.577973097Z",
+      "End": "2026-01-30T00:20:22.635162832Z",
+      "ExitCode": 127,
+      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
+    },
+    {
+      "Start": "2026-01-30T00:20:32.636031052Z",
+      "End": "2026-01-30T00:20:32.695887883Z",
+      "ExitCode": 127,
+      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
+    },
+    {
+      "Start": "2026-01-30T00:20:42.697513446Z",
+      "End": "2026-01-30T00:20:42.758775912Z",
+      "ExitCode": 127,
+      "Output": "/bin/sh: 1: mariadb-admin: not found\n"
+    }
+  ]
+}

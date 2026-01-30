@@ -1,27 +1,11 @@
-psychostats_db  | 2026-01-30 00:03:39+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.3.39+maria~ubu2004 started.
-psychostats_db  | 2026-01-30 00:03:39+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-psychostats_db  | 2026-01-30 00:03:39+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.3.39+maria~ubu2004 started.
-psychostats_db  | 2026-01-30 00:03:40+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] Starting MariaDB 10.3.39-MariaDB-1:10.3.39+maria~ubu2004 source revision ca001cf2048f0152689e1895e2dc15486dd0b1af as process 1
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Using Linux native AIO
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Uses event mutexes
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Number of pools: 1
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Using SSE2 crc32 instructions
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Initializing buffer pool, total size = 256M, instances = 1, chunk size = 128M
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: Completed initialization of buffer pool
-psychostats_db  | 2026-01-30  0:03:40 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] InnoDB: Creating shared tablespace for temporary tables
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] InnoDB: 10.3.39 started; log sequence number 1625446; transaction id 20
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] Plugin 'FEEDBACK' is disabled.
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
-psychostats_db  | 2026-01-30  0:03:41 0 [Note] InnoDB: Buffer pool(s) load completed at 260130  0:03:41
-psychostats_db  | 2026-01-30  0:03:42 0 [Note] Server socket created on IP: '::'.
-psychostats_db  | 2026-01-30  0:03:42 0 [Note] Reading of all Master_info entries succeeded
-psychostats_db  | 2026-01-30  0:03:42 0 [Note] Added new Master_info '' to hash table
-psychostats_db  | 2026-01-30  0:03:42 0 [Note] mysqld: ready for connections.
-psychostats_db  | Version: '10.3.39-MariaDB-1:10.3.39+maria~ubu2004'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+eterraverse@eterraverse:~/projects/hlds-docker/container$ docker compose images
+WARN[0000] The "FLAG" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "VERSION" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "IMAGE" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "FLAG" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "VERSION" variable is not set. Defaulting to a blank string. 
+WARN[0000] The "IMAGE" variable is not set. Defaulting to a blank string. 
+CONTAINER           REPOSITORY                  TAG                 PLATFORM            IMAGE ID            SIZE                CREATED
+container-hlds-1    container-hlds              latest              linux/amd64         83781f984e66        1.27GB              24 minutes ago
+psychostats_db      mariadb                     10.3                linux/amd64         1172e50de434        369MB               292 years ago
+psychostats_web     container-psychostats_web   latest              linux/amd64         a15aa4862b31        1.28GB              16 minutes ago

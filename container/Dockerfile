@@ -61,6 +61,7 @@ WORKDIR /opt/steam
 
 # Copies the hlds.txt file to the container.
 COPY ./hlds.txt /opt/steam
+COPY ./config/server.cfg /opt/steam/hlds/cstrike/server.cfg
 
 # Replaces $GAME with the requested mod to install in hlds.txt.
 # Additionally replaces $FLAG with any additional flags that should be passed to the SteamCMD installer to support betas.

@@ -1,5 +1,27 @@
-docker exec -it psychostats_web bash -lc '
-  mkdir -p /var/www/html/temp &&
-  chown -R www-data:www-data /var/www/html/temp &&
-  chmod -R 775 /var/www/html/temp
-'
+#27 186.6 
+#27 DONE 187.9s
+
+#28 [hlds 16/20] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt
+#28 5.249 /bin/sh: 1: cannot create /opt/steam/hlds/steam_appid.txt: Permission denied
+#28 ERROR: process "/bin/sh -c mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt" did not complete successfully: exit code: 2
+------
+ > [hlds 16/20] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt:
+5.249 /bin/sh: 1: cannot create /opt/steam/hlds/steam_appid.txt: Permission denied
+------
+Dockerfile:78
+
+--------------------
+
+  77 |     # Patches a known issue with the Steam client.
+
+  78 | >>> RUN mkdir -p $HOME/.steam \
+
+  79 | >>>     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32 \
+
+  80 | >>>     && echo 70 > /opt/steam/hlds/steam_appid.txt
+
+  81 |     
+
+--------------------
+
+target hlds: failed to solve: process "/bin/sh -c mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt" did not complete successfully: exit code: 2

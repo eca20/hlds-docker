@@ -44,7 +44,9 @@ services:
     restart: unless-stopped
 
   psychostats_web:
-    image: php:8.2-apache
+    build:
+      context: .
+      dockerfile: Dockerfile.psychostats_web
     container_name: psychostats_web
     depends_on:
       psychostats_db:

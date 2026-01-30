@@ -61,7 +61,8 @@ WORKDIR /opt/steam
 
 # Copies the hlds.txt file to the container.
 COPY ./hlds.txt /opt/steam
-COPY ./config/server.cfg /opt/steam/hlds/cstrike/server.cfg
+# NOTE: server.cfg is copied later (after SteamCMD) so the destination directory exists
+# and to avoid root-owned directory creation issues.
 
 # Replaces $GAME with the requested mod to install in hlds.txt.
 # Additionally replaces $FLAG with any additional flags that should be passed to the SteamCMD installer to support betas.
@@ -72,6 +73,12 @@ RUN sed -i "s/\$FLAG/${FLAG}/g" /opt/steam/hlds.txt
 RUN curl -v -sL media.steampowered.com/client/installer/steamcmd_linux.tar.gz | tar xzvf - && \
     file /opt/steam/linux32/steamcmd && \
     ./steamcmd.sh +runscript /opt/steam/hlds.txt
+
+# Ensure the installed HLDS directory is writable by the steam user.
+# Some COPY steps can create root-owned intermediate dirs which then break later writes.
+USER root
+RUN chown -R steam:steam /opt/steam/hlds
+USER steam
 
 # Writes the steam_appid.txt file to the hlds directory with the title id for Half-Life.
 # Patches a known issue with the Steam client.
@@ -86,6 +93,8 @@ COPY --chown=steam:steam ./entrypoint.sh ./entrypoint.sh
 # NOTE: Server config and mods are bind-mounted at runtime (via /temp/config and /temp/mods)
 # to allow live updates without rebuilding the image (and without re-running SteamCMD).
 RUN mkdir -p "/opt/steam/hlds/${GAME}" "/opt/steam/hlds/${GAME}/cfg" "/opt/steam/hlds/${GAME}/logs"
+# Provide a default server.cfg inside the image. (You can still override via bind-mount in docker-compose.)
+COPY --chown=steam:steam ./config/server.cfg /opt/steam/hlds/${GAME}/cfg/server.cfg
 
 # Sets the entrypoint script as executable.
 RUN chmod +x ./entrypoint.sh

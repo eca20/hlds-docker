@@ -52,6 +52,10 @@ services:
     ports:
       - "8080:80"
     volumes:
-      # PsychoStats web files (you will copy PsychoStats' `www/` contents here)
+      # Mount the full PsychoStats distribution so `root/`, `scripts/`, etc. are available
+      # (the installer and runtime often reference these outside of `www/`).
+      - "./psychostats:/opt/psychostats"
+
+      # Apache document root serves the PsychoStats `www/` directory
       - "./psychostats/www:/var/www/html"
     restart: unless-stopped

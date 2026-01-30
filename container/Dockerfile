@@ -38,15 +38,20 @@ RUN dpkg --add-architecture i386 && \
     rm -rf /var/lib/apt/lists/*
 
 # Creates a new user and group for the SteamCMD installer.
+# RUN groupadd -r steam && \
+#     useradd -r -g steam -m -d /opt/steam steam
+ARG STEAM_UID=1000
+ARG STEAM_GID=1000
+
 RUN groupadd -r steam && \
     useradd -r -g steam -m -d /opt/steam steam
-
 # Creates the necessary directories for the Half-Life Dedicated Server, including the configuration and mods directories.
 RUN mkdir /config
 RUN mkdir /mods
 RUN mkdir /temp
 RUN mkdir /temp/config
 RUN mkdir /temp/mods
+RUN mkdir -p /opt/steam && chown -R steam:steam /opt/steam /temp /config /mods
 
 RUN apt-get update && \
     apt-get install -y lib32gcc-s1 lib32z1 lib32stdc++6 \
@@ -77,7 +82,7 @@ RUN curl -v -sL media.steampowered.com/client/installer/steamcmd_linux.tar.gz | 
 # Ensure the installed HLDS directory is writable by the steam user.
 # Some COPY steps can create root-owned intermediate dirs which then break later writes.
 USER root
-RUN chown -R steam:steam /opt/steam/hlds
+RUN chown -R steam:steam /opt/steam
 USER steam
 
 # Writes the steam_appid.txt file to the hlds directory with the title id for Half-Life.

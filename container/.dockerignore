@@ -1,5 +1,5 @@
 # Runtime server configuration (bind-mounted)
-config/
+
 mods/
 
 # Persistent runtime data (bind-mounted)
@@ -11,3 +11,5 @@ psychostats/
 # Logs and temporary files
 *.log
 *.tmp
+
+!/config/server.cfg

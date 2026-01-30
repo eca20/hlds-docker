@@ -1,0 +1,12 @@
+FROM perl:5.36
+
+RUN apt-get update && apt-get install -y \
+    mariadb-client \
+    libdbi-perl \
+    libdbd-mysql-perl \
+    cron \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /opt/psychostats
+
+CMD ["cron", "-f"]

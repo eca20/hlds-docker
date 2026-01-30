@@ -1,1 +1,5 @@
-Fatal error: Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/includes/DB/mysql.php:67 Stack trace: #0 /var/www/html/includes/DB/mysql.php(67): mysqli_connect('localhost', 'psychostats', Object(SensitiveParameterValue)) #1 /var/www/html/includes/DB/mysql.php(45): DB_mysql->connect() #2 /var/www/html/includes/class_DB.php(69): DB_mysql->__construct(Array) #3 /var/www/html/install/common.php(83): PsychoDB::create(Array) #4 /var/www/html/install/index.php(25): require_once('/var/www/html/i...') #5 {main} thrown in /var/www/html/includes/DB/mysql.php on line 67
+docker exec -it psychostats_web bash -lc '
+  mkdir -p /var/www/html/temp &&
+  chown -R www-data:www-data /var/www/html/temp &&
+  chmod -R 775 /var/www/html/temp
+'

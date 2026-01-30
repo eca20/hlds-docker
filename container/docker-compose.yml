@@ -2,48 +2,33 @@ services:
   hlds:
     build:
       context: .
-      dockerfile: Dockerfile
       args:
         - GAME=${GAME:-cstrike}
         - FLAG=${FLAG:-}
         - VERSION=${VERSION:-custom}
         - IMAGE=${IMAGE:-custom}
-
-    # IMPORTANT:
-    # If you bind-mount logs from the host, permissions come from the host.
-    # Running as root avoids "Unable to open logfiles..." due to host dir perms.
-    # (If you'd rather run as steam, we should patch entrypoint.sh to fix perms then drop privileges.)
-    user: "0:0"
-
     volumes:
       - "./config:/temp/config"
       - "./mods:/temp/mods"
-
-      # Host bind mount for logs (permissions controlled by host FS)
       - "./data/hlds_logs:/opt/steam/hlds/cstrike/logs"
-
-      # Your server.cfg overrides anything installed by SteamCMD
-      - "./config/server.cfg:/opt/steam/hlds/cstrike/cfg/server.cfg:ro"
-
+      - ./config/server.cfg:/opt/steam/hlds/cstrike/cfg/server.cfg:ro
     ports:
       - "27015:27015/udp"
-      - "27015:27015/tcp"
+      - "27015:27015"
       - "26900:2690/udp"
-
     environment:
       - GAME=${GAME:-cstrike}
       - FLAG=${FLAG:-}
       - VERSION=${VERSION:-custom}
       - IMAGE=${IMAGE:-custom}
-
     command: +maxplayers 18 +log on +map cs_assault_upc +hostname "Sofa's 24/7 UPC"
     restart: unless-stopped
-
 
   psychostats_db:
     image: mariadb:10.3
     container_name: psychostats_db
     environment:
+      # NOTE: Move these to a .env file for production
       - MARIADB_DATABASE=psychostats
       - MARIADB_USER=psychostats
       - MARIADB_PASSWORD=psychostats_pass
@@ -58,7 +43,6 @@ services:
       start_period: 60s
     restart: unless-stopped
 
-
   psychostats_web:
     build:
       context: .
@@ -70,9 +54,10 @@ services:
     ports:
       - "8080:80"
     volumes:
-      # Full PsychoStats distribution available in-container
+      # Mount the full PsychoStats distribution so `root/`, `scripts/`, etc. are available
+      # (the installer and runtime often reference these outside of `www/`).
       - "./psychostats:/opt/psychostats"
 
-      # Apache docroot serves the web UI
+      # Apache document root serves the PsychoStats `www/` directory
       - "./psychostats/www:/var/www/html"
     restart: unless-stopped

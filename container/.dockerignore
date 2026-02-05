@@ -7,6 +7,10 @@ data/
 
 # PsychoStats runtime files (bind-mounted)
 psychostats/
+!psychostats/
+psychostats/**
+!psychostats/parser/
+!psychostats/parser/run.sh
 
 # Logs and temporary files
 *.log

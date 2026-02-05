@@ -1,27 +1,12 @@
-#27 186.6 
-#27 DONE 187.9s
-
-#28 [hlds 16/20] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt
-#28 5.249 /bin/sh: 1: cannot create /opt/steam/hlds/steam_appid.txt: Permission denied
-#28 ERROR: process "/bin/sh -c mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt" did not complete successfully: exit code: 2
-------
- > [hlds 16/20] RUN mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt:
-5.249 /bin/sh: 1: cannot create /opt/steam/hlds/steam_appid.txt: Permission denied
-------
-Dockerfile:78
-
---------------------
-
-  77 |     # Patches a known issue with the Steam client.
-
-  78 | >>> RUN mkdir -p $HOME/.steam \
-
-  79 | >>>     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32 \
-
-  80 | >>>     && echo 70 > /opt/steam/hlds/steam_appid.txt
-
-  81 |     
-
---------------------
-
-target hlds: failed to solve: process "/bin/sh -c mkdir -p $HOME/.steam     && ln -s /opt/steam/linux32 $HOME/.steam/sdk32     && echo 70 > /opt/steam/hlds/steam_appid.txt" did not complete successfully: exit code: 2
+2026-02-05 04:49:58 	info 	- 	Daily process completed: 'maxdays' (Time elapsed: 00:01)
+2026-02-05 04:49:58 	info 	- 	Daily 'decay' process skipped, decay is disabled.
+2026-02-05 04:49:58 	info 	- 	Daily 'clans' process running (Last updated: Wed Sep 3 12:57:40 2008)
+2026-02-05 04:49:58 	info 	- 	Daily 'ranks' process running (Last updated: Wed Sep 3 12:57:40 2008)
+2026-02-05 04:49:58 	info 	- 	Daily process completed: 'ranks' (Time elapsed: 00:00)
+2026-02-05 04:49:58 	info 	- 	Daily 'awards' process running (Last updated: Wed Sep 3 12:57:41 2008)
+2026-02-05 04:49:58 	info 	- 	No historical stats available. Aborting award calculations.
+2026-02-05 04:49:58 	info 	- 	PsychoStats v3.2 exiting (elapsed: 00:00:02, logs: 0, lines: 0)
+2026-02-05 04:49:57 	info 	- 	PsychoStats v3.2 initialized.
+2026-02-05 04:49:57 	warning 	- 	Error opening logsource directory /home/eterraverse/projects/hlds-docker/container/data/hlds_logs: No such file or directory
+2026-02-05 04:49:57 	info 	- 	Daily updates about to be performed: maxdays,decay,activity,players,clans,ranks,awards
+2026-02-05 04:49:57 	info 	- 	Daily 'maxdays' process running (Last updated: Wed Sep 3 12:57:40 2008)

@@ -72,11 +72,12 @@ services:
     depends_on: 
       psychostats_db:
         condition: service_healthy
+    environment:
+      - LOG_SOURCE=/opt/steam/hlds/cstrike/logs
+      - RUN_INTERVAL_SECONDS=60
     volumes:
       - "./psychostats:/opt/psychostats"
       - hlds_logs:/opt/steam/hlds/cstrike/logs:ro
-      - "./cron.stats:/etc/cron.d/psychostats"
-    command: ["cron", "-f"]
     restart: unless-stopped
 volumes:
   hlds_logs: 

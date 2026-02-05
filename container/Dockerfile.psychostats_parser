@@ -9,4 +9,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /opt/psychostats
 
-CMD ["cron", "-f"]
+COPY ./psychostats/parser/run.sh /opt/psychostats/parser/run.sh
+RUN chmod +x /opt/psychostats/parser/run.sh
+
+CMD ["/opt/psychostats/parser/run.sh"]

@@ -10,3 +10,462 @@
 2026-02-05 04:49:57 	warning 	- 	Error opening logsource directory /home/eterraverse/projects/hlds-docker/container/data/hlds_logs: No such file or directory
 2026-02-05 04:49:57 	info 	- 	Daily updates about to be performed: maxdays,decay,activity,players,clans,ranks,awards
 2026-02-05 04:49:57 	info 	- 	Daily 'maxdays' process running (Last updated: Wed Sep 3 12:57:40 2008)
+
+#43 DONE 0.0s
+[+] Running 8/8
+ ✔ container-hlds                Built                                                                                            0.0s 
+ ✔ container-psychostats_web     Built                                                                                            0.0s 
+ ✔ container-psychostats_parser  Built                                                                                            0.0s 
+ ✔ Network container_default     Created                                                                                          0.4s 
+ ✔ Container container-hlds-1    Created                                                                                          2.1s 
+ ✔ Container psychostats_db      Created                                                                                          2.0s 
+ ✔ Container psychostats_web     Created                                                                                          2.8s 
+ ✔ Container psychostats_parser  Created                                                                                          2.3s 
+Attaching to hlds-1, psychostats_db, psychostats_parser, psychostats_web
+psychostats_db  | 2026-02-05 17:20:13+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.3.39+maria~ubu2004 started.
+hlds-1          | rsync: [generator] chgrp "/opt/steam/hlds/cstrike/maps" failed: Read-only file system (30)
+hlds-1          | rsync: [generator] chgrp "/opt/steam/hlds/cstrike/maps/cs_assault_upc.bsp" failed: Read-only file system (30)
+psychostats_db  | 2026-02-05 17:20:15+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+hlds-1          | rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+hlds-1          | 
+hlds-1          |                           ..::::::..              
+hlds-1          |                       :-=++++++++++++=-:          
+hlds-1          |                   :=++++=--::...::-=++++=:       
+hlds-1          |                 :=+++=:              :-++++:     
+hlds-1          |                 =+++-     =====:         -+++=    
+hlds-1          |               ++++.      ===+++.         .=+++   
+hlds-1          |               =+++           :+++           =+++  
+hlds-1          |             :+++.           -+++=          .+++: 
+hlds-1          |             =++=           =+++++-          =++= 
+hlds-1          |             =++-         .=++-:+++:         -+++ 
+hlds-1          |             =++=        .+++-  -+++.        =++= 
+hlds-1          |             :+++.      :+++.    =+++       .+++: 
+hlds-1          |               =+++     =++=.      ++++++=   =++=  
+hlds-1          |               =+++.  -==-        .+++=-: .=+++   
+hlds-1          |                 =+++-.                   -+++=    
+hlds-1          |                 :=+++=:              :=+++=:     
+hlds-1          |                   :=+++++=-::..::-=+++++=:       
+hlds-1          |                       :-=++++++++++++=-:          
+hlds-1          |                           ..::::::..              
+hlds-1          | 
+hlds-1          |                           hlds-docker 
+hlds-1          | 
+hlds-1          | ====================================================================
+hlds-1          | 💿 Image: custom
+hlds-1          | 📎 Version: custom
+hlds-1          | 🎮 Game: cstrike
+hlds-1          | ====================================================================
+hlds-1          | 
+hlds-1          | ▄▄ LINKS ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+hlds-1          | █                                                                  █
+hlds-1          | █  🔧 Maintained by Jives: https://jives.dev                       █
+hlds-1          | █  💖 Support: https://github.com/sponsors/JamesIves               █
+hlds-1          | █  🔔 Feedback / Issues: https://github.com/JamesIves/hlds-docker  █
+hlds-1          | █                                                                  █
+hlds-1          | ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+hlds-1          | 
+hlds-1          | Starting Half-Life Dedicated Server...
+hlds-1          | Auto-restarting the server on crash
+psychostats_db  | 2026-02-05 17:20:15+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.3.39+maria~ubu2004 started.
+psychostats_db  | 2026-02-05 17:20:16+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] Starting MariaDB 10.3.39-MariaDB-1:10.3.39+maria~ubu2004 source revision ca001cf2048f0152689e1895e2dc15486dd0b1af as process 1
+hlds-1          | Using breakpad crash handler
+hlds-1          | Setting breakpad minidump AppID = 10
+hlds-1          | Forcing breakpad minidump interfaces to load
+hlds-1          | 
+hlds-1          | Console initialized.
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Using Linux native AIO
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Uses event mutexes
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Number of pools: 1
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Using SSE2 crc32 instructions
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Initializing buffer pool, total size = 256M, instances = 1, chunk size = 128M
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: Completed initialization of buffer pool
+psychostats_db  | 2026-02-05 17:20:16 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: 10.3.39 started; log sequence number 1625795; transaction id 20
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] Plugin 'FEEDBACK' is disabled.
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] Recovering after a crash using tc.log
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] Starting crash recovery...
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] Crash recovery finished.
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] InnoDB: Buffer pool(s) load completed at 260205 17:20:17
+psychostats_db  | 2026-02-05 17:20:17 0 [Note] Server socket created on IP: '::'.
+psychostats_db  | 2026-02-05 17:20:18 0 [Note] Reading of all Master_info entries succeeded
+psychostats_db  | 2026-02-05 17:20:18 0 [Note] Added new Master_info '' to hash table
+psychostats_db  | 2026-02-05 17:20:18 0 [Note] mysqld: ready for connections.
+psychostats_db  | Version: '10.3.39-MariaDB-1:10.3.39+maria~ubu2004'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+hlds-1          | Looking up breakpad interfaces from steamclient
+hlds-1          | Calling BreakpadMiniDumpSystemInit
+hlds-1          | 02/05 17:20:20 minidumps folder is set to /tmp/dumps
+hlds-1          | 02/05 17:20:20 Init: Installing breakpad exception handler for appid(10)/version(10211)/tid(19)
+hlds-1          | Protocol version 48
+hlds-1          | Exe version 1.1.2.7/Stdio (cstrike)
+hlds-1          | Exe build: 01:34:04 Oct  8 2024 (10211)
+hlds-1          | STEAM Auth Server
+hlds-1          | Server logging data to file logs/L0205008.log
+hlds-1          | L 02/05/2026 - 17:20:21: Log file started (file "logs/L0205008.log") (game "cstrike") (version "48/1.1.2.7/Stdio/10211")
+hlds-1          | Server IP address 172.20.0.3:27015
+hlds-1          |    
+hlds-1          |    Metamod version 1.21.1-am  Copyright (c) 2001-2013 Will Day <willday@metamod.org>
+hlds-1          |    Metamod comes with ABSOLUTELY NO WARRANTY; for details type `meta gpl'.
+hlds-1          |    This is free software, and you are welcome to redistribute it
+hlds-1          |    under certain conditions; type `meta gpl' for details.
+hlds-1          |    
+hlds-1          | L 02/05/2026 - 17:20:21: [META] Metamod v1.21.1-am  2013-09-26
+hlds-1          | L 02/05/2026 - 17:20:21: [META] by Will Day <willday@metamod.org>
+hlds-1          | L 02/05/2026 - 17:20:21: [META]    http://www.metamod.org/
+hlds-1          | L 02/05/2026 - 17:20:21: [META] compiled: Sep 26 2013, 17:09:41 -0500 (optimized)
+hlds-1          | L 02/05/2026 - 17:20:21: [META] engine: i486
+hlds-1          | L 02/05/2026 - 17:20:21: [META] Recognized game 'cstrike'; using dllfile 'cs.so'
+hlds-1          | L 02/05/2026 - 17:20:21: [META] Game DLL for 'Counter-Strike' loaded successfully
+hlds-1          | L 02/05/2026 - 17:20:21: [META] ini: Begin reading plugins list: /opt/steam/hlds/cstrike/addons/metamod/plugins.ini
+hlds-1          | L 02/05/2026 - 17:20:21: [META] ini: Read plugin config for: <amxmodx_mm_i386.so>
+hlds-1          | L 02/05/2026 - 17:20:21: [META] ini: Finished reading plugins list: /opt/steam/hlds/cstrike/addons/metamod/plugins.ini; Found 1 plugins to load
+hlds-1          | L 02/05/2026 - 17:20:21: [META] dll: Loading plugins...
+hlds-1          | L 02/05/2026 - 17:20:21: [AMXX] WARNING:      meta-interface version mismatch; requested=AMXX ours=5:13
+hlds-1          | L 02/05/2026 - 17:20:21: [AMXX] WARNING: metamod version is newer than        expected; consider finding a newer version of this plugin
+hlds-1          | L 02/05/2026 - 17:20:21: [META] dll: Note: plugin '<amxmodx_mm_i386.so>' is using an older interface version (5:11), not the latest interface version (5:13); there might be an updated version of the plugin
+hlds-1          | 
+hlds-1          |    AMX Mod X version 1.50 Copyright (c) 2004-2005 AMX Mod X Development Team 
+hlds-1          |    AMX Mod X comes with ABSOLUTELY NO WARRANTY; for details type `amxx gpl'.
+hlds-1          |    This is free software and you are welcome to redistribute it under 
+hlds-1          |    certain conditions; type 'amxx gpl' for details.
+hlds-1          |   
+hlds-1          | L 02/05/2026 - 17:20:21: [META] dll: Loaded plugin 'AMX Mod X': AMX Mod X v1.50 Aug  2 2005, AMX Mod X Dev Team
+hlds-1          | L 02/05/2026 - 17:20:21: [META] dll: Finished loading 1 plugins
+hlds-1          | L 02/05/2026 - 17:20:21: Log file closed
+hlds-1          | Server logging data to file logs/L0205009.log
+hlds-1          | L 02/05/2026 - 17:20:21: Log file started (file "logs/L0205009.log") (game "cstrike") (version "48/1.1.2.7/Stdio/10211")
+hlds-1          | L 02/05/2026 - 17:20:21: Loading map "cs_assault_upc"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvars start
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_bomb_viewable_check_interval" = "0.5"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_debug_level" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_examine_time" = "0.5"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_hint_interval_time" = "10.0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_look_angle" = "10"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_look_distance" = "200"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_message_character_display_time_coefficient" = "0.07"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_message_minimum_display_time" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_message_repeats" = "5"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "_tutor_view_distance" = "1000"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "allow_spectators" = "1.0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "amxmodx_version" = ""
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "coop" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "deathmatch" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "decalfrequency" = "30"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "edgefriction" = "2"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "hostage_debug" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "hostage_stop" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "humans_join_team" = "any"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "max_queries_sec" = "3.0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "max_queries_sec_global" = "30"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "max_queries_window" = "60"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "metamod_version" = "1.21.1-am"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_allowmonsters" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_autokick" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_autokick_timeout" = "-1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_autoteambalance" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_buytime" = "1.5"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_c4timer" = "45"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_chattime" = "10"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_consistency" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_fadetoblack" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_flashlight" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_footsteps" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_forcecamera" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_forcechasecam" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_fragsleft" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_freezetime" = "6"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_friendlyfire" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_ghostfrequency" = "0.1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_hostagepenalty" = "13"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_infinite_ammo" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_kickpercent" = "0.66"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_limitteams" = "2"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_logdetail" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_logfile" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_logmessages" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_mapvoteratio" = "0.66"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_maxrounds" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_mirrordamage" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_playerid" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_roundtime" = "5"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_scoreboard_showhealth" = "3"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_scoreboard_showmoney" = "3"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_startmoney" = "800"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_timeleft" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_timelimit" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_tkpunish" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_windifference" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "mp_winlimit" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "pausable" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_accelerate" = "10"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_airaccelerate" = "10"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_allow_autoaim" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_allow_shaders" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_allowupload" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_bounce" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_cheats" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_clienttrace" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_contact" = ""
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_friction" = "4"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_gravity" = "800"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_logblocks" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_maxrate" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_maxspeed" = "320"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_minrate" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_password" = ""
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_proxies" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_restart" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_restartround" = "0"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_stepsize" = "18"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_stopspeed" = "100"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_uploadmax" = "0.5"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_uploadmaxcount" = "10"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_voiceenable" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_wateraccelerate" = "10"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvar "sv_waterfriction" = "1"
+hlds-1          | L 02/05/2026 - 17:20:21: Server cvars end
+hlds-1          | L 02/05/2026 - 17:20:24: -------- Mapchange --------
+hlds-1          | L 02/05/2026 - 17:20:24: Server cvar "amxmodx_version" = "1.50"
+hlds-1          | L 02/05/2026 - 17:20:24: [AMXX] Plugin file open error (plugin "pluginmenu.amxx")
+hlds-1          | L 02/05/2026 - 17:20:24: [AMXX] Plugin "statsx.amxx" failed to load: Plugin uses an unknown function (name "get_user_rstats") - check your modules.ini.
+hlds-1          | L 02/05/2026 - 17:20:24: Server cvar "sv_maxspeed" = "900"
+hlds-1          | couldn't exec maps/cs_assault_upc_load.cfg
+hlds-1          | L 02/05/2026 - 17:20:24: Server cvar "pausable" = "0"
+psychostats_web  | [Thu Feb 05 17:20:27.013671 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.65 (Debian) PHP/8.2.30 configured -- resuming normal operations
+psychostats_web  | [Thu Feb 05 17:20:27.013723 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+hlds-1           | [AMXX] Loaded 2 admins from file
+hlds-1           | L 02/05/2026 - 17:20:28: Server cvar "amx_language" = "en"
+hlds-1           | L 02/05/2026 - 17:20:28: [nextmap.amxx] WARNING: Couldn't find a valid map or the file doesn't exist (file "mapcycle.txt")
+hlds-1           | L 02/05/2026 - 17:20:28: Server cvar "amx_nextmap" = "cs_assault_upc"
+hlds-1           | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1           | Looking up breakpad interfaces from steamclient
+hlds-1           | Calling BreakpadMiniDumpSystemInit
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1           | IPC function call IClientUtils::GetSteamRealm took too long: 605 msec
+hlds-1           | IPC function call IClientUtils::SetAppIDForCurrentPipe took too long: 49 msec
+hlds-1           | L 02/05/2026 - 17:20:30: Server cvar "sv_accelerate" = "5"
+hlds-1           | L 02/05/2026 - 17:20:30: Server cvar "sv_stopspeed" = "75"
+hlds-1           | L 02/05/2026 - 17:20:30: Started map "cs_assault_upc" (CRC "1080147872")
+hlds-1           | 
+hlds-1           | Executing AMX Mod X Configuration File 
+hlds-1           | Scrolling message displaying frequency: 10:00 minutes
+hlds-1           | L 02/05/2026 - 17:20:30: [META] ini: Begin re-reading plugins list: /opt/steam/hlds/cstrike/addons/metamod/plugins.ini
+hlds-1           | L 02/05/2026 - 17:20:30: [META] ini: Read plugin config for: AMX Mod X
+hlds-1           | L 02/05/2026 - 17:20:30: [META] ini: Finished reading plugins list: /opt/steam/hlds/cstrike/addons/metamod/plugins.ini; Found 1 plugins
+hlds-1           | L 02/05/2026 - 17:20:30: [META] dll: Updating plugins...
+hlds-1           | L 02/05/2026 - 17:20:30: [META] dll: Finished updating 1 plugins; kept 1, loaded 0, unloaded 0, reloaded 0, delayed 0
+hlds-1           | CWorkThreadPool::~CWorkThreadPool: work complete queue not empty, 1 items discarded.
+hlds-1           | CWorkThreadPool::~CWorkThreadPool: work processing queue not empty: 6 items discarded.
+hlds-1           | Server IP address 172.20.0.3:27015
+hlds-1           | L 02/05/2026 - 17:20:31: Server shutdown
+hlds-1           | L 02/05/2026 - 17:20:31: Log file closed
+hlds-1           | Server logging data to file logs/L0205010.log
+hlds-1           | L 02/05/2026 - 17:20:31: Log file started (file "logs/L0205010.log") (game "cstrike") (version "48/1.1.2.7/Stdio/10211")
+hlds-1           | L 02/05/2026 - 17:20:31: Loading map "cs_assault_upc"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvars start
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_bomb_viewable_check_interval" = "0.5"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_debug_level" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_examine_time" = "0.5"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_hint_interval_time" = "10.0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_look_angle" = "10"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_look_distance" = "200"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_message_character_display_time_coefficient" = "0.07"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_message_minimum_display_time" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_message_repeats" = "5"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "_tutor_view_distance" = "1000"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "allow_spectators" = "1.0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "amx_language" = "en"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "amx_nextmap" = "cs_assault_upc"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "amx_timeleft" = "00:00"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "amxmodx_version" = "1.50"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "coop" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "deathmatch" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "decalfrequency" = "30"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "edgefriction" = "2"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "hostage_debug" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "hostage_stop" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "humans_join_team" = "any"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "max_queries_sec" = "3.0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "max_queries_sec_global" = "30"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "max_queries_window" = "60"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "metamod_version" = "1.21.1-am"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_allowmonsters" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_autokick" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_autokick_timeout" = "-1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_autoteambalance" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_buytime" = "1.5"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_c4timer" = "45"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_chattime" = "10"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_consistency" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_fadetoblack" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_flashlight" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_footsteps" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_forcecamera" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_forcechasecam" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_fragsleft" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_freezetime" = "6"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_friendlyfire" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_ghostfrequency" = "0.1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_hostagepenalty" = "13"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_infinite_ammo" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_kickpercent" = "0.66"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_limitteams" = "2"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_logdetail" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_logfile" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_logmessages" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_mapvoteratio" = "0.66"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_maxrounds" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_mirrordamage" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_playerid" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_roundtime" = "5"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_scoreboard_showhealth" = "3"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_scoreboard_showmoney" = "3"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_startmoney" = "800"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_timeleft" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_timelimit" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_tkpunish" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_windifference" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_winlimit" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "pausable" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_accelerate" = "5"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_airaccelerate" = "10"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_allow_autoaim" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_allow_shaders" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_allowupload" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_alltalk" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_bounce" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_cheats" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_clienttrace" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_contact" = ""
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_friction" = "4"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_gravity" = "800"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_logblocks" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_maxrate" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_maxspeed" = "900"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_minrate" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_password" = ""
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_proxies" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_restart" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_restartround" = "0"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_stepsize" = "18"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_stopspeed" = "75"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_uploadmax" = "0.5"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_uploadmaxcount" = "10"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_voiceenable" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_wateraccelerate" = "10"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_waterfriction" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvars end
+hlds-1           | L 02/05/2026 - 17:20:31: -------- Mapchange --------
+hlds-1           | L 02/05/2026 - 17:20:31: [AMXX] Plugin file open error (plugin "pluginmenu.amxx")
+hlds-1           | L 02/05/2026 - 17:20:31: [AMXX] Plugin "statsx.amxx" failed to load: Plugin uses an unknown function (name "get_user_rstats") - check your modules.ini.
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_alltalk" = "1"
+hlds-1           | L 02/05/2026 - 17:20:31: Log file closed
+hlds-1           | Server logging data to file logs/L0205011.log
+hlds-1           | L 02/05/2026 - 17:20:31: Log file started (file "logs/L0205011.log") (game "cstrike") (version "48/1.1.2.7/Stdio/10211")
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "mp_logdetail" = "3"
+hlds-1           | L 02/05/2026 - 17:20:31: Server cvar "sv_logblocks" = "1"
+hlds-1           | couldn't exec maps/cs_assault_upc_unload.cfg
+hlds-1           | couldn't exec maps/cs_assault_upc_load.cfg
+hlds-1           | [AMXX] Loaded 2 admins from file
+hlds-1           | L 02/05/2026 - 17:20:31: [nextmap.amxx] WARNING: Couldn't find a valid map or the file doesn't exist (file "mapcycle.txt")
+hlds-1           | [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+hlds-1           | Forcing breakpad minidump interfaces to load
+hlds-1           | Looking up breakpad interfaces from steamclient
+hlds-1           | Calling BreakpadMiniDumpSystemInit
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1           | Looking up breakpad interfaces from steamclient
+hlds-1           | Calling BreakpadMiniDumpSystemInit
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded yes]
+hlds-1           | SteamInternal_SetMinidumpSteamID:  Setting Steam ID:  76561197960265728
+hlds-1           | IPC function call IClientUtils::GetSteamRealm took too long: 41 msec
+hlds-1           | L 02/05/2026 - 17:20:31: Started map "cs_assault_upc" (CRC "1080147872")
+hlds-1           | 
+hlds-1           | Executing AMX Mod X Configuration File 
+hlds-1           | Scrolling message displaying frequency: 10:00 minutes
+hlds-1           | Connection to Steam servers successful.
+hlds-1           |    VAC secure mode is activated.
+hlds-1           | L 02/05/2026 - 17:20:38: World triggered "Round_Start"
+hlds-1           | flock /sys/devices/virtual/dmi/id/sys_vendor LOCK_SH failed. errno = 13flock /sys/devices/virtual/dmi/id/product_name LOCK_SH failed. errno = 13[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.
+hlds-1           | L 02/05/2026 - 17:22:59: "edmeister<1><STEAM_0:0:697174><>" connected, address "192.168.1.151:27005"
+hlds-1           | L 02/05/2026 - 17:22:59: [admin.amxx] Login: "edmeister<1><STEAM_0:0:697174><>" became an admin (account "STEAM_0:0:697174") (access "abcdefghijklmnopqrstu") (address "192.168.1.151")
+hlds-1           | L 02/05/2026 - 17:22:59: "edmeister<1><STEAM_0:0:697174><>" STEAM USERID validated
+hlds-1           | L 02/05/2026 - 17:23:09: "edmeister<1><STEAM_0:0:697174><>" entered the game
+hlds-1           | L 02/05/2026 - 17:23:14: "edmeister<1><STEAM_0:0:697174><>" joined team "TERRORIST"
+hlds-1           | L 02/05/2026 - 17:25:38: Team "TERRORIST" triggered "Hostages_Not_Rescued" (CT "0") (T "1")
+hlds-1           | L 02/05/2026 - 17:25:38: World triggered "Round_End"
+hlds-1           | L 02/05/2026 - 17:25:49: World triggered "Round_Start"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:23 +0000] "GET /server.php HTTP/1.1" 200 1728 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:24 +0000] "GET /themes/default/css/overall.css HTTP/1.1" 200 2546 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:24 +0000] "GET /themes/default/css/content.css HTTP/1.1" 200 4837 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:24 +0000] "GET /themes/default/js/jquery.js HTTP/1.1" 200 16001 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:24 +0000] "GET /themes/default/js/overall.js HTTP/1.1" 200 2117 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /server.php HTTP/1.1" 200 1727 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/js/overall.js HTTP/1.1" 200 2117 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/menu-login-icon.png HTTP/1.1" 304 248 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/icons/ps_logo_16X16.png HTTP/1.1" 304 248 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/go.png HTTP/1.1" 304 249 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/header-menu-sep.png HTTP/1.1" 304 248 "http://localhost:8080/themes/default/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/header-menu-bg.png HTTP/1.1" 304 248 "http://localhost:8080/themes/default/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/header-bg.png HTTP/1.1" 304 247 "http://localhost:8080/themes/default/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/header-logo.webp HTTP/1.1" 304 250 "http://localhost:8080/themes/default/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/footer-bg.png HTTP/1.1" 304 249 "http://localhost:8080/themes/default/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:30 +0000] "GET /themes/default/img/script_error.png HTTP/1.1" 304 249 "http://localhost:8080/themes/default/css/content.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:35 +0000] "GET /index.php HTTP/1.1" 200 1719 "http://localhost:8080/server.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/index.php HTTP/1.1" 302 380 "http://localhost:8080/index.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/login.php?ref=%2Fadmin%2Findex.php HTTP/1.1" 200 1242 "http://localhost:8080/index.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/themes/acp/css/overall.css HTTP/1.1" 200 1851 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Findex.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/themes/acp/js/overall.js HTTP/1.1" 200 2185 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Findex.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/themes/acp/js/jquery.js HTTP/1.1" 200 15178 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Findex.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/themes/acp/css/content.css HTTP/1.1" 200 2960 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Findex.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/themes/acp/css/forms.css HTTP/1.1" 200 2182 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Findex.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/themes/acp/js/forms.js HTTP/1.1" 200 500 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Findex.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:37 +0000] "GET /admin/themes/acp/js/login.js HTTP/1.1" 200 429 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Findex.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/header-bg.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/header-menu-bg.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/header-menu-sep.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/content-bg.gif HTTP/1.1" 304 247 "http://localhost:8080/admin/themes/acp/css/content.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/icons/cancel.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/forms.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/icons/information.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/forms.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/icons/user_go.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/forms.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:38 +0000] "GET /admin/themes/acp/img/footer-bg.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 127.0.0.1 - - [05/Feb/2026:17:26:43 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.65 (Debian) PHP/8.2.30 (internal dummy connection)"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:52 +0000] "GET /admin/errlogs.php HTTP/1.1" 302 287 "http://localhost:8080/admin/logsources.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:52 +0000] "GET /admin/login.php?ref=%2Fadmin%2Ferrlogs.php HTTP/1.1" 200 1242 "http://localhost:8080/admin/logsources.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:56 +0000] "POST /admin/login.php HTTP/1.1" 302 332 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Ferrlogs.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:56 +0000] "GET /admin/errlogs.php HTTP/1.1" 200 2167 "http://localhost:8080/admin/login.php?ref=%2Fadmin%2Ferrlogs.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:56 +0000] "GET /admin/themes/acp/css/2column.css HTTP/1.1" 200 2063 "http://localhost:8080/admin/errlogs.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/bullet_go.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/overall.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/table-header-bg.png HTTP/1.1" 304 249 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/exp_minus.gif HTTP/1.1" 304 247 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/page_white_text.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/user_gray.png HTTP/1.1" 304 249 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/layers.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/award_star_gold_3.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/add.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/lightning.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/images.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/server.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/bomb.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/page_white.png HTTP/1.1" 304 249 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/tag.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/user_green.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/group.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/user_red.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/icons/error.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/2column.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/table-header-active-l-bg.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/content.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+psychostats_web  | 172.20.0.1 - - [05/Feb/2026:17:26:57 +0000] "GET /admin/themes/acp/img/table-header-desc-r-bg.png HTTP/1.1" 304 248 "http://localhost:8080/admin/themes/acp/css/content.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
+

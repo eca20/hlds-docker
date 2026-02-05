@@ -11,7 +11,7 @@ services:
       - "./config:/temp/config"
       - "./mods:/temp/mods"
       - hlds_logs:/opt/steam/hlds/cstrike/logs
-      - ./config/server.cfg:/opt/steam/hlds/cstrike/server.cfg:ro
+      - ./config/server.cfg:/opt/steam/hlds/cstrike/cfg/server.cfg:ro
       - ./config/maps:/opt/steam/hlds/cstrike/maps:ro
     ports:
       - "27015:27015/udp"
@@ -74,7 +74,7 @@ services:
         condition: service_healthy
     volumes:
       - "./psychostats:/opt/psychostats"
-      - "./data/hlds_logs:/opt/steam/hlds/cstrike/logs:ro"
+      - hlds_logs:/opt/steam/hlds/cstrike/logs:ro
       - "./cron.stats:/etc/cron.d/psychostats"
     command: ["cron", "-f"]
     restart: unless-stopped

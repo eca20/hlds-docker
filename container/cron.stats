@@ -1,1 +1,5 @@
-* * * * * root /opt/psychostats/root/stats.pl >> /var/log/psychostats_parser.log 2>&1
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LOG_SOURCE=/opt/steam/hlds/cstrike/logs
+
+* * * * * root /opt/psychostats/root/stats.pl -logsource $LOG_SOURCE -gametype halflife -modtype cstrike >> /var/log/psychostats_parser.log 2>&1

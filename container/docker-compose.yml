@@ -12,7 +12,6 @@ services:
       - "./mods:/temp/mods"
       - hlds_logs:/opt/steam/hlds/cstrike/logs
       - ./config/server.cfg:/opt/steam/hlds/cstrike/cfg/server.cfg:ro
-      - ./config/maps:/opt/steam/hlds/cstrike/maps:ro
     ports:
       - "27015:27015/udp"
       - "27015:27015"

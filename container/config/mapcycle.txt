@@ -1,0 +1,4 @@
+# Map rotation file.
+# Copied into the game dir at runtime by `container/entrypoint.sh`.
+# Keep the server rotation pinned; admins can switch maps via the AMX Mod X maps menu.
+cs_assault_upc

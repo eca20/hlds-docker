@@ -32,24 +32,38 @@ MAPS_DIR="/opt/steam/hlds/$GAME/maps"
 
 if [ -d "$AMXX_CONFIG_DIR" ] && [ -d "$MAPS_DIR" ]
 then
+  TMP_MAPS_LIST="$(mktemp 2>/dev/null || echo "/tmp/amxx-maps-list.$$")"
   TMP_MAPS_INI="$(mktemp 2>/dev/null || echo "/tmp/amxx-maps.$$")"
 
-  {
-    echo "; Auto-generated on container start from installed .bsp files."
-    echo "; Rotation lives in mapcycle.txt; this file is for the admin maps menu."
-    echo
-    find "$MAPS_DIR" -maxdepth 1 -type f -iname '*.bsp' -print \
-      | sed 's#.*/##' \
-      | sed 's/\\.[bB][sS][pP]$//' \
-      | sort -fu
-  } > "$TMP_MAPS_INI" 2>/dev/null || true
+  found_maps=0
 
-  if [ -s "$TMP_MAPS_INI" ]
+  # Avoid relying on `find` inside the image; glob for map files instead.
+  for f in "$MAPS_DIR"/*.bsp "$MAPS_DIR"/*.BSP
+  do
+    [ -f "$f" ] || continue
+    name="${f##*/}"
+    name="${name%.*}"
+    printf "%s\n" "$name" >> "$TMP_MAPS_LIST"
+    found_maps=1
+  done
+
+  # Only overwrite maps.ini if we found at least one map; otherwise keep any existing file.
+  if [ "$found_maps" -eq 1 ]
   then
-    mv "$TMP_MAPS_INI" "$AMXX_MAPS_INI"
-  else
-    rm -f "$TMP_MAPS_INI" 2>/dev/null || true
+    {
+      echo "; Auto-generated on container start from installed .bsp files."
+      echo "; Rotation lives in mapcycle.txt; this file is for the admin maps menu."
+      echo
+      sort -fu "$TMP_MAPS_LIST" 2>/dev/null || cat "$TMP_MAPS_LIST"
+    } > "$TMP_MAPS_INI" 2>/dev/null || true
+
+    if [ -s "$TMP_MAPS_INI" ]
+    then
+      mv "$TMP_MAPS_INI" "$AMXX_MAPS_INI"
+    fi
   fi
+
+  rm -f "$TMP_MAPS_LIST" "$TMP_MAPS_INI" 2>/dev/null || true
 fi
 
 

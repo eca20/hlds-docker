@@ -11,12 +11,16 @@ fi
 # Push mods and config files from their temp directories to the server directories.
 if [ -d /temp/mods ]
 then
-  rsync --recursive --update --chown=steam:steam /temp/mods/* /opt/steam/hlds
+  # Keep the container's HLDS tree in sync with the repo. We intentionally do NOT use
+  # `--update` because the SteamCMD-installed files inside the image can have newer mtimes
+  # than the repo checkout, which would otherwise cause rsync to skip our config/plugins.
+  rsync --recursive --chown=steam:steam /temp/mods/* /opt/steam/hlds
 fi
 
 if [ -d /temp/config ]
 then
-  rsync --recursive --update --chown=steam:steam /temp/config/* /opt/steam/hlds/$GAME
+  # Same rationale as above: we want repo-managed config to always win.
+  rsync --recursive --chown=steam:steam /temp/config/* /opt/steam/hlds/$GAME
 fi
 
 # Keep the AMX Mod X maps menu in sync with maps actually installed on the server.
@@ -90,4 +94,4 @@ echo "
 echo "\e[32mStarting Half-Life Dedicated Server...\e[0m"
 
 # Start the server with the specified game and any additional arguments.
-./hlds_run "-game $GAME $@"
+./hlds_run -game "$GAME" "$@"

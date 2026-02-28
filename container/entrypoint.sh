@@ -19,6 +19,35 @@ then
   rsync --recursive --update --chown=steam:steam /temp/config/* /opt/steam/hlds/$GAME
 fi
 
+# Keep the AMX Mod X maps menu in sync with maps actually installed on the server.
+# `mapsmenu.amxx` reads `addons/amxmodx/configs/maps.ini` and filters entries with `is_map_valid()`.
+# We keep `mapcycle.txt` pinned, so admins can change maps at will without bloating rotation.
+AMXX_CONFIG_DIR="/opt/steam/hlds/$GAME/addons/amxmodx/configs"
+AMXX_MAPS_INI="$AMXX_CONFIG_DIR/maps.ini"
+MAPS_DIR="/opt/steam/hlds/$GAME/maps"
+
+if [ -d "$AMXX_CONFIG_DIR" ] && [ -d "$MAPS_DIR" ]
+then
+  TMP_MAPS_INI="$(mktemp 2>/dev/null || echo "/tmp/amxx-maps.$$")"
+
+  {
+    echo "; Auto-generated on container start from installed .bsp files."
+    echo "; Rotation lives in mapcycle.txt; this file is for the admin maps menu."
+    echo
+    find "$MAPS_DIR" -maxdepth 1 -type f -iname '*.bsp' -print \
+      | sed 's#.*/##' \
+      | sed 's/\\.[bB][sS][pP]$//' \
+      | sort -fu
+  } > "$TMP_MAPS_INI" 2>/dev/null || true
+
+  if [ -s "$TMP_MAPS_INI" ]
+  then
+    mv "$TMP_MAPS_INI" "$AMXX_MAPS_INI"
+  else
+    rm -f "$TMP_MAPS_INI" 2>/dev/null || true
+  fi
+fi
+
 
 echo "
                           ..::::::..              

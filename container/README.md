@@ -1,5 +1,7 @@
 # Building an Image
 
+For the fastest deployment path on a new host, see [README.quick-launch.md](README.quick-launch.md).
+
 If you want to build an image yourself, follow the steps below. This can be useful in cases where you want to make changes to the build scripts or add custom functionality. It is also useful for testing changes before submitting a contribution to the project.
 
 1. Clone this project locally.

@@ -1,0 +1,6 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Install with `crontab -e` on the Docker host and replace the path below with
+# the absolute path to this repo checkout on that host.
+0 4 * * * /path/to/hlds-docker/container/restart-hlds.sh >> /var/log/hlds_restart.log 2>&1

@@ -1,0 +1,17 @@
+[Unit]
+Description=HLDS Docker Compose Stack
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/eterraverse/projects/hlds-docker/container
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/home/eterraverse/projects/hlds-docker/container/start-compose-stack.sh
+ExecStop=/home/eterraverse/projects/hlds-docker/container/stop-compose-stack.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
